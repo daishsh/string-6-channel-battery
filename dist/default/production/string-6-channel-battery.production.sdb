@@ -109,7 +109,7 @@
 [v _LATAbits LATAbits `VES194  1 e 1 @24 ]
 "684
 [v _LATC LATC `VEuc  1 e 1 @26 ]
-[s S150 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S155 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -117,8 +117,8 @@
 `uc 1 LATC5 1 0 :1:5 
 ]
 "699
-[u S157 . 1 `S150 1 . 1 0 ]
-[v _LATCbits LATCbits `VES157  1 e 1 @26 ]
+[u S162 . 1 `S155 1 . 1 0 ]
+[v _LATCbits LATCbits `VES162  1 e 1 @26 ]
 "1070
 [v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
 "1124
@@ -217,7 +217,7 @@
 {
 "56
 [v main@ret ret `uc  1 a 1 38 ]
-"120
+"122
 } 0
 "530 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 [v _cw_bat_work cw_bat_work `(v  1 e 1 0 ]
