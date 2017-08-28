@@ -58,6 +58,7 @@ void main(void)
     SYSTEM_Initialize();
     
     ret = cw_bat_init();
+    IO_RC3_SetHigh();
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -77,8 +78,6 @@ void main(void)
     {
         // Add your application code
         CW_Delay10ms(100);
-        
-        IO_RC3_SetHigh();
         cw_bat_work();
         EUSART1_Write(cw_bat.voltage);
         EUSART1_Write(cw_bat.capacity);

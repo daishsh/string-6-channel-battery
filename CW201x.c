@@ -328,10 +328,7 @@ int cw_get_capacity(void)
         reset_loop =0;
     }
 	
-	/*����ǳ��״̬������Ӧ�����������ӵģ���������ʱ������ζ�ȡ�ĵ������ϴ�С����ʾ�ϴε�����*/
-	/*ʲô����»�������������أ���Ϊ��˾��������С��λ�����籾�ε���0x04�Ĵ���������ֵ��9.01����Ϊ����ֻ��03�Ĵ��������Ը��ͻ���ʾ��ֵ��9�����´ζ�ȡ�ĵ�����8.99*/
-	/*��ô�´���ʾ���ͻ��ĵ�����8���ӿͻ���ʾ��������̫�ÿ����������������*/
-	/*�ŵ�ʱ����ͬ���Ĵ���*/
+/*
 	if(((cw_bat.usb_online == 1) && (cw_capacity == (cw_bat.capacity - 1)))
 			|| ((cw_bat.usb_online == 0) && (cw_capacity == (cw_bat.capacity + 1))))
 	{
@@ -341,12 +338,7 @@ int cw_get_capacity(void)
 			cw_capacity = cw_bat.capacity;
 		}
 	}
-	
-		/*����ǿͻ����������⣬�ͻ�ʹ�õ�charger ic�����ic�����Ȳ��Ǻܸߣ���Щicֻ�ܰѵ�س�絽4.1V�������ȡ�������ʱ�����ѹ�����4.2V����ô����Զ��ʾ����100%*/
-		/*�����������������ַ�����1������д�Ĵ���������ʾ���ͻ�һ���ٵ�ֵ��һ������ӵ�100��
-		2���������޸�profile��������ʾ100%ʱ�ĵ�ѹ�㣨��������������ǻ���Щcharger icֻ���õ�س䵽4.0�����������ˣ���
-		��ǰ��oppo��һ��charger��������������
-		*/
+
 	if((cw_bat.usb_online == 1) && (cw_capacity >= 95) && (cw_capacity <= cw_bat.capacity) )
 	{     
 		// avoid not charge full
@@ -363,7 +355,7 @@ int cw_get_capacity(void)
 			cw_capacity = cw_bat.capacity; 
 		}
 	}
-	/*��εĴ����ǵ�������ͨ���ϵ�����������ȥ�ļٵ�ֵ����ôҪ�üٵķ�����������������100ֱ���������ʵֵ�����*/
+	
     else if((cw_bat.usb_online == 0) && (cw_capacity <= cw_bat.capacity ) && (cw_capacity >= 90) && (no_charger_full_jump == 1))
 	{
 		// avoid battery level jump to CW_BAT
@@ -392,7 +384,7 @@ int cw_get_capacity(void)
   		allow_no_charger_full =0;
     }
 	
-	/*ic�����ˣ����˺ܾ�һֱ����0%��һ�������ð��Сʱ����ô������ic*/
+	
 	if((cw_bat.usb_online > 0) && (cw_capacity == 0))
 	{		  
 		allow_charger_always_zero++;
@@ -410,7 +402,7 @@ int cw_get_capacity(void)
 	{
 		if_quickstart = 0;
 	}
-
+*/
 	return(cw_capacity);
 }
 

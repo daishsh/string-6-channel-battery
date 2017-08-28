@@ -296,82 +296,7 @@ return cw_bat.capacity;
 reset_loop =0;
 }
 
-# 335
-if(((cw_bat.usb_online == 1) && (cw_capacity == (cw_bat.capacity - 1)))
-|| ((cw_bat.usb_online == 0) && (cw_capacity == (cw_bat.capacity + 1))))
-{
-
-if(!((cw_capacity == 0 && cw_bat.capacity <= 2)||(cw_capacity == 100 && cw_bat.capacity == 99)))
-{
-cw_capacity = cw_bat.capacity;
-}
-}
-
-# 350
-if((cw_bat.usb_online == 1) && (cw_capacity >= 95) && (cw_capacity <= cw_bat.capacity) )
-{
-
-allow_no_charger_full++;
-if(allow_no_charger_full >= 720)
-{
-allow_capacity = cw_bat.capacity + 1;
-cw_capacity = (allow_capacity <= 100) ? allow_capacity : 100;
-no_charger_full_jump =1;
-allow_no_charger_full =0;
-}
-else if(cw_capacity <= cw_bat.capacity)
-{
-cw_capacity = cw_bat.capacity;
-}
-}
-
-else if((cw_bat.usb_online == 0) && (cw_capacity <= cw_bat.capacity ) && (cw_capacity >= 90) && (no_charger_full_jump == 1))
-{
-
-if(cw_bat.usb_online == 0)
-allow_no_charger_full++;
-if(allow_no_charger_full >= 60)
-{
-allow_capacity = cw_bat.capacity - 1;
-allow_no_charger_full =0;
-if (cw_capacity >= allow_capacity)
-{
-no_charger_full_jump =0;
-}
-else
-{
-cw_capacity = (allow_capacity > 0) ? allow_capacity : 0;
-}
-}
-else if(cw_capacity <= cw_bat.capacity)
-{
-cw_capacity = cw_bat.capacity;
-}
-}
-else
-{
-allow_no_charger_full =0;
-}
-
-
-if((cw_bat.usb_online > 0) && (cw_capacity == 0))
-{
-allow_charger_always_zero++;
-if((allow_charger_always_zero >= 1800) && (if_quickstart == 0))
-{
-ret = cw_por();
-if(ret){
-return -1;
-}
-if_quickstart = 1;
-allow_charger_always_zero =0;
-}
-}
-else if((if_quickstart == 1)&&(cw_bat.usb_online == 0))
-{
-if_quickstart = 0;
-}
-
+# 406
 return(cw_capacity);
 }
 
@@ -415,7 +340,7 @@ ad_value = ad_value * 305 / 100000;
 return(ad_value);
 }
 
-# 480
+# 472
 void update_capacity(void)
 {
 int cw_capacity;
@@ -440,7 +365,7 @@ cw_bat.voltage = cw_voltage;
 }
 }
 
-# 527
+# 519
 void update_usb_online(void)
 {
 if(CHARGE == 1)
@@ -458,10 +383,10 @@ update_usb_online();
 update_capacity();
 update_vol();
 
-# 546
+# 538
 }
 
-# 560
+# 552
 unsigned char cw_bat_init(void)
 {
 unsigned char ret;
@@ -478,7 +403,7 @@ cw_bat.usb_online = 0;
 cw_bat.capacity = 2;
 cw_bat.voltage = 0;
 
-# 578
+# 570
 cw_bat.alt = 0;
 
 return ret;

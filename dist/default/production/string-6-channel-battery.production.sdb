@@ -23,17 +23,17 @@
 [v _cw_por cw_por `(i  1 e 2 0 ]
 "300
 [v _cw_get_capacity cw_get_capacity `(i  1 e 2 0 ]
-"417
+"409
 [v _cw_get_vol cw_get_vol `(ui  1 e 2 0 ]
-"480
+"472
 [v _update_capacity update_capacity `(v  1 e 1 0 ]
-"491
+"483
 [v _update_vol update_vol `(v  1 e 1 0 ]
-"527
+"519
 [v _update_usb_online update_usb_online `(v  1 e 1 0 ]
-"538
+"530
 [v _cw_bat_work cw_bat_work `(v  1 e 1 0 ]
-"560
+"552
 [v _cw_bat_init cw_bat_init `(uc  1 e 1 0 ]
 "22 C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
 [v _Delay10us Delay10us `(v  1 e 1 0 ]
@@ -71,7 +71,7 @@
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "51 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-[s S340 . 1 `uc 1 RC0 1 0 :1:0 
+[s S338 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -79,13 +79,13 @@
 `uc 1 RC5 1 0 :1:5 
 ]
 "509 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
-[u S347 . 1 `S340 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES347  1 e 1 @14 ]
+[u S345 . 1 `S338 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES345  1 e 1 @14 ]
 "544
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "589
 [v _TRISC TRISC `VEuc  1 e 1 @20 ]
-[s S313 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S311 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -93,8 +93,8 @@
 `uc 1 TRISC5 1 0 :1:5 
 ]
 "604
-[u S320 . 1 `S313 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES320  1 e 1 @20 ]
+[u S318 . 1 `S311 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES318  1 e 1 @20 ]
 "639
 [v _LATA LATA `VEuc  1 e 1 @24 ]
 [s S187 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -109,7 +109,7 @@
 [v _LATAbits LATAbits `VES194  1 e 1 @24 ]
 "684
 [v _LATC LATC `VEuc  1 e 1 @26 ]
-[s S155 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S150 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -117,8 +117,8 @@
 `uc 1 LATC5 1 0 :1:5 
 ]
 "699
-[u S162 . 1 `S155 1 . 1 0 ]
-[v _LATCbits LATCbits `VES162  1 e 1 @26 ]
+[u S157 . 1 `S150 1 . 1 0 ]
+[v _LATCbits LATCbits `VES157  1 e 1 @26 ]
 "1070
 [v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
 "1124
@@ -205,14 +205,6 @@
 [v _PLLR PLLR `VEb  1 e 0 @17536 ]
 "4 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 [v _CHARGE CHARGE `i  1 e 2 0 ]
-"5
-[v _no_charger_full_jump no_charger_full_jump `i  1 e 2 0 ]
-"6
-[v _allow_no_charger_full allow_no_charger_full `ui  1 e 2 0 ]
-"7
-[v _allow_charger_always_zero allow_charger_always_zero `ui  1 e 2 0 ]
-"8
-[v _if_quickstart if_quickstart `uc  1 e 1 0 ]
 "9
 [v _reset_loop reset_loop `uc  1 e 1 0 ]
 [s S177 tagSTRUCT_CW_BATTERY 6 `uc 1 usb_online 1 0 `ui 1 capacity 2 1 `ui 1 voltage 2 3 `uc 1 alt 1 5 ]
@@ -224,40 +216,40 @@
 [v _main main `(v  1 e 1 0 ]
 {
 "56
-[v main@ret ret `uc  1 a 1 43 ]
-"121
+[v main@ret ret `uc  1 a 1 38 ]
+"120
 } 0
-"538 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+"530 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 [v _cw_bat_work cw_bat_work `(v  1 e 1 0 ]
 {
-"546
+"538
 } 0
-"491
+"483
 [v _update_vol update_vol `(v  1 e 1 0 ]
 {
-"493
+"485
 [v update_vol@cw_voltage cw_voltage `ui  1 a 2 35 ]
-"502
+"494
 } 0
-"417
+"409
 [v _cw_get_vol cw_get_vol `(ui  1 e 2 0 ]
 {
-"422
+"414
 [v cw_get_vol@ad_value ad_value `ul  1 a 4 28 ]
-"423
+"415
 [v cw_get_vol@ad_buff ad_buff `ui  1 a 2 33 ]
-"421
+"413
 [v cw_get_vol@reg_val reg_val `[2]uc  1 a 2 22 ]
-"425
+"417
 [v cw_get_vol@ad_value_max ad_value_max `ui  1 a 2 26 ]
-"424
+"416
 [v cw_get_vol@ad_value_min ad_value_min `ui  1 a 2 24 ]
-"419
+"411
 [v cw_get_vol@ret ret `i  1 a 2 20 ]
-"420
+"412
 [v cw_get_vol@get_ad_times get_ad_times `uc  1 a 1 32 ]
 [v cw_get_vol@F83 F83 `[2]uc  1 s 2 F83 ]
-"455
+"447
 } 0
 "189 C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
 [v _cw_read_word cw_read_word `(i  1 e 2 0 ]
@@ -300,30 +292,28 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "31
 } 0
-"527 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+"519 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 [v _update_usb_online update_usb_online `(v  1 e 1 0 ]
 {
-"535
+"527
 } 0
-"480
+"472
 [v _update_capacity update_capacity `(v  1 e 1 0 ]
 {
-"482
-[v update_capacity@cw_capacity cw_capacity `i  1 a 2 40 ]
-"488
+"474
+[v update_capacity@cw_capacity cw_capacity `i  1 a 2 35 ]
+"480
 } 0
 "300
 [v _cw_get_capacity cw_get_capacity `(i  1 e 2 0 ]
 {
 "302
-[v cw_get_capacity@ret ret `i  1 a 2 35 ]
-"306
-[v cw_get_capacity@cw_capacity cw_capacity `uc  1 a 1 38 ]
-"303
-[v cw_get_capacity@allow_capacity allow_capacity `uc  1 a 1 37 ]
+[v cw_get_capacity@ret ret `i  1 a 2 31 ]
 "304
-[v cw_get_capacity@reg_val reg_val `uc  1 a 1 34 ]
-"415
+[v cw_get_capacity@reg_val reg_val `uc  1 a 1 33 ]
+"306
+[v cw_get_capacity@cw_capacity cw_capacity `uc  1 a 1 30 ]
+"407
 } 0
 "278
 [v _cw_por cw_por `(i  1 e 2 0 ]
@@ -334,14 +324,14 @@
 [v cw_por@reset_val reset_val `uc  1 a 1 23 ]
 "298
 } 0
-"560
+"552
 [v _cw_bat_init cw_bat_init `(uc  1 e 1 0 ]
 {
-"562
+"554
 [v cw_bat_init@ret ret `uc  1 a 1 21 ]
-"563
+"555
 [v cw_bat_init@loop loop `uc  1 a 1 20 ]
-"581
+"573
 } 0
 "126
 [v _cw_init cw_init `(uc  1 e 1 0 ]
