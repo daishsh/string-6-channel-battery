@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=string-6-channel-batery
+PROJECTNAME=string-6-channel-battery
 
 # Active Configuration
 DEFAULTCONF=default

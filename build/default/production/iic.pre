@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "iic.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9308,75 +9308,218 @@ void SYSTEM_Initialize(void);
 # 81
 void OSCILLATOR_Initialize(void);
 
-# 34 "CW201x.h"
-static unsigned char cw_bat_config_info[64] = {
-0x14,0xA6,0x70,0x6C,0x6C,0x67,0x64,
-0x62,0x60,0x5C,0x59,0x4E,0x50,0x42,
-0x2E,0x26,0x25,0x24,0x27,0x2E,0x41,
-0x5A,0x6D,0x4C,0x39,0xD7,0x06,0x66,
-0x00,0x01,0x05,0x34,0x61,0x76,0x79,
-0x7D,0x42,0x1E,0xA4,0x00,0x27,0x5A,
-0x52,0x87,0x8F,0x91,0x94,0x52,0x82,
-0x8C,0x92,0x96,0x2B,0x59,0x6E,0xCB,
-0x2F,0x7D,0x72,0xA5,0xB5,0xC1,0x94,
-0x99
-};
-
-
-typedef struct tagSTRUCT_CW_BATTERY {
-unsigned char usb_online;
-unsigned int capacity;
-unsigned int voltage;
-
-# 55
-unsigned char alt;
-}STRUCT_CW_BATTERY;
-
-unsigned char cw_bat_init(void);
-void cw_bat_work(void);
-
-# 48 "main.c"
-extern STRUCT_CW_BATTERY cw_bat;
-
-# 52
-void delay()
+# 24 "iic.c"
+void I2C_Delay10us(unsigned char us)
 {
-unsigned char a, b, d;
-int c = 100;
-for (;c>0;c--)
+unsigned char a, b;
+unsigned char i;
+for(i = 0; i < us; i++)
 {
-for(b=95;b>0;b--)
+for(b = 1;b > 0;b --)
 {
-for(a=209;a>0;a--) ;
+for(a = 7;a > 0;a --) ;
 }
 }
 }
 
-void main(void)
+# 45
+void start(void)
 {
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC1 = 0; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 0; } while(0);
+}
 
-unsigned char ret = 0;
-uint8_t send_char;
-SYSTEM_Initialize();
-
-do { TRISCbits.TRISC0 = 0; } while(0);
-
-ret = cw_bat_init();
-EUSART1_Write(ret);
-
-# 91
-while (1)
+void stop(void)
 {
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 0; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC1 = 1; } while(0);
+I2C_Delay10us(5);
 
-do { LATCbits.LATC2 = 0; } while(0);
-delay();
-do { LATCbits.LATC2 = 1; } while(0);
-delay();
-do { LATCbits.LATC3 = 1; } while(0);
+I2C_Delay10us(5);
+}
 
-# 104
-ret = cw_bat_init();
-EUSART1_Write(ret);
+int r_ack(void)
+{
+int ack;
+do { TRISCbits.TRISC1 = 1; } while(0);
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+ack = PORTCbits.RC1;
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 0; } while(0);
+I2C_Delay10us(5);
+return ack;
+}
+
+int wait_r_ack(void)
+{
+int ack;
+unsigned int i;
+ack = 1;
+for(i = 0; i < 100; i++)
+{
+ack = r_ack();
+if(!ack)
+{
+break;
+}
+if(i == 99)
+{
+stop();
+return 1;
+}
+}
+return 0;
+}
+
+void s_ack(void)
+{
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 0; } while(0);
+I2C_Delay10us(5);
+
+}
+
+void sn_ack(void)
+{
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 0; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 0; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
+I2C_Delay10us(5);
+}
+
+
+void write_byte(unsigned char w_data)
+{
+unsigned char i;
+do { TRISCbits.TRISC1 = 0; } while(0);
+for(i = 0; i < 8; i++)
+{
+LATCbits.LATC1 = w_data & 0x80;
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+do { LATCbits.LATC0 = 0; } while(0);
+I2C_Delay10us(5);
+w_data = w_data << 1;
 }
 }
 
+unsigned char read_byte(void)
+{
+unsigned char i;
+unsigned char r_data;
+do { TRISCbits.TRISC1 = 1; } while(0);
+for(i = 0; i < 8; i++)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+I2C_Delay10us(5);
+r_data = r_data << 1;
+I2C_Delay10us(5);
+if(PORTCbits.RC1)
+{
+r_data = r_data | 0x1;
+}
+do { LATCbits.LATC0 = 0; } while(0);
+I2C_Delay10us(5);
+}
+return r_data;
+}
+
+
+int cw_read(unsigned char point_reg,unsigned char *r_pdata)
+{
+start();
+write_byte(0xc4);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(point_reg);
+if(wait_r_ack())
+{
+return 1;
+}
+start();
+write_byte(0xc5);
+if(wait_r_ack())
+{
+return 1;
+}
+*r_pdata = read_byte();
+s_ack();
+stop();
+return 0;
+}
+
+int cw_read_word(unsigned char point_reg,unsigned char *r_pdata, unsigned int length)
+{
+unsigned char count;
+
+start();
+write_byte(0xc4);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(point_reg);
+if(wait_r_ack())
+{
+return 1;
+}
+start();
+write_byte(0xc5);
+if(wait_r_ack())
+{
+return 1;
+}
+for(count = 0; count < length; count++ ){
+*r_pdata = read_byte();
+if(count + 1 < length){
+r_pdata++;
+sn_ack();
+}
+}
+s_ack();
+stop();
+return 0;
+}
+
+int cw_write(unsigned char point_reg,unsigned char *w_pdata)
+{
+start();
+write_byte(0xc4);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(point_reg);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(*w_pdata);
+if(wait_r_ack())
+{
+return 1;
+}
+stop();
+return 0;
+}

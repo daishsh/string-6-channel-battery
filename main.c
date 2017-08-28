@@ -44,24 +44,35 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-
+#include "CW201x.h"
+extern STRUCT_CW_BATTERY   cw_bat;
 /*
                          Main application
  */
 void delay()
 {
-    unsigned char a,b,c;
-    for(c=252;c>0;c--)
-        for(b=230;b>0;b--)
-            for(a=33;a>0;a--);
-                asm("nop");  //if Keil,require use intrins.h
+    unsigned char a, b, d;
+    int c = 100;
+    for (;c>0;c--)
+	{
+        for(b=95;b>0;b--)
+        {
+            for(a=209;a>0;a--) ;
+        }
+	}
 }
 
 void main(void)
 {
     // initialize the device
+    unsigned char ret = 0;
+    uint8_t send_char;
     SYSTEM_Initialize();
-
+    
+    IO_RC0_SetDigitalOutput();
+    
+    ret = cw_bat_init();
+    EUSART1_Write(ret);
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -80,16 +91,18 @@ void main(void)
     while (1)
     {
         // Add your application code
-        IO_RA2_SetLow();
         IO_RC2_SetLow();
-        IO_RA5_SetHigh();
-        IO_RA4_SetHigh();
         delay();
-        IO_RA2_SetHigh();
         IO_RC2_SetHigh();
-        IO_RA5_SetLow();
-        IO_RA4_SetLow();
         delay();
+        IO_RC3_SetHigh();
+        //cw_bat_work();
+        /*send_char = (cw_bat.voltage >> 8);
+        EUSART1_Write(send_char);
+        send_char = (cw_bat.voltage & 0x00FF);
+        EUSART1_Write(send_char);*/
+        ret = cw_bat_init();
+        EUSART1_Write(ret);
     }
 }
 /**

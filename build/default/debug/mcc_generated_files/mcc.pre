@@ -1,5 +1,42 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/mcc.c"
+
+
+# 49
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINTPLL
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = OFF
+
+
+#pragma config MCLRE = OFF
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9308,75 +9345,32 @@ void SYSTEM_Initialize(void);
 # 81
 void OSCILLATOR_Initialize(void);
 
-# 34 "CW201x.h"
-static unsigned char cw_bat_config_info[64] = {
-0x14,0xA6,0x70,0x6C,0x6C,0x67,0x64,
-0x62,0x60,0x5C,0x59,0x4E,0x50,0x42,
-0x2E,0x26,0x25,0x24,0x27,0x2E,0x41,
-0x5A,0x6D,0x4C,0x39,0xD7,0x06,0x66,
-0x00,0x01,0x05,0x34,0x61,0x76,0x79,
-0x7D,0x42,0x1E,0xA4,0x00,0x27,0x5A,
-0x52,0x87,0x8F,0x91,0x94,0x52,0x82,
-0x8C,0x92,0x96,0x2B,0x59,0x6E,0xCB,
-0x2F,0x7D,0x72,0xA5,0xB5,0xC1,0x94,
-0x99
-};
-
-
-typedef struct tagSTRUCT_CW_BATTERY {
-unsigned char usb_online;
-unsigned int capacity;
-unsigned int voltage;
-
-# 55
-unsigned char alt;
-}STRUCT_CW_BATTERY;
-
-unsigned char cw_bat_init(void);
-void cw_bat_work(void);
-
-# 48 "main.c"
-extern STRUCT_CW_BATTERY cw_bat;
-
-# 52
-void delay()
+# 86 "mcc_generated_files/mcc.c"
+void SYSTEM_Initialize(void)
 {
-unsigned char a, b, d;
-int c = 100;
-for (;c>0;c--)
-{
-for(b=95;b>0;b--)
-{
-for(a=209;a>0;a--) ;
-}
-}
+
+PIN_MANAGER_Initialize();
+OSCILLATOR_Initialize();
+EUSART1_Initialize();
 }
 
-void main(void)
+void OSCILLATOR_Initialize(void)
 {
 
-unsigned char ret = 0;
-uint8_t send_char;
-SYSTEM_Initialize();
+OSCCON1 = 0x10;
 
-do { TRISCbits.TRISC0 = 0; } while(0);
+OSCCON3 = 0x00;
 
-ret = cw_bat_init();
-EUSART1_Write(ret);
+OSCEN = 0x00;
 
-# 91
-while (1)
+OSCFRQ = 0x05;
+
+OSCSTAT = 0x00;
+
+OSCTUNE = 0x00;
+
+while(PLLR == 0)
 {
-
-do { LATCbits.LATC2 = 0; } while(0);
-delay();
-do { LATCbits.LATC2 = 1; } while(0);
-delay();
-do { LATCbits.LATC3 = 1; } while(0);
-
-# 104
-ret = cw_bat_init();
-EUSART1_Write(ret);
 }
 }
 

@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/string-6-channel-batery.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=string-6-channel-batery.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=string-6-channel-batery/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/string-6-channel-battery.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=string-6-channel-battery.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=string-6-channel-battery/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/string-6-channel-batery/bin
+makeDirectory ${TMPDIR}/string-6-channel-battery/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/string-6-channel-batery.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/string-6-channel-battery.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/string-6-channel-batery.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/string-6-channel-battery.tar *
 checkReturnCode
 
 # Cleanup

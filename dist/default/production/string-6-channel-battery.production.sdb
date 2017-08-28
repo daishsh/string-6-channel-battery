@@ -1,0 +1,404 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F15323 ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"26 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+[v _CW_Delay10ms CW_Delay10ms `(v  1 e 1 0 ]
+"38
+[v _CW_Delay10us CW_Delay10us `(v  1 e 1 0 ]
+"53
+[v _cw_update_config_info cw_update_config_info `(uc  1 e 1 0 ]
+"126
+[v _cw_init cw_init `(uc  1 e 1 0 ]
+"278
+[v _cw_por cw_por `(i  1 e 2 0 ]
+"300
+[v _cw_get_capacity cw_get_capacity `(i  1 e 2 0 ]
+"417
+[v _cw_get_vol cw_get_vol `(ui  1 e 2 0 ]
+"480
+[v _update_capacity update_capacity `(v  1 e 1 0 ]
+"491
+[v _update_vol update_vol `(v  1 e 1 0 ]
+"527
+[v _update_usb_online update_usb_online `(v  1 e 1 0 ]
+"560
+[v _cw_bat_init cw_bat_init `(uc  1 e 1 0 ]
+"24 C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+[v _I2C_Delay10us I2C_Delay10us `(v  1 e 1 0 ]
+"45
+[v _start start `(v  1 e 1 0 ]
+"56
+[v _stop stop `(v  1 e 1 0 ]
+"69
+[v _r_ack r_ack `(i  1 e 2 0 ]
+"82
+[v _wait_r_ack wait_r_ack `(i  1 e 2 0 ]
+"103
+[v _s_ack s_ack `(v  1 e 1 0 ]
+"115
+[v _sn_ack sn_ack `(v  1 e 1 0 ]
+"128
+[v _write_byte write_byte `(v  1 e 1 0 ]
+"144
+[v _read_byte read_byte `(uc  1 e 1 0 ]
+"166
+[v _cw_read cw_read `(i  1 e 2 0 ]
+"191
+[v _cw_read_word cw_read_word `(i  1 e 2 0 ]
+"224
+[v _cw_write cw_write `(i  1 e 2 0 ]
+"52 C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+[v _delay delay `(v  1 e 1 0 ]
+"65
+[v _main main `(v  1 e 1 0 ]
+"55 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"96
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"86 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"94
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"51 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+[s S326 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+]
+"509 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
+[u S333 . 1 `S326 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES333  1 e 1 @14 ]
+"544
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"589
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+[s S146 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+]
+"604
+[u S153 . 1 `S146 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES153  1 e 1 @20 ]
+"639
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+"684
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+[s S168 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+]
+"699
+[u S175 . 1 `S168 1 . 1 0 ]
+[v _LATCbits LATCbits `VES175  1 e 1 @26 ]
+"1070
+[v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
+"1124
+[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
+"1185
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @283 ]
+"1255
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
+"1309
+[v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
+[s S39 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1335
+[u S48 . 1 `S39 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES48  1 e 1 @285 ]
+"1489
+[v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
+"1669
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
+[s S24 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+"7875
+[u S30 . 1 `S24 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES30  1 e 1 @1807 ]
+"9592
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"9732
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"9766
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @2192 ]
+"9818
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"9864
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"9922
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"15184
+[v _PPSLOCK PPSLOCK `VEuc  1 e 1 @7823 ]
+[s S110 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
+]
+"15194
+[u S112 . 1 `S110 1 . 1 0 ]
+[v _PPSLOCKbits PPSLOCKbits `VES112  1 e 1 @7823 ]
+[s S117 . 1 `uc 1 RX1DTPPS 1 0 :6:0 
+]
+"16150
+[s S119 . 1 `uc 1 RX1DTPPS0 1 0 :1:0 
+`uc 1 RX1DTPPS1 1 0 :1:1 
+`uc 1 RX1DTPPS2 1 0 :1:2 
+`uc 1 RX1DTPPS3 1 0 :1:3 
+`uc 1 RX1DTPPS4 1 0 :1:4 
+`uc 1 RX1DTPPS5 1 0 :1:5 
+]
+[u S126 . 1 `S117 1 . 1 0 `S119 1 . 1 0 ]
+[v _RX1DTPPSbits RX1DTPPSbits `VES126  1 e 1 @7883 ]
+"16688
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @7972 ]
+"16776
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"16821
+[v _WPUA WPUA `VEuc  1 e 1 @7993 ]
+"16871
+[v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
+"17161
+[v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
+"17211
+[v _WPUC WPUC `VEuc  1 e 1 @8015 ]
+"17261
+[v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
+"18638
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"19700
+[v _PLLR PLLR `VEb  1 e 0 @17536 ]
+"4 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+[v _CHARGE CHARGE `i  1 e 2 0 ]
+"5
+[v _no_charger_full_jump no_charger_full_jump `i  1 e 2 0 ]
+"6
+[v _allow_no_charger_full allow_no_charger_full `ui  1 e 2 0 ]
+"7
+[v _allow_charger_always_zero allow_charger_always_zero `ui  1 e 2 0 ]
+"8
+[v _if_quickstart if_quickstart `uc  1 e 1 0 ]
+"9
+[v _reset_loop reset_loop `uc  1 e 1 0 ]
+[s S213 tagSTRUCT_CW_BATTERY 6 `uc 1 usb_online 1 0 `ui 1 capacity 2 1 `ui 1 voltage 2 3 `uc 1 alt 1 5 ]
+"12
+[v _cw_bat cw_bat `S213  1 e 6 0 ]
+"34 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.h
+[v CW201x@cw_bat_config_info cw_bat_config_info `[64]uc  1 s 64 cw_bat_config_info ]
+"65 C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"68
+[v main@ret ret `uc  1 a 1 23 ]
+"107
+} 0
+"52
+[v _delay delay `(v  1 e 1 0 ]
+{
+"55
+[v delay@c c `i  1 a 2 1 ]
+"54
+[v delay@b b `uc  1 a 1 4 ]
+[v delay@a a `uc  1 a 1 3 ]
+"63
+} 0
+"560 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+[v _cw_bat_init cw_bat_init `(uc  1 e 1 0 ]
+{
+"562
+[v cw_bat_init@ret ret `uc  1 a 1 21 ]
+"563
+[v cw_bat_init@loop loop `uc  1 a 1 20 ]
+"581
+} 0
+"126
+[v _cw_init cw_init `(uc  1 e 1 0 ]
+{
+"128
+[v cw_init@ret ret `ui  1 a 2 16 ]
+"130
+[v cw_init@reg_val reg_val `uc  1 a 1 18 ]
+"129
+[v cw_init@i i `uc  1 a 1 15 ]
+"213
+} 0
+"53
+[v _cw_update_config_info cw_update_config_info `(uc  1 e 1 0 ]
+{
+"55
+[v cw_update_config_info@ret ret `i  1 a 2 9 ]
+"58
+[v cw_update_config_info@reg_val reg_val `uc  1 a 1 12 ]
+"56
+[v cw_update_config_info@i i `uc  1 a 1 11 ]
+"57
+[v cw_update_config_info@reset_val reset_val `uc  1 a 1 8 ]
+"122
+} 0
+"224 C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+[v _cw_write cw_write `(i  1 e 2 0 ]
+{
+[v cw_write@point_reg point_reg `uc  1 a 1 wreg ]
+[v cw_write@point_reg point_reg `uc  1 a 1 wreg ]
+[v cw_write@w_pdata w_pdata `*.4uc  1 p 1 4 ]
+"226
+[v cw_write@point_reg point_reg `uc  1 a 1 13 ]
+"244
+} 0
+"166
+[v _cw_read cw_read `(i  1 e 2 0 ]
+{
+[v cw_read@point_reg point_reg `uc  1 a 1 wreg ]
+[v cw_read@point_reg point_reg `uc  1 a 1 wreg ]
+[v cw_read@r_pdata r_pdata `*.4uc  1 p 1 4 ]
+"168
+[v cw_read@point_reg point_reg `uc  1 a 1 6 ]
+"189
+} 0
+"128
+[v _write_byte write_byte `(v  1 e 1 0 ]
+{
+[v write_byte@w_data w_data `uc  1 a 1 wreg ]
+"130
+[v write_byte@i i `uc  1 a 1 7 ]
+"128
+[v write_byte@w_data w_data `uc  1 a 1 wreg ]
+"131
+[v write_byte@w_data w_data `uc  1 a 1 6 ]
+"142
+} 0
+"82
+[v _wait_r_ack wait_r_ack `(i  1 e 2 0 ]
+{
+"85
+[v wait_r_ack@i i `ui  1 a 2 2 ]
+"84
+[v wait_r_ack@ack ack `i  1 a 2 0 ]
+"101
+} 0
+"56
+[v _stop stop `(v  1 e 1 0 ]
+{
+"67
+} 0
+"69
+[v _r_ack r_ack `(i  1 e 2 0 ]
+{
+"71
+[v r_ack@ack ack `i  1 a 2 9 ]
+"80
+} 0
+"45
+[v _start start `(v  1 e 1 0 ]
+{
+"54
+} 0
+"103
+[v _s_ack s_ack `(v  1 e 1 0 ]
+{
+"113
+} 0
+"144
+[v _read_byte read_byte `(uc  1 e 1 0 ]
+{
+"147
+[v read_byte@r_data r_data `uc  1 a 1 7 ]
+"146
+[v read_byte@i i `uc  1 a 1 6 ]
+"163
+} 0
+"24
+[v _I2C_Delay10us I2C_Delay10us `(v  1 e 1 0 ]
+{
+[v I2C_Delay10us@us us `uc  1 a 1 wreg ]
+"26
+[v I2C_Delay10us@b b `uc  1 a 1 4 ]
+[v I2C_Delay10us@a a `uc  1 a 1 3 ]
+"27
+[v I2C_Delay10us@i i `uc  1 a 1 2 ]
+"24
+[v I2C_Delay10us@us us `uc  1 a 1 wreg ]
+"28
+[v I2C_Delay10us@us us `uc  1 a 1 1 ]
+"35
+} 0
+"38 C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+[v _CW_Delay10us CW_Delay10us `(v  1 e 1 0 ]
+{
+[v CW_Delay10us@us us `uc  1 a 1 wreg ]
+"40
+[v CW_Delay10us@b b `uc  1 a 1 4 ]
+[v CW_Delay10us@a a `uc  1 a 1 3 ]
+"41
+[v CW_Delay10us@i i `uc  1 a 1 2 ]
+"38
+[v CW_Delay10us@us us `uc  1 a 1 wreg ]
+"42
+[v CW_Delay10us@us us `uc  1 a 1 1 ]
+"49
+} 0
+"26
+[v _CW_Delay10ms CW_Delay10ms `(v  1 e 1 0 ]
+{
+"28
+[v CW_Delay10ms@b b `uc  1 a 1 4 ]
+[v CW_Delay10ms@a a `uc  1 a 1 3 ]
+"26
+[v CW_Delay10ms@c c `ui  1 p 2 0 ]
+"36
+} 0
+"86 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"51 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"88
+[v PIN_MANAGER_Initialize@state state `uc  1 a 1 0 ]
+"102
+} 0
+"94 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"112
+} 0
+"55 C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"74
+} 0
+"96
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
+"103
+} 0

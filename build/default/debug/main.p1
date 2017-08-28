@@ -2,14 +2,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "68 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"595 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 ]
-"594
-[u S33 `S34 1 ]
-[n S33 . . ]
-"604
-[v _TRISCbits `VS33 ~T0 @X0 0 e@20 ]
 "58 CW201x.h
 [v _cw_bat_init `(uc ~T0 @X0 0 ef ]
 "134 mcc_generated_files/eusart1.h
@@ -22,6 +14,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S37 . . ]
 "699
 [v _LATCbits `VS37 ~T0 @X0 0 e@26 ]
+"59 CW201x.h
+[v _cw_bat_work `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7142,66 +7136,59 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 70: SYSTEM_Initialize();
 "70
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 72: do { TRISCbits.TRISC0 = 0; } while(0);
-"72
-[e :U 847 ]
-{
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 846 ]
-[; ;main.c: 74: ret = cw_bat_init();
-"74
+[; ;main.c: 71: ret = cw_bat_init();
+"71
 [e = _ret ( _cw_bat_init ..  ]
-[; ;main.c: 75: EUSART1_Write(ret);
-"75
+[; ;main.c: 72: EUSART1_Write(ret);
+"72
 [e ( _EUSART1_Write (1 _ret ]
-[; ;main.c: 91: while (1)
-"91
-[e :U 849 ]
-[; ;main.c: 92: {
-"92
+[; ;main.c: 88: while (1)
+"88
+[e :U 846 ]
+[; ;main.c: 89: {
+"89
 {
-[; ;main.c: 94: do { LATCbits.LATC2 = 0; } while(0);
-"94
-[e :U 853 ]
+[; ;main.c: 91: do { LATCbits.LATC2 = 0; } while(0);
+"91
+[e :U 850 ]
 {
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 852 ]
-[; ;main.c: 95: delay();
-"95
+[e :U 849 ]
+[; ;main.c: 92: delay();
+"92
 [e ( _delay ..  ]
-[; ;main.c: 96: do { LATCbits.LATC2 = 1; } while(0);
-"96
-[e :U 856 ]
+[; ;main.c: 93: do { LATCbits.LATC2 = 1; } while(0);
+"93
+[e :U 853 ]
 {
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 855 ]
-[; ;main.c: 97: delay();
-"97
+[e :U 852 ]
+[; ;main.c: 94: delay();
+"94
 [e ( _delay ..  ]
-[; ;main.c: 98: do { LATCbits.LATC3 = 1; } while(0);
-"98
-[e :U 859 ]
+[; ;main.c: 95: do { LATCbits.LATC3 = 1; } while(0);
+"95
+[e :U 856 ]
 {
 [e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
 }
-[e :U 858 ]
-[; ;main.c: 104: ret = cw_bat_init();
-"104
-[e = _ret ( _cw_bat_init ..  ]
-[; ;main.c: 105: EUSART1_Write(ret);
-"105
+[e :U 855 ]
+[; ;main.c: 96: cw_bat_work();
+"96
+[e ( _cw_bat_work ..  ]
+[; ;main.c: 101: EUSART1_Write(ret);
+"101
 [e ( _EUSART1_Write (1 _ret ]
-"106
+"102
 }
-[e :U 848 ]
-"91
-[e $U 849  ]
-[e :U 850 ]
-[; ;main.c: 106: }
-[; ;main.c: 107: }
-"107
+[e :U 845 ]
+"88
+[e $U 846  ]
+[e :U 847 ]
+[; ;main.c: 102: }
+[; ;main.c: 103: }
+"103
 [e :UE 844 ]
 }
