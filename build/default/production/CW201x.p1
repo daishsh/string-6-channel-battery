@@ -108,6 +108,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CW201x.h: 56: }STRUCT_CW_BATTERY;
 [; ;CW201x.h: 58: unsigned char cw_bat_init(void);
 [; ;CW201x.h: 59: void cw_bat_work(void);
+[; ;CW201x.h: 60: void CW_Delay10ms(unsigned int c);
 [; ;iic.h: 11: void I2C_Delay10us(unsigned char us);
 [; ;iic.h: 12: void start(void);
 [; ;iic.h: 13: void stop(void);
@@ -228,15 +229,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 2 ]
 }
 "38
-[v _CW_Delay10us `(v ~T0 @X0 1 ef1`uc ]
+[v _CW_Delay100us `(v ~T0 @X0 1 ef ]
 "39
 {
-[; ;CW201x.c: 38: void CW_Delay10us(unsigned char us)
+[; ;CW201x.c: 38: void CW_Delay100us()
 [; ;CW201x.c: 39: {
-[e :U _CW_Delay10us ]
-"38
-[v _us `uc ~T0 @X0 1 r1 ]
-"39
+[e :U _CW_Delay100us ]
 [f ]
 "40
 [v _a `uc ~T0 @X0 1 a ]
@@ -245,11 +243,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _i `uc ~T0 @X0 1 a ]
 [; ;CW201x.c: 40: unsigned char a, b;
 [; ;CW201x.c: 41: unsigned char i;
-[; ;CW201x.c: 42: for(i = 0; i < us; i++)
+[; ;CW201x.c: 42: for(i = 0; i < 10; i++)
 "42
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 16  ]
+[e $ < -> _i `i -> 10 `i 13  ]
+[e $U 14  ]
 "43
 [e :U 13 ]
 [; ;CW201x.c: 43: {
@@ -258,37 +257,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 "44
 {
 [e = _b -> -> 1 `i `uc ]
-[e $ > -> _b `i -> 0 `i 17  ]
-[e $U 18  ]
+[e $ > -> _b `i -> 0 `i 16  ]
+[e $U 17  ]
 "45
-[e :U 17 ]
+[e :U 16 ]
 [; ;CW201x.c: 45: {
 {
 [; ;CW201x.c: 46: for(a = 7;a > 0;a --);
 "46
 {
 [e = _a -> -> 7 `i `uc ]
-[e $ > -> _a `i -> 0 `i 20  ]
-[e $U 21  ]
-[e :U 20 ]
+[e $ > -> _a `i -> 0 `i 19  ]
+[e $U 20  ]
+[e :U 19 ]
 [e -- _a -> -> 1 `i `uc ]
-[e $ > -> _a `i -> 0 `i 20  ]
-[e :U 21 ]
+[e $ > -> _a `i -> 0 `i 19  ]
+[e :U 20 ]
 }
 "47
 }
 "44
 [e -- _b -> -> 1 `i `uc ]
-[e $ > -> _b `i -> 0 `i 17  ]
-[e :U 18 ]
+[e $ > -> _b `i -> 0 `i 16  ]
+[e :U 17 ]
 "47
 }
 "48
 }
 "42
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 16 ]
-[e $ < -> _i `i -> _us `i 13  ]
+[e $ < -> _i `i -> 10 `i 13  ]
 [e :U 14 ]
 "48
 }
@@ -324,40 +322,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_read (2 , -> -> 10 `i `uc &U _reg_val ]
 [; ;CW201x.c: 61: if(ret)
 "61
-[e $ ! != _ret -> 0 `i 24  ]
+[e $ ! != _ret -> 0 `i 23  ]
 [; ;CW201x.c: 62: {
 "62
 {
 [; ;CW201x.c: 63: return 1;
 "63
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "64
 }
-[e :U 24 ]
+[e :U 23 ]
 [; ;CW201x.c: 64: }
 [; ;CW201x.c: 65: if((reg_val & (0x3<<6)) == (0x3<<6))
 "65
-[e $ ! == & -> _reg_val `i << -> 3 `i -> 6 `i << -> 3 `i -> 6 `i 25  ]
+[e $ ! == & -> _reg_val `i << -> 3 `i -> 6 `i << -> 3 `i -> 6 `i 24  ]
 [; ;CW201x.c: 66: {
 "66
 {
 [; ;CW201x.c: 67: return 2;
 "67
 [e ) -> -> 2 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "68
 }
-[e :U 25 ]
+[e :U 24 ]
 [; ;CW201x.c: 68: }
 [; ;CW201x.c: 70: for(i = 0; i < 64; i++)
 "70
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 64 `i 26  ]
-[e $U 27  ]
+[e $ < -> _i `i -> 64 `i 25  ]
+[e $U 26  ]
 "71
-[e :U 26 ]
+[e :U 25 ]
 [; ;CW201x.c: 71: {
 {
 [; ;CW201x.c: 72: reg_val = cw_bat_config_info[i];
@@ -368,23 +366,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_write (2 , -> + -> 16 `i -> _i `i `uc &U _reg_val ]
 [; ;CW201x.c: 74: if(ret)
 "74
-[e $ ! != _ret -> 0 `i 29  ]
+[e $ ! != _ret -> 0 `i 28  ]
 [; ;CW201x.c: 75: {
 "75
 {
 [; ;CW201x.c: 76: return 1;
 "76
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "77
 }
-[e :U 29 ]
+[e :U 28 ]
 "78
 }
 "70
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 64 `i 26  ]
-[e :U 27 ]
+[e $ < -> _i `i -> 64 `i 25  ]
+[e :U 26 ]
 "78
 }
 [; ;CW201x.c: 77: }
@@ -393,10 +391,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "81
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 64 `i 30  ]
-[e $U 31  ]
+[e $ < -> _i `i -> 64 `i 29  ]
+[e $U 30  ]
 "82
-[e :U 30 ]
+[e :U 29 ]
 [; ;CW201x.c: 82: {
 {
 [; ;CW201x.c: 83: ret = cw_read(0x10+i, &reg_val);
@@ -404,37 +402,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_read (2 , -> + -> 16 `i -> _i `i `uc &U _reg_val ]
 [; ;CW201x.c: 84: if(ret)
 "84
-[e $ ! != _ret -> 0 `i 33  ]
+[e $ ! != _ret -> 0 `i 32  ]
 [; ;CW201x.c: 85: {
 "85
 {
 [; ;CW201x.c: 86: return 1;
 "86
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "87
 }
-[e :U 33 ]
+[e :U 32 ]
 [; ;CW201x.c: 87: }
 [; ;CW201x.c: 88: if(reg_val != cw_bat_config_info[i])
 "88
-[e $ ! != -> _reg_val `i -> *U + &U _cw_bat_config_info * -> _i `ux -> -> # *U &U _cw_bat_config_info `ui `ux `i 34  ]
+[e $ ! != -> _reg_val `i -> *U + &U _cw_bat_config_info * -> _i `ux -> -> # *U &U _cw_bat_config_info `ui `ux `i 33  ]
 [; ;CW201x.c: 89: {
 "89
 {
 [; ;CW201x.c: 90: return 3;
 "90
 [e ) -> -> 3 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "91
 }
-[e :U 34 ]
+[e :U 33 ]
 "92
 }
 "81
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 64 `i 30  ]
-[e :U 31 ]
+[e $ < -> _i `i -> 64 `i 29  ]
+[e :U 30 ]
 "92
 }
 [; ;CW201x.c: 91: }
@@ -444,17 +442,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_read (2 , -> -> 8 `i `uc &U _reg_val ]
 [; ;CW201x.c: 95: if(ret)
 "95
-[e $ ! != _ret -> 0 `i 35  ]
+[e $ ! != _ret -> 0 `i 34  ]
 [; ;CW201x.c: 96: {
 "96
 {
 [; ;CW201x.c: 97: return 1;
 "97
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "98
 }
-[e :U 35 ]
+[e :U 34 ]
 [; ;CW201x.c: 98: }
 [; ;CW201x.c: 99: reg_val |= (0x1<<1);
 "99
@@ -470,17 +468,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_write (2 , -> -> 8 `i `uc &U _reg_val ]
 [; ;CW201x.c: 103: if(ret)
 "103
-[e $ ! != _ret -> 0 `i 36  ]
+[e $ ! != _ret -> 0 `i 35  ]
 [; ;CW201x.c: 104: {
 "104
 {
 [; ;CW201x.c: 105: return 1;
 "105
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "106
 }
-[e :U 36 ]
+[e :U 35 ]
 [; ;CW201x.c: 106: }
 [; ;CW201x.c: 108: reset_val = (0x0<<6);
 "108
@@ -493,45 +491,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reg_val ]
 [; ;CW201x.c: 111: if(ret)
 "111
-[e $ ! != _ret -> 0 `i 37  ]
+[e $ ! != _ret -> 0 `i 36  ]
 [; ;CW201x.c: 112: {
 "112
 {
 [; ;CW201x.c: 113: return 1;
 "113
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "114
 }
-[e :U 37 ]
+[e :U 36 ]
 [; ;CW201x.c: 114: }
-[; ;CW201x.c: 115: CW_Delay10us(10);
+[; ;CW201x.c: 115: CW_Delay100us();
 "115
-[e ( _CW_Delay10us (1 -> -> 10 `i `uc ]
+[e ( _CW_Delay100us ..  ]
 [; ;CW201x.c: 116: ret = cw_write(0xA, &reset_val);
 "116
 [e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reset_val ]
 [; ;CW201x.c: 117: if(ret)
 "117
-[e $ ! != _ret -> 0 `i 38  ]
+[e $ ! != _ret -> 0 `i 37  ]
 [; ;CW201x.c: 118: {
 "118
 {
 [; ;CW201x.c: 119: return 1;
 "119
 [e ) -> -> 1 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 "120
 }
-[e :U 38 ]
+[e :U 37 ]
 [; ;CW201x.c: 120: }
 [; ;CW201x.c: 121: return 0;
 "121
 [e ) -> -> 0 `i `uc ]
-[e $UE 23  ]
+[e $UE 22  ]
 [; ;CW201x.c: 122: }
 "122
-[e :UE 23 ]
+[e :UE 22 ]
 }
 "126
 [v _cw_init `(uc ~T0 @X0 1 ef ]
@@ -556,38 +554,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_write (2 , -> -> 10 `i `uc &U _reg_val `ui ]
 [; ;CW201x.c: 134: if(ret)
 "134
-[e $ ! != _ret -> -> 0 `i `ui 40  ]
+[e $ ! != _ret -> -> 0 `i `ui 39  ]
 [; ;CW201x.c: 135: {
 "135
 {
 [; ;CW201x.c: 136: return 1;
 "136
 [e ) -> -> 1 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "137
 }
-[e :U 40 ]
+[e :U 39 ]
 [; ;CW201x.c: 137: }
 [; ;CW201x.c: 140: ret = cw_read(0x8, &reg_val);
 "140
 [e = _ret -> ( _cw_read (2 , -> -> 8 `i `uc &U _reg_val `ui ]
 [; ;CW201x.c: 141: if(ret)
 "141
-[e $ ! != _ret -> -> 0 `i `ui 41  ]
+[e $ ! != _ret -> -> 0 `i `ui 40  ]
 [; ;CW201x.c: 142: {
 "142
 {
 [; ;CW201x.c: 143: return 1;
 "143
 [e ) -> -> 1 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "144
 }
-[e :U 41 ]
+[e :U 40 ]
 [; ;CW201x.c: 144: }
 [; ;CW201x.c: 145: if((reg_val & 0xf8) != (0x0<<3))
 "145
-[e $ ! != & -> _reg_val `i -> 248 `i << -> 0 `i -> 3 `i 42  ]
+[e $ ! != & -> _reg_val `i -> 248 `i << -> 0 `i -> 3 `i 41  ]
 [; ;CW201x.c: 146: {
 "146
 {
@@ -602,20 +600,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_write (2 , -> -> 8 `i `uc &U _reg_val `ui ]
 [; ;CW201x.c: 151: if(ret)
 "151
-[e $ ! != _ret -> -> 0 `i `ui 43  ]
+[e $ ! != _ret -> -> 0 `i `ui 42  ]
 [; ;CW201x.c: 152: {
 "152
 {
 [; ;CW201x.c: 153: return 1;
 "153
 [e ) -> -> 1 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "154
 }
-[e :U 43 ]
+[e :U 42 ]
 "155
 }
-[e :U 42 ]
+[e :U 41 ]
 [; ;CW201x.c: 154: }
 [; ;CW201x.c: 155: }
 [; ;CW201x.c: 158: ret = cw_read(0x8, &reg_val);
@@ -623,21 +621,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_read (2 , -> -> 8 `i `uc &U _reg_val `ui ]
 [; ;CW201x.c: 159: if(ret)
 "159
-[e $ ! != _ret -> -> 0 `i `ui 44  ]
+[e $ ! != _ret -> -> 0 `i `ui 43  ]
 [; ;CW201x.c: 160: {
 "160
 {
 [; ;CW201x.c: 161: return 1;
 "161
 [e ) -> -> 1 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "162
 }
-[e :U 44 ]
+[e :U 43 ]
 [; ;CW201x.c: 162: }
 [; ;CW201x.c: 163: if(!(reg_val & (0x1<<1)))
 "163
-[e $ ! ! != & -> _reg_val `i << -> 1 `i -> 1 `i -> 0 `i 45  ]
+[e $ ! ! != & -> _reg_val `i << -> 1 `i -> 1 `i -> 0 `i 44  ]
 [; ;CW201x.c: 164: {
 "164
 {
@@ -646,24 +644,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_update_config_info ..  `ui ]
 [; ;CW201x.c: 167: if(ret)
 "167
-[e $ ! != _ret -> -> 0 `i `ui 46  ]
+[e $ ! != _ret -> -> 0 `i `ui 45  ]
 [; ;CW201x.c: 168: {
 "168
 {
 [; ;CW201x.c: 169: return ret;
 "169
 [e ) -> _ret `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "170
 }
-[e :U 46 ]
+[e :U 45 ]
 "171
 }
 [; ;CW201x.c: 170: }
 [; ;CW201x.c: 171: }
-[e $U 47  ]
+[e $U 46  ]
 "172
-[e :U 45 ]
+[e :U 44 ]
 [; ;CW201x.c: 172: else
 [; ;CW201x.c: 173: {
 "173
@@ -672,10 +670,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "174
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 64 `i 48  ]
-[e $U 49  ]
+[e $ < -> _i `i -> 64 `i 47  ]
+[e $U 48  ]
 "175
-[e :U 48 ]
+[e :U 47 ]
 [; ;CW201x.c: 175: {
 {
 [; ;CW201x.c: 176: ret = cw_read(0x10 +i, &reg_val);
@@ -683,43 +681,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_read (2 , -> + -> 16 `i -> _i `i `uc &U _reg_val `ui ]
 [; ;CW201x.c: 177: if(ret)
 "177
-[e $ ! != _ret -> -> 0 `i `ui 51  ]
+[e $ ! != _ret -> -> 0 `i `ui 50  ]
 [; ;CW201x.c: 178: {
 "178
 {
 [; ;CW201x.c: 179: return 1;
 "179
 [e ) -> -> 1 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "180
 }
-[e :U 51 ]
+[e :U 50 ]
 [; ;CW201x.c: 180: }
 [; ;CW201x.c: 181: if(cw_bat_config_info[i] != reg_val)
 "181
-[e $ ! != -> *U + &U _cw_bat_config_info * -> _i `ux -> -> # *U &U _cw_bat_config_info `ui `ux `i -> _reg_val `i 52  ]
+[e $ ! != -> *U + &U _cw_bat_config_info * -> _i `ux -> -> # *U &U _cw_bat_config_info `ui `ux `i -> _reg_val `i 51  ]
 [; ;CW201x.c: 182: {
 "182
 {
 [; ;CW201x.c: 183: break;
 "183
-[e $U 49  ]
+[e $U 48  ]
 "184
 }
-[e :U 52 ]
+[e :U 51 ]
 "185
 }
 "174
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 64 `i 48  ]
-[e :U 49 ]
+[e $ < -> _i `i -> 64 `i 47  ]
+[e :U 48 ]
 "185
 }
 [; ;CW201x.c: 184: }
 [; ;CW201x.c: 185: }
 [; ;CW201x.c: 186: if(i != 64)
 "186
-[e $ ! != -> _i `i -> 64 `i 53  ]
+[e $ ! != -> _i `i -> 64 `i 52  ]
 [; ;CW201x.c: 187: {
 "187
 {
@@ -728,23 +726,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_update_config_info ..  `ui ]
 [; ;CW201x.c: 190: if(ret)
 "190
-[e $ ! != _ret -> -> 0 `i `ui 54  ]
+[e $ ! != _ret -> -> 0 `i `ui 53  ]
 [; ;CW201x.c: 191: {
 "191
 {
 [; ;CW201x.c: 192: return ret;
 "192
 [e ) -> _ret `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "193
 }
-[e :U 54 ]
+[e :U 53 ]
 "194
 }
-[e :U 53 ]
+[e :U 52 ]
 "195
 }
-[e :U 47 ]
+[e :U 46 ]
 [; ;CW201x.c: 193: }
 [; ;CW201x.c: 194: }
 [; ;CW201x.c: 195: }
@@ -752,9 +750,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "197
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 30 `i 55  ]
-[e $U 56  ]
-[e :U 55 ]
+[e $ < -> _i `i -> 30 `i 54  ]
+[e $U 55  ]
+[e :U 54 ]
 {
 [; ;CW201x.c: 198: CW_Delay10ms(10);
 "198
@@ -764,33 +762,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> ( _cw_read (2 , -> -> 4 `i `uc &U _reg_val `ui ]
 [; ;CW201x.c: 200: if (ret)
 "200
-[e $ ! != _ret -> -> 0 `i `ui 58  ]
+[e $ ! != _ret -> -> 0 `i `ui 57  ]
 [; ;CW201x.c: 201: return 1;
 "201
 [e ) -> -> 1 `i `uc ]
-[e $UE 39  ]
-[e $U 59  ]
+[e $UE 38  ]
+[e $U 58  ]
 "202
-[e :U 58 ]
+[e :U 57 ]
 [; ;CW201x.c: 202: else if (reg_val <= 100)
-[e $ ! <= -> _reg_val `i -> 100 `i 60  ]
+[e $ ! <= -> _reg_val `i -> 100 `i 59  ]
 [; ;CW201x.c: 203: break;
 "203
-[e $U 56  ]
-[e :U 60 ]
-"204
+[e $U 55  ]
 [e :U 59 ]
+"204
+[e :U 58 ]
 }
 "197
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 30 `i 55  ]
-[e :U 56 ]
+[e $ < -> _i `i -> 30 `i 54  ]
+[e :U 55 ]
 "204
 }
 [; ;CW201x.c: 204: }
 [; ;CW201x.c: 206: if (i >=30){
 "206
-[e $ ! >= -> _i `i -> 30 `i 61  ]
+[e $ ! >= -> _i `i -> 30 `i 60  ]
 {
 [; ;CW201x.c: 207: reg_val = (0x3<<6);
 "207
@@ -801,18 +799,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CW201x.c: 210: return 4;
 "210
 [e ) -> -> 4 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 "211
 }
-[e :U 61 ]
+[e :U 60 ]
 [; ;CW201x.c: 211: }
 [; ;CW201x.c: 212: return 0;
 "212
 [e ) -> -> 0 `i `uc ]
-[e $UE 39  ]
+[e $UE 38  ]
 [; ;CW201x.c: 213: }
 "213
-[e :UE 39 ]
+[e :UE 38 ]
 }
 "278
 [v _cw_por `(i ~T0 @X0 1 ef ]
@@ -838,15 +836,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reset_val ]
 [; ;CW201x.c: 284: if (ret)
 "284
-[e $ ! != _ret -> 0 `i 63  ]
+[e $ ! != _ret -> 0 `i 62  ]
 [; ;CW201x.c: 285: return -1;
 "285
 [e ) -U -> 1 `i ]
-[e $UE 62  ]
-[e :U 63 ]
-[; ;CW201x.c: 286: CW_Delay10us(10);
+[e $UE 61  ]
+[e :U 62 ]
+[; ;CW201x.c: 286: CW_Delay100us();
 "286
-[e ( _CW_Delay10us (1 -> -> 10 `i `uc ]
+[e ( _CW_Delay100us ..  ]
 [; ;CW201x.c: 288: reset_val = (0x0<<6);
 "288
 [e = _reset_val -> << -> 0 `i -> 6 `i `uc ]
@@ -855,33 +853,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reset_val ]
 [; ;CW201x.c: 290: if (ret)
 "290
-[e $ ! != _ret -> 0 `i 64  ]
+[e $ ! != _ret -> 0 `i 63  ]
 [; ;CW201x.c: 291: return -1;
 "291
 [e ) -U -> 1 `i ]
-[e $UE 62  ]
-[e :U 64 ]
-[; ;CW201x.c: 292: CW_Delay10us(10);
+[e $UE 61  ]
+[e :U 63 ]
+[; ;CW201x.c: 292: CW_Delay100us();
 "292
-[e ( _CW_Delay10us (1 -> -> 10 `i `uc ]
+[e ( _CW_Delay100us ..  ]
 [; ;CW201x.c: 294: ret = cw_init();
 "294
 [e = _ret -> ( _cw_init ..  `i ]
 [; ;CW201x.c: 295: if (ret)
 "295
-[e $ ! != _ret -> 0 `i 65  ]
+[e $ ! != _ret -> 0 `i 64  ]
 [; ;CW201x.c: 296: return ret;
 "296
 [e ) _ret ]
-[e $UE 62  ]
-[e :U 65 ]
+[e $UE 61  ]
+[e :U 64 ]
 [; ;CW201x.c: 297: return 0;
 "297
 [e ) -> 0 `i ]
-[e $UE 62  ]
+[e $UE 61  ]
 [; ;CW201x.c: 298: }
 "298
-[e :UE 62 ]
+[e :UE 61 ]
 }
 "300
 [v _cw_get_capacity `(i ~T0 @X0 1 ef ]
@@ -909,77 +907,77 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_read (2 , -> -> 4 `i `uc &U _reg_val ]
 [; ;CW201x.c: 310: if(ret)
 "310
-[e $ ! != _ret -> 0 `i 67  ]
+[e $ ! != _ret -> 0 `i 66  ]
 [; ;CW201x.c: 311: {
 "311
 {
 [; ;CW201x.c: 312: return -1;
 "312
 [e ) -U -> 1 `i ]
-[e $UE 66  ]
+[e $UE 65  ]
 "313
 }
-[e :U 67 ]
+[e :U 66 ]
 [; ;CW201x.c: 313: }
 [; ;CW201x.c: 315: cw_capacity = reg_val;
 "315
 [e = _cw_capacity _reg_val ]
 [; ;CW201x.c: 317: if ((cw_capacity < 0) || (cw_capacity > 100)) {
 "317
-[e $ ! || < -> _cw_capacity `i -> 0 `i > -> _cw_capacity `i -> 100 `i 68  ]
+[e $ ! || < -> _cw_capacity `i -> 0 `i > -> _cw_capacity `i -> 100 `i 67  ]
 {
 [; ;CW201x.c: 319: reset_loop++;
 "319
 [e ++ _reset_loop -> -> 1 `i `uc ]
 [; ;CW201x.c: 320: if (reset_loop >5) {
 "320
-[e $ ! > -> _reset_loop `i -> 5 `i 69  ]
+[e $ ! > -> _reset_loop `i -> 5 `i 68  ]
 {
 [; ;CW201x.c: 321: ret = cw_por();
 "321
 [e = _ret ( _cw_por ..  ]
 [; ;CW201x.c: 322: if(ret)
 "322
-[e $ ! != _ret -> 0 `i 70  ]
+[e $ ! != _ret -> 0 `i 69  ]
 [; ;CW201x.c: 323: return -1;
 "323
 [e ) -U -> 1 `i ]
-[e $UE 66  ]
-[e :U 70 ]
+[e $UE 65  ]
+[e :U 69 ]
 [; ;CW201x.c: 324: reset_loop =0;
 "324
 [e = _reset_loop -> -> 0 `i `uc ]
 "325
 }
-[e :U 69 ]
+[e :U 68 ]
 [; ;CW201x.c: 325: }
 [; ;CW201x.c: 326: return cw_bat.capacity;
 "326
 [e ) -> . _cw_bat 1 `i ]
-[e $UE 66  ]
+[e $UE 65  ]
 "327
 }
 [; ;CW201x.c: 327: }else {
-[e $U 71  ]
-[e :U 68 ]
+[e $U 70  ]
+[e :U 67 ]
 {
 [; ;CW201x.c: 328: reset_loop =0;
 "328
 [e = _reset_loop -> -> 0 `i `uc ]
 "329
 }
-[e :U 71 ]
+[e :U 70 ]
 [; ;CW201x.c: 329: }
 [; ;CW201x.c: 335: if(((cw_bat.usb_online == 1) && (cw_capacity == (cw_bat.capacity - 1)))
 [; ;CW201x.c: 336: || ((cw_bat.usb_online == 0) && (cw_capacity == (cw_bat.capacity + 1))))
 "336
-[e $ ! || && == -> . _cw_bat 0 `i -> 1 `i == -> _cw_capacity `ui - . _cw_bat 1 -> -> 1 `i `ui && == -> . _cw_bat 0 `i -> 0 `i == -> _cw_capacity `ui + . _cw_bat 1 -> -> 1 `i `ui 72  ]
+[e $ ! || && == -> . _cw_bat 0 `i -> 1 `i == -> _cw_capacity `ui - . _cw_bat 1 -> -> 1 `i `ui && == -> . _cw_bat 0 `i -> 0 `i == -> _cw_capacity `ui + . _cw_bat 1 -> -> 1 `i `ui 71  ]
 [; ;CW201x.c: 337: {
 "337
 {
 [; ;CW201x.c: 339: if(!((cw_capacity == 0 && cw_bat.capacity <= 2)||(cw_capacity == 100 && cw_bat.capacity == 99)))
 "339
-[e $ ! ! || && == -> _cw_capacity `i -> 0 `i <= . _cw_bat 1 -> -> 2 `i `ui && == -> _cw_capacity `i -> 100 `i == . _cw_bat 1 -> -> 99 `i `ui 73  ]
+[e $ ! ! || && == -> _cw_capacity `i -> 0 `i <= . _cw_bat 1 -> -> 2 `i `ui && == -> _cw_capacity `i -> 100 `i == . _cw_bat 1 -> -> 99 `i `ui 72  ]
 [; ;CW201x.c: 340: {
 "340
 {
@@ -988,15 +986,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cw_capacity -> . _cw_bat 1 `uc ]
 "342
 }
-[e :U 73 ]
+[e :U 72 ]
 "343
 }
-[e :U 72 ]
+[e :U 71 ]
 [; ;CW201x.c: 342: }
 [; ;CW201x.c: 343: }
 [; ;CW201x.c: 350: if((cw_bat.usb_online == 1) && (cw_capacity >= 95) && (cw_capacity <= cw_bat.capacity) )
 "350
-[e $ ! && && == -> . _cw_bat 0 `i -> 1 `i >= -> _cw_capacity `i -> 95 `i <= -> _cw_capacity `ui . _cw_bat 1 74  ]
+[e $ ! && && == -> . _cw_bat 0 `i -> 1 `i >= -> _cw_capacity `i -> 95 `i <= -> _cw_capacity `ui . _cw_bat 1 73  ]
 [; ;CW201x.c: 351: {
 "351
 {
@@ -1005,7 +1003,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _allow_no_charger_full -> -> 1 `i `ui ]
 [; ;CW201x.c: 354: if(allow_no_charger_full >= 720)
 "354
-[e $ ! >= _allow_no_charger_full -> -> 720 `i `ui 75  ]
+[e $ ! >= _allow_no_charger_full -> -> 720 `i `ui 74  ]
 [; ;CW201x.c: 355: {
 "355
 {
@@ -1024,11 +1022,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "360
 }
 [; ;CW201x.c: 360: }
-[e $U 76  ]
+[e $U 75  ]
 "361
-[e :U 75 ]
+[e :U 74 ]
 [; ;CW201x.c: 361: else if(cw_capacity <= cw_bat.capacity)
-[e $ ! <= -> _cw_capacity `ui . _cw_bat 1 77  ]
+[e $ ! <= -> _cw_capacity `ui . _cw_bat 1 76  ]
 [; ;CW201x.c: 362: {
 "362
 {
@@ -1037,30 +1035,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cw_capacity -> . _cw_bat 1 `uc ]
 "364
 }
-[e :U 77 ]
-"365
 [e :U 76 ]
+"365
+[e :U 75 ]
 }
 [; ;CW201x.c: 364: }
 [; ;CW201x.c: 365: }
-[e $U 78  ]
+[e $U 77  ]
 "367
-[e :U 74 ]
+[e :U 73 ]
 [; ;CW201x.c: 367: else if((cw_bat.usb_online == 0) && (cw_capacity <= cw_bat.capacity ) && (cw_capacity >= 90) && (no_charger_full_jump == 1))
-[e $ ! && && && == -> . _cw_bat 0 `i -> 0 `i <= -> _cw_capacity `ui . _cw_bat 1 >= -> _cw_capacity `i -> 90 `i == _no_charger_full_jump -> 1 `i 79  ]
+[e $ ! && && && == -> . _cw_bat 0 `i -> 0 `i <= -> _cw_capacity `ui . _cw_bat 1 >= -> _cw_capacity `i -> 90 `i == _no_charger_full_jump -> 1 `i 78  ]
 [; ;CW201x.c: 368: {
 "368
 {
 [; ;CW201x.c: 370: if(cw_bat.usb_online == 0)
 "370
-[e $ ! == -> . _cw_bat 0 `i -> 0 `i 80  ]
+[e $ ! == -> . _cw_bat 0 `i -> 0 `i 79  ]
 [; ;CW201x.c: 371: allow_no_charger_full++;
 "371
 [e ++ _allow_no_charger_full -> -> 1 `i `ui ]
-[e :U 80 ]
+[e :U 79 ]
 [; ;CW201x.c: 372: if(allow_no_charger_full >= 60)
 "372
-[e $ ! >= _allow_no_charger_full -> -> 60 `i `ui 81  ]
+[e $ ! >= _allow_no_charger_full -> -> 60 `i `ui 80  ]
 [; ;CW201x.c: 373: {
 "373
 {
@@ -1072,7 +1070,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _allow_no_charger_full -> -> 0 `i `ui ]
 [; ;CW201x.c: 376: if (cw_capacity >= allow_capacity)
 "376
-[e $ ! >= -> _cw_capacity `i -> _allow_capacity `i 82  ]
+[e $ ! >= -> _cw_capacity `i -> _allow_capacity `i 81  ]
 [; ;CW201x.c: 377: {
 "377
 {
@@ -1082,9 +1080,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "379
 }
 [; ;CW201x.c: 379: }
-[e $U 83  ]
+[e $U 82  ]
 "380
-[e :U 82 ]
+[e :U 81 ]
 [; ;CW201x.c: 380: else
 [; ;CW201x.c: 381: {
 "381
@@ -1094,16 +1092,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cw_capacity -> ? > -> _allow_capacity `i -> 0 `i : -> _allow_capacity `i -> 0 `i `uc ]
 "383
 }
-[e :U 83 ]
+[e :U 82 ]
 "384
 }
 [; ;CW201x.c: 383: }
 [; ;CW201x.c: 384: }
-[e $U 84  ]
+[e $U 83  ]
 "385
-[e :U 81 ]
+[e :U 80 ]
 [; ;CW201x.c: 385: else if(cw_capacity <= cw_bat.capacity)
-[e $ ! <= -> _cw_capacity `ui . _cw_bat 1 85  ]
+[e $ ! <= -> _cw_capacity `ui . _cw_bat 1 84  ]
 [; ;CW201x.c: 386: {
 "386
 {
@@ -1112,15 +1110,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cw_capacity -> . _cw_bat 1 `uc ]
 "388
 }
-[e :U 85 ]
-"389
 [e :U 84 ]
+"389
+[e :U 83 ]
 }
 [; ;CW201x.c: 388: }
 [; ;CW201x.c: 389: }
-[e $U 86  ]
+[e $U 85  ]
 "390
-[e :U 79 ]
+[e :U 78 ]
 [; ;CW201x.c: 390: else
 [; ;CW201x.c: 391: {
 "391
@@ -1130,12 +1128,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _allow_no_charger_full -> -> 0 `i `ui ]
 "393
 }
-[e :U 86 ]
-[e :U 78 ]
+[e :U 85 ]
+[e :U 77 ]
 [; ;CW201x.c: 393: }
 [; ;CW201x.c: 396: if((cw_bat.usb_online > 0) && (cw_capacity == 0))
 "396
-[e $ ! && > -> . _cw_bat 0 `i -> 0 `i == -> _cw_capacity `i -> 0 `i 87  ]
+[e $ ! && > -> . _cw_bat 0 `i -> 0 `i == -> _cw_capacity `i -> 0 `i 86  ]
 [; ;CW201x.c: 397: {
 "397
 {
@@ -1144,7 +1142,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _allow_charger_always_zero -> -> 1 `i `ui ]
 [; ;CW201x.c: 399: if((allow_charger_always_zero >= 1800) && (if_quickstart == 0))
 "399
-[e $ ! && >= _allow_charger_always_zero -> -> 1800 `i `ui == -> _if_quickstart `i -> 0 `i 88  ]
+[e $ ! && >= _allow_charger_always_zero -> -> 1800 `i `ui == -> _if_quickstart `i -> 0 `i 87  ]
 [; ;CW201x.c: 400: {
 "400
 {
@@ -1153,15 +1151,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_por ..  ]
 [; ;CW201x.c: 402: if(ret){
 "402
-[e $ ! != _ret -> 0 `i 89  ]
+[e $ ! != _ret -> 0 `i 88  ]
 {
 [; ;CW201x.c: 403: return -1;
 "403
 [e ) -U -> 1 `i ]
-[e $UE 66  ]
+[e $UE 65  ]
 "404
 }
-[e :U 89 ]
+[e :U 88 ]
 [; ;CW201x.c: 404: }
 [; ;CW201x.c: 405: if_quickstart = 1;
 "405
@@ -1171,16 +1169,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _allow_charger_always_zero -> -> 0 `i `ui ]
 "407
 }
-[e :U 88 ]
+[e :U 87 ]
 "408
 }
 [; ;CW201x.c: 407: }
 [; ;CW201x.c: 408: }
-[e $U 90  ]
+[e $U 89  ]
 "409
-[e :U 87 ]
+[e :U 86 ]
 [; ;CW201x.c: 409: else if((if_quickstart == 1)&&(cw_bat.usb_online == 0))
-[e $ ! && == -> _if_quickstart `i -> 1 `i == -> . _cw_bat 0 `i -> 0 `i 91  ]
+[e $ ! && == -> _if_quickstart `i -> 1 `i == -> . _cw_bat 0 `i -> 0 `i 90  ]
 [; ;CW201x.c: 410: {
 "410
 {
@@ -1189,16 +1187,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _if_quickstart -> -> 0 `i `uc ]
 "412
 }
-[e :U 91 ]
-"414
 [e :U 90 ]
+"414
+[e :U 89 ]
 [; ;CW201x.c: 412: }
 [; ;CW201x.c: 414: return(cw_capacity);
 [e ) -> _cw_capacity `i ]
-[e $UE 66  ]
+[e $UE 65  ]
 [; ;CW201x.c: 415: }
 "415
-[e :UE 66 ]
+[e :UE 65 ]
 }
 "417
 [v _cw_get_vol `(ui ~T0 @X0 1 ef ]
@@ -1247,10 +1245,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "427
 {
 [e = _get_ad_times -> -> 0 `i `uc ]
-[e $ < -> _get_ad_times `i -> 3 `i 93  ]
-[e $U 94  ]
+[e $ < -> _get_ad_times `i -> 3 `i 92  ]
+[e $U 93  ]
 "428
-[e :U 93 ]
+[e :U 92 ]
 [; ;CW201x.c: 428: {
 {
 [; ;CW201x.c: 429: ret = cw_read_word(0x2, &reg_val[0],2);
@@ -1258,24 +1256,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_read_word (3 , , -> -> 2 `i `uc &U *U + &U _reg_val * -> -> -> 0 `i `ui `ux -> -> # *U &U _reg_val `ui `ux -> -> 2 `i `ui ]
 [; ;CW201x.c: 430: if(ret)
 "430
-[e $ ! != _ret -> 0 `i 96  ]
+[e $ ! != _ret -> 0 `i 95  ]
 [; ;CW201x.c: 431: {
 "431
 {
 [; ;CW201x.c: 432: return 1;
 "432
 [e ) -> -> 1 `i `ui ]
-[e $UE 92  ]
+[e $UE 91  ]
 "433
 }
-[e :U 96 ]
+[e :U 95 ]
 [; ;CW201x.c: 433: }
 [; ;CW201x.c: 434: ad_buff = (reg_val[0] << 8) + reg_val[1];
 "434
 [e = _ad_buff -> + << -> *U + &U _reg_val * -> -> -> 0 `i `ui `ux -> -> # *U &U _reg_val `ui `ux `i -> 8 `i -> *U + &U _reg_val * -> -> -> 1 `i `ui `ux -> -> # *U &U _reg_val `ui `ux `i `ui ]
 [; ;CW201x.c: 436: if(get_ad_times == 0)
 "436
-[e $ ! == -> _get_ad_times `i -> 0 `i 97  ]
+[e $ ! == -> _get_ad_times `i -> 0 `i 96  ]
 [; ;CW201x.c: 437: {
 "437
 {
@@ -1287,11 +1285,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ad_value_max _ad_buff ]
 "440
 }
-[e :U 97 ]
+[e :U 96 ]
 [; ;CW201x.c: 440: }
 [; ;CW201x.c: 441: if(ad_buff < ad_value_min)
 "441
-[e $ ! < _ad_buff _ad_value_min 98  ]
+[e $ ! < _ad_buff _ad_value_min 97  ]
 [; ;CW201x.c: 442: {
 "442
 {
@@ -1300,11 +1298,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ad_value_min _ad_buff ]
 "444
 }
-[e :U 98 ]
+[e :U 97 ]
 [; ;CW201x.c: 444: }
 [; ;CW201x.c: 445: if(ad_buff > ad_value_max)
 "445
-[e $ ! > _ad_buff _ad_value_max 99  ]
+[e $ ! > _ad_buff _ad_value_max 98  ]
 [; ;CW201x.c: 446: {
 "446
 {
@@ -1313,7 +1311,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ad_value_max _ad_buff ]
 "448
 }
-[e :U 99 ]
+[e :U 98 ]
 [; ;CW201x.c: 448: }
 [; ;CW201x.c: 449: ad_value += ad_buff;
 "449
@@ -1322,8 +1320,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "427
 [e ++ _get_ad_times -> -> 1 `i `uc ]
-[e $ < -> _get_ad_times `i -> 3 `i 93  ]
-[e :U 94 ]
+[e $ < -> _get_ad_times `i -> 3 `i 92  ]
+[e :U 93 ]
 "450
 }
 [; ;CW201x.c: 450: }
@@ -1333,16 +1331,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CW201x.c: 452: ad_value -= ad_value_max;
 "452
 [e =- _ad_value -> _ad_value_max `ul ]
-[; ;CW201x.c: 453: ad_value = ad_value * 305 / 1000;
+[; ;CW201x.c: 453: ad_value = ad_value * 305 / 100000;
 "453
-[e = _ad_value / * _ad_value -> -> -> 305 `i `l `ul -> -> -> 1000 `i `l `ul ]
+[e = _ad_value / * _ad_value -> -> -> 305 `i `l `ul -> -> 100000 `l `ul ]
 [; ;CW201x.c: 454: return(ad_value);
 "454
 [e ) -> _ad_value `ui ]
-[e $UE 92  ]
+[e $UE 91  ]
 [; ;CW201x.c: 455: }
 "455
-[e :UE 92 ]
+[e :UE 91 ]
 }
 "480
 [v _update_capacity `(v ~T0 @X0 1 ef ]
@@ -1360,7 +1358,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cw_capacity ( _cw_get_capacity ..  ]
 [; ;CW201x.c: 484: if((cw_capacity >= 0) && (cw_capacity <= 100) && (cw_bat.capacity != cw_capacity))
 "484
-[e $ ! && && >= _cw_capacity -> 0 `i <= _cw_capacity -> 100 `i != . _cw_bat 1 -> _cw_capacity `ui 101  ]
+[e $ ! && && >= _cw_capacity -> 0 `i <= _cw_capacity -> 100 `i != . _cw_bat 1 -> _cw_capacity `ui 100  ]
 [; ;CW201x.c: 485: {
 "485
 {
@@ -1369,11 +1367,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _cw_bat 1 -> _cw_capacity `ui ]
 "487
 }
-[e :U 101 ]
+[e :U 100 ]
 [; ;CW201x.c: 487: }
 [; ;CW201x.c: 488: }
 "488
-[e :UE 100 ]
+[e :UE 99 ]
 }
 "491
 [v _update_vol `(v ~T0 @X0 1 ef ]
@@ -1391,7 +1389,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cw_voltage ( _cw_get_vol ..  ]
 [; ;CW201x.c: 495: if(cw_voltage == 1){
 "495
-[e $ ! == _cw_voltage -> -> 1 `i `ui 103  ]
+[e $ ! == _cw_voltage -> -> 1 `i `ui 102  ]
 {
 [; ;CW201x.c: 497: cw_bat.voltage = cw_bat.voltage;
 "497
@@ -1399,9 +1397,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "498
 }
 [; ;CW201x.c: 498: }else if(cw_bat.voltage != cw_voltage)
-[e $U 104  ]
-[e :U 103 ]
-[e $ ! != . _cw_bat 2 _cw_voltage 105  ]
+[e $U 103  ]
+[e :U 102 ]
+[e $ ! != . _cw_bat 2 _cw_voltage 104  ]
 [; ;CW201x.c: 499: {
 "499
 {
@@ -1410,12 +1408,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _cw_bat 2 _cw_voltage ]
 "501
 }
-[e :U 105 ]
-"502
 [e :U 104 ]
+"502
+[e :U 103 ]
 [; ;CW201x.c: 501: }
 [; ;CW201x.c: 502: }
-[e :UE 102 ]
+[e :UE 101 ]
 }
 "527
 [v _update_usb_online `(v ~T0 @X0 1 ef ]
@@ -1427,7 +1425,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;CW201x.c: 529: if(CHARGE == 1)
 "529
-[e $ ! == _CHARGE -> 1 `i 107  ]
+[e $ ! == _CHARGE -> 1 `i 106  ]
 [; ;CW201x.c: 530: {
 "530
 {
@@ -1437,19 +1435,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 "532
 }
 [; ;CW201x.c: 532: }else{
-[e $U 108  ]
-[e :U 107 ]
+[e $U 107  ]
+[e :U 106 ]
 {
 [; ;CW201x.c: 533: cw_bat.usb_online = 0;
 "533
 [e = . _cw_bat 0 -> -> 0 `i `uc ]
 "534
 }
-[e :U 108 ]
+[e :U 107 ]
 [; ;CW201x.c: 534: }
 [; ;CW201x.c: 535: }
 "535
-[e :UE 106 ]
+[e :UE 105 ]
 }
 "538
 [v _cw_bat_work `(v ~T0 @X0 1 ef ]
@@ -1470,7 +1468,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _update_vol ..  ]
 [; ;CW201x.c: 546: }
 "546
-[e :UE 109 ]
+[e :UE 108 ]
 }
 "560
 [v _cw_bat_init `(uc ~T0 @X0 1 ef ]
@@ -1492,8 +1490,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_init ..  ]
 [; ;CW201x.c: 567: while((loop++ < 200) && (ret != 0))
 "567
-[e $U 111  ]
-[e :U 112 ]
+[e $U 110  ]
+[e :U 111 ]
 [; ;CW201x.c: 568: {
 "568
 {
@@ -1502,10 +1500,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret ( _cw_init ..  ]
 "570
 }
-[e :U 111 ]
+[e :U 110 ]
 "567
-[e $ && < -> ++ _loop -> -> 1 `i `uc `i -> 200 `i != -> _ret `i -> 0 `i 112  ]
-[e :U 113 ]
+[e $ && < -> ++ _loop -> -> 1 `i `uc `i -> 200 `i != -> _ret `i -> 0 `i 111  ]
+[e :U 112 ]
 [; ;CW201x.c: 570: }
 [; ;CW201x.c: 572: cw_bat.usb_online = 0;
 "572
@@ -1522,8 +1520,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CW201x.c: 580: return ret;
 "580
 [e ) _ret ]
-[e $UE 110  ]
+[e $UE 109  ]
 [; ;CW201x.c: 581: }
 "581
-[e :UE 110 ]
+[e :UE 109 ]
 }

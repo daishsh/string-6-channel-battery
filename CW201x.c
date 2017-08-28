@@ -35,11 +35,11 @@ void CW_Delay10ms(unsigned int c)
 	}       
 }
 
-void CW_Delay10us(unsigned char us)
+void CW_Delay100us()
 {
 	unsigned char a, b;
 	unsigned char i;
-	for(i = 0; i < us; i++)
+	for(i = 0; i < 10; i++)
     {
         for(b = 1;b > 0;b --)
         {
@@ -112,7 +112,7 @@ unsigned char cw_update_config_info(void)
 	{
 		return 1;
 	}
-	CW_Delay10us(10);  //delay 100us      
+	CW_Delay100us();  //delay 100us      
 	ret = cw_write(REG_MODE, &reset_val);
 	if(ret)
 	{
@@ -283,13 +283,13 @@ int cw_por(void)
 	ret = cw_write(REG_MODE, &reset_val);
 	if (ret)
 		return -1;
-	CW_Delay10us(10); //delay 100us
+	CW_Delay100us(); //delay 100us
 	
 	reset_val = MODE_NORMAL;
 	ret = cw_write(REG_MODE, &reset_val);
 	if (ret)
 		return -1;
-	CW_Delay10us(10); //delay 100us
+	CW_Delay100us(); //delay 100us
 	
 	ret = cw_init();
 	if (ret) 
@@ -450,7 +450,7 @@ unsigned int cw_get_vol(void)
 	}
 	ad_value -= ad_value_min;
 	ad_value -= ad_value_max;
-	ad_value = ad_value  * 305 / 1000;
+	ad_value = ad_value  * 305 / 100000;
 	return(ad_value);       //14λADCת��ֵ
 }
 

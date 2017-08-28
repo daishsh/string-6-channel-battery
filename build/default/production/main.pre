@@ -9334,24 +9334,12 @@ unsigned char alt;
 
 unsigned char cw_bat_init(void);
 void cw_bat_work(void);
+void CW_Delay10ms(unsigned int c);
 
 # 48 "main.c"
 extern STRUCT_CW_BATTERY cw_bat;
 
-# 52
-void delay()
-{
-unsigned char a, b, d;
-int c = 100;
-for (;c>0;c--)
-{
-for(b=95;b>0;b--)
-{
-for(a=209;a>0;a--) ;
-}
-}
-}
-
+# 53
 void main(void)
 {
 
@@ -9359,24 +9347,53 @@ unsigned char ret = 0;
 uint8_t send_char;
 SYSTEM_Initialize();
 
-do { TRISCbits.TRISC0 = 0; } while(0);
-
 ret = cw_bat_init();
-EUSART1_Write(ret);
 
-# 91
+# 76
 while (1)
 {
 
-do { LATCbits.LATC2 = 0; } while(0);
-delay();
-do { LATCbits.LATC2 = 1; } while(0);
-delay();
-do { LATCbits.LATC3 = 1; } while(0);
+CW_Delay10ms(100);
 
-# 104
-ret = cw_bat_init();
-EUSART1_Write(ret);
+do { LATCbits.LATC3 = 1; } while(0);
+cw_bat_work();
+EUSART1_Write(cw_bat.voltage);
+EUSART1_Write(cw_bat.capacity);
+if(cw_bat.capacity >= 80)
+{
+do { LATCbits.LATC2 = 0; } while(0);
+do { LATAbits.LATA2 = 0; } while(0);
+do { LATAbits.LATA5 = 0; } while(0);
+do { LATAbits.LATA4 = 0; } while(0);
+}
+else if(cw_bat.capacity >= 60)
+{
+do { LATCbits.LATC2 = 1; } while(0);
+do { LATAbits.LATA2 = 0; } while(0);
+do { LATAbits.LATA5 = 0; } while(0);
+do { LATAbits.LATA4 = 0; } while(0);
+}
+else if(cw_bat.capacity >= 40)
+{
+do { LATCbits.LATC2 = 1; } while(0);
+do { LATAbits.LATA2 = 1; } while(0);
+do { LATAbits.LATA5 = 0; } while(0);
+do { LATAbits.LATA4 = 0; } while(0);
+}
+else if(cw_bat.capacity >= 20)
+{
+do { LATCbits.LATC2 = 1; } while(0);
+do { LATAbits.LATA2 = 1; } while(0);
+do { LATAbits.LATA5 = 1; } while(0);
+do { LATAbits.LATA4 = 0; } while(0);
+}
+else
+{
+do { LATCbits.LATC2 = 1; } while(0);
+do { LATAbits.LATA2 = 1; } while(0);
+do { LATAbits.LATA5 = 1; } while(0);
+do { LATAbits.LATA4 = 1; } while(0);
+}
 }
 }
 

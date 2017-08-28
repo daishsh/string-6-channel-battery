@@ -57,6 +57,7 @@ typedef struct tagSTRUCT_CW_BATTERY {
 
 unsigned char cw_bat_init(void);
 void cw_bat_work(void);
+void CW_Delay10ms(unsigned int c);
 
 #endif
 

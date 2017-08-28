@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/iic.c</file>
             <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/CW201x.c</file>
-            <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/mcc_generated_files/pin_manager.c</file>
+            <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/iic.c</file>
             <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/CW201x.h</file>
-            <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/mcc_generated_files/mcc.h</file>
             <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/mcc_generated_files/mcc.c</file>
             <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/mcc_generated_files/pin_manager.h</file>
             <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/main.c</file>
             <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/iic.h</file>
-            <file>file:/C:/Users/zwq/Desktop/string-6-channel-battery/mcc_generated_files/eusart1.c</file>
         </group>
     </open-files>
 </project-private>

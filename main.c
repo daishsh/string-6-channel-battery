@@ -49,18 +49,6 @@ extern STRUCT_CW_BATTERY   cw_bat;
 /*
                          Main application
  */
-void delay()
-{
-    unsigned char a, b, d;
-    int c = 100;
-    for (;c>0;c--)
-	{
-        for(b=95;b>0;b--)
-        {
-            for(a=209;a>0;a--) ;
-        }
-	}
-}
 
 void main(void)
 {
@@ -69,10 +57,7 @@ void main(void)
     uint8_t send_char;
     SYSTEM_Initialize();
     
-    IO_RC0_SetDigitalOutput();
-    
     ret = cw_bat_init();
-    EUSART1_Write(ret);
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -91,18 +76,47 @@ void main(void)
     while (1)
     {
         // Add your application code
-        IO_RC2_SetLow();
-        delay();
-        IO_RC2_SetHigh();
-        delay();
+        CW_Delay10ms(100);
+        
         IO_RC3_SetHigh();
-        //cw_bat_work();
-        /*send_char = (cw_bat.voltage >> 8);
-        EUSART1_Write(send_char);
-        send_char = (cw_bat.voltage & 0x00FF);
-        EUSART1_Write(send_char);*/
-        ret = cw_bat_init();
-        EUSART1_Write(ret);
+        cw_bat_work();
+        EUSART1_Write(cw_bat.voltage);
+        EUSART1_Write(cw_bat.capacity);
+        if(cw_bat.capacity >= 80)
+        {
+            IO_RC2_SetLow();
+            IO_RA2_SetLow();
+            IO_RA5_SetLow();
+            IO_RA4_SetLow();
+        }
+        else if(cw_bat.capacity >= 60)
+        {
+            IO_RC2_SetHigh();
+            IO_RA2_SetLow();
+            IO_RA5_SetLow();
+            IO_RA4_SetLow();
+        }
+        else if(cw_bat.capacity >= 40)
+        {
+            IO_RC2_SetHigh();
+            IO_RA2_SetHigh();
+            IO_RA5_SetLow();
+            IO_RA4_SetLow();
+        }
+        else if(cw_bat.capacity >= 20)
+        {
+            IO_RC2_SetHigh();
+            IO_RA2_SetHigh();
+            IO_RA5_SetHigh();
+            IO_RA4_SetLow();
+        }
+        else
+        {
+            IO_RC2_SetHigh();
+            IO_RA2_SetHigh();
+            IO_RA5_SetHigh();
+            IO_RA4_SetHigh();
+        }
     }
 }
 /**
