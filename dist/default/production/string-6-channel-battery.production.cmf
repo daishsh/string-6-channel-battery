@@ -13,49 +13,49 @@
 %PSECTS
 $dist/default/production\string-6-channel-battery.production.obj
 cinit CODE 0 16 16 C 2
-text1 CODE 0 76E 76E 4 2
-text2 CODE 0 6DD 6DD 17 2
-text3 CODE 0 1C0 1C0 C1 2
-text4 CODE 0 281 281 5F 2
-text5 CODE 0 71C 71C C 2
-text6 CODE 0 578 578 30 2
-text7 CODE 0 336 336 53 2
-text8 CODE 0 756 756 A 2
-text9 CODE 0 61E 61E 21 2
-text10 CODE 0 416 416 45 2
-text11 CODE 0 389 389 48 2
-text12 CODE 0 6C2 6C2 1B 2
+text1 CODE 0 786 786 4 2
+text2 CODE 0 6F5 6F5 17 2
+text3 CODE 0 FB FB D1 2
+text4 CODE 0 291 291 5F 2
+text5 CODE 0 734 734 C 2
+text6 CODE 0 590 590 30 2
+text7 CODE 0 34E 34E 53 2
+text8 CODE 0 76E 76E A 2
+text9 CODE 0 636 636 21 2
+text10 CODE 0 42E 42E 45 2
+text11 CODE 0 3A1 3A1 48 2
+text12 CODE 0 6DA 6DA 1B 2
 text13 CODE 0 22 22 D9 2
-text14 CODE 0 FB FB C5 2
-text15 CODE 0 514 514 32 2
-text16 CODE 0 4DB 4DB 39 2
-text17 CODE 0 6A2 6A2 20 2
-text18 CODE 0 546 546 32 2
-text19 CODE 0 728 728 C 2
-text20 CODE 0 6F4 6F4 17 2
-text21 CODE 0 740 740 B 2
-text22 CODE 0 74B 74B B 2
-text23 CODE 0 5D8 5D8 24 2
-text24 CODE 0 63F 63F 21 2
-text25 CODE 0 660 660 21 2
-text26 CODE 0 5FC 5FC 22 2
-text27 CODE 0 772 772 4 2
-text28 CODE 0 5A8 5A8 30 2
-text29 CODE 0 734 734 C 2
-text30 CODE 0 70B 70B 11 2
-text32 CODE 0 2E0 2E0 56 2
-text33 CODE 0 681 681 21 2
-text34 CODE 0 760 760 8 2
-maintext CODE 0 3D1 3D1 45 2
+text14 CODE 0 1CC 1CC C5 2
+text15 CODE 0 52C 52C 32 2
+text16 CODE 0 4F3 4F3 39 2
+text17 CODE 0 6BA 6BA 20 2
+text18 CODE 0 55E 55E 32 2
+text19 CODE 0 740 740 C 2
+text20 CODE 0 70C 70C 17 2
+text21 CODE 0 758 758 B 2
+text22 CODE 0 763 763 B 2
+text23 CODE 0 5F0 5F0 24 2
+text24 CODE 0 657 657 21 2
+text25 CODE 0 678 678 21 2
+text26 CODE 0 614 614 22 2
+text27 CODE 0 78A 78A 4 2
+text28 CODE 0 5C0 5C0 30 2
+text29 CODE 0 74C 74C C 2
+text30 CODE 0 723 723 11 2
+text32 CODE 0 2F0 2F0 5E 2
+text33 CODE 0 699 699 21 2
+text34 CODE 0 778 778 8 2
+maintext CODE 0 3E9 3E9 45 2
 cstackCOMMON COMMON 1 70 70 8 1
 cstackBANK0 BANK0 1 20 20 34 1
-stringtext1 STRCODE 0 45B 45B 40 2
-stringtext2 STRCODE 0 49B 49B 40 2
+stringtext1 STRCODE 0 473 473 40 2
+stringtext2 STRCODE 0 4B3 4B3 40 2
 intentry CODE 0 4 4 11 2
 bssBANK0 BANK0 1 54 54 18 1
-clrtext CODE 0 768 768 6 2
+clrtext CODE 0 780 780 6 2
 bssCOMMON COMMON 1 78 78 3 1
-$C:\Users\zwq\AppData\Local\Temp\s5d4.obj
+$C:\Users\zwq\AppData\Local\Temp\s8q8.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 15 15 1 2
 config CONFIG 0 8007 8007 5 2
@@ -72,9 +72,9 @@ BANK0 6C-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
 CONST 1-3 2
-CONST 776-7FF 2
+CONST 78E-7FF 2
 ENTRY 1-3 2
-ENTRY 776-7FF 2
+ENTRY 78E-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -132,7 +132,7 @@ SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
 STACK 204C-20EF 1
 CODE 1-3 2
-CODE 776-7FF 2
+CODE 78E-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -146,9 +146,9 @@ SFR9 480-4EF 1
 BIGRAM 2000-20EF 1
 COMMON 7B-7D 1
 STRCODE 1-3 2
-STRCODE 776-7FF 2
+STRCODE 78E-7FF 2
 STRING 1-3 2
-STRING 776-7FF 2
+STRING 78E-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -163,266 +163,267 @@ STRING 776-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\string-6-channel-battery.production.obj
-16 cinit CODE >3797:C:\Users\zwq\AppData\Local\Temp\s5d4.
-16 cinit CODE >3800:C:\Users\zwq\AppData\Local\Temp\s5d4.
-16 cinit CODE >3845:C:\Users\zwq\AppData\Local\Temp\s5d4.
-17 cinit CODE >3846:C:\Users\zwq\AppData\Local\Temp\s5d4.
-18 cinit CODE >3847:C:\Users\zwq\AppData\Local\Temp\s5d4.
-19 cinit CODE >3851:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1A cinit CODE >3852:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1B cinit CODE >3853:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1C cinit CODE >3854:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1D cinit CODE >3855:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1E cinit CODE >3856:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1F cinit CODE >3862:C:\Users\zwq\AppData\Local\Temp\s5d4.
-1F cinit CODE >3864:C:\Users\zwq\AppData\Local\Temp\s5d4.
-20 cinit CODE >3865:C:\Users\zwq\AppData\Local\Temp\s5d4.
-21 cinit CODE >3866:C:\Users\zwq\AppData\Local\Temp\s5d4.
+16 cinit CODE >3797:C:\Users\zwq\AppData\Local\Temp\s8q8.
+16 cinit CODE >3800:C:\Users\zwq\AppData\Local\Temp\s8q8.
+16 cinit CODE >3845:C:\Users\zwq\AppData\Local\Temp\s8q8.
+17 cinit CODE >3846:C:\Users\zwq\AppData\Local\Temp\s8q8.
+18 cinit CODE >3847:C:\Users\zwq\AppData\Local\Temp\s8q8.
+19 cinit CODE >3851:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1A cinit CODE >3852:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1B cinit CODE >3853:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1C cinit CODE >3854:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1D cinit CODE >3855:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1E cinit CODE >3856:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1F cinit CODE >3862:C:\Users\zwq\AppData\Local\Temp\s8q8.
+1F cinit CODE >3864:C:\Users\zwq\AppData\Local\Temp\s8q8.
+20 cinit CODE >3865:C:\Users\zwq\AppData\Local\Temp\s8q8.
+21 cinit CODE >3866:C:\Users\zwq\AppData\Local\Temp\s8q8.
 4 intentry CODE >51:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/interrupt_manager.c
 9 intentry CODE >54:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/interrupt_manager.c
 F intentry CODE >56:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/interrupt_manager.c
 10 intentry CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/interrupt_manager.c
-760 text34 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-761 text34 CODE >96:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-761 text34 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-764 text34 CODE >100:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-767 text34 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-681 text33 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-681 text33 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-685 text33 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-68C text33 CODE >33:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-698 text33 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-69D text33 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-2E0 text32 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2E0 text32 CODE >106:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2E3 text32 CODE >110:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2E4 text32 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2E5 text32 CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2E9 text32 CODE >117:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2F0 text32 CODE >119:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2F2 text32 CODE >120:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2F3 text32 CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2F7 text32 CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-2FB text32 CODE >124:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-308 text32 CODE >126:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-309 text32 CODE >127:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-30E text32 CODE >128:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-310 text32 CODE >129:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-312 text32 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-314 text32 CODE >131:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-317 text32 CODE >132:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-31A text32 CODE >133:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-31C text32 CODE >134:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-321 text32 CODE >135:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-323 text32 CODE >137:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-324 text32 CODE >138:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-325 text32 CODE >139:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-328 text32 CODE >141:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-331 text32 CODE >142:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-335 text32 CODE >144:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-70B text30 CODE >64:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-70B text30 CODE >67:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-70D text30 CODE >68:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-70E text30 CODE >73:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-711 text30 CODE >76:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-713 text30 CODE >79:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-715 text30 CODE >82:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-717 text30 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-719 text30 CODE >91:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-71B text30 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
-734 text29 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-734 text29 CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-737 text29 CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-738 text29 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-739 text29 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-73B text29 CODE >105:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-73C text29 CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-73D text29 CODE >109:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-73D text29 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-5A8 text28 CODE >51:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5A8 text28 CODE >56:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5AA text28 CODE >57:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5AB text28 CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5AD text28 CODE >63:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5AF text28 CODE >68:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5B2 text28 CODE >69:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5B4 text28 CODE >74:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5B5 text28 CODE >75:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5B6 text28 CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5B7 text28 CODE >81:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5B8 text28 CODE >88:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5BD text28 CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5BE text28 CODE >90:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5C1 text28 CODE >91:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5C3 text28 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5C4 text28 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5C8 text28 CODE >95:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5CB text28 CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5CE text28 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5D0 text28 CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5D1 text28 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-5D7 text28 CODE >102:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
-772 text27 CODE >86:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-772 text27 CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-773 text27 CODE >90:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-774 text27 CODE >91:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-775 text27 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
-5FC text26 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-5FC text26 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-601 text26 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-608 text26 CODE >33:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-614 text26 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-619 text26 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-660 text25 CODE >38:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-660 text25 CODE >42:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-666 text25 CODE >44:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-66B text25 CODE >46:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-677 text25 CODE >44:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-67C text25 CODE >42:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-63F text24 CODE >22:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-63F text24 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-645 text24 CODE >28:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-64A text24 CODE >30:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-656 text24 CODE >28:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-65B text24 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5D8 text23 CODE >142:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5D8 text23 CODE >146:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5DA text23 CODE >147:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5DF text23 CODE >149:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5E0 text23 CODE >150:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5E1 text23 CODE >151:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5E6 text23 CODE >152:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5E7 text23 CODE >153:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5EA text23 CODE >155:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5EF text23 CODE >157:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5F0 text23 CODE >158:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5F1 text23 CODE >147:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-5FA text23 CODE >160:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-74B text22 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-74B text22 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-74D text22 CODE >104:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-74E text22 CODE >105:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-74F text22 CODE >106:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-751 text22 CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-752 text22 CODE >108:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-754 text22 CODE >109:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-755 text22 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-740 text21 CODE >43:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-740 text21 CODE >45:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-742 text21 CODE >46:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-743 text21 CODE >47:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-744 text21 CODE >48:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-745 text21 CODE >49:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-747 text21 CODE >50:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-748 text21 CODE >51:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6F4 text20 CODE >67:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6F4 text20 CODE >70:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6F6 text20 CODE >71:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6F7 text20 CODE >72:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6F8 text20 CODE >73:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-701 text20 CODE >74:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-702 text20 CODE >75:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-704 text20 CODE >76:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-705 text20 CODE >77:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-728 text19 CODE >54:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-728 text19 CODE >56:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-72A text19 CODE >57:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-72B text19 CODE >58:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-72C text19 CODE >59:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-72E text19 CODE >60:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-72F text19 CODE >61:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-731 text19 CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-732 text19 CODE >64:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-733 text19 CODE >65:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-546 text18 CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-546 text18 CODE >84:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-54B text18 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-554 text18 CODE >87:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-55A text18 CODE >88:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-55E text18 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-563 text18 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-564 text18 CODE >95:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-56A text18 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-575 text18 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6A2 text17 CODE >126:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6A4 text17 CODE >129:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6A5 text17 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6AA text17 CODE >132:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6B1 text17 CODE >133:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6B2 text17 CODE >134:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6B4 text17 CODE >135:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6B5 text17 CODE >136:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6B7 text17 CODE >137:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-6B8 text17 CODE >138:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+778 text34 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+779 text34 CODE >96:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+779 text34 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+77C text34 CODE >100:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+77F text34 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+699 text33 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+699 text33 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+69D text33 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6A4 text33 CODE >33:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6B0 text33 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6B5 text33 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+2F0 text32 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+2F0 text32 CODE >106:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+2F3 text32 CODE >110:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+2F4 text32 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+2F5 text32 CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+2F9 text32 CODE >117:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+300 text32 CODE >119:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+302 text32 CODE >120:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+303 text32 CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+307 text32 CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+30B text32 CODE >124:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+318 text32 CODE >126:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+319 text32 CODE >127:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+31E text32 CODE >128:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+320 text32 CODE >129:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+322 text32 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+324 text32 CODE >131:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+327 text32 CODE >132:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+32A text32 CODE >133:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+32C text32 CODE >134:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+331 text32 CODE >135:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+333 text32 CODE >137:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+334 text32 CODE >138:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+335 text32 CODE >139:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+338 text32 CODE >141:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+341 text32 CODE >142:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+345 text32 CODE >143:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+34D text32 CODE >145:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+723 text30 CODE >64:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+723 text30 CODE >67:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+725 text30 CODE >68:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+726 text30 CODE >73:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+729 text30 CODE >76:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+72B text30 CODE >79:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+72D text30 CODE >82:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+72F text30 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+731 text30 CODE >91:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+733 text30 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
+74C text29 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+74C text29 CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+74F text29 CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+750 text29 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+751 text29 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+753 text29 CODE >105:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+754 text29 CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+755 text29 CODE >109:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+755 text29 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+5C0 text28 CODE >51:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5C0 text28 CODE >56:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5C2 text28 CODE >57:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5C3 text28 CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5C5 text28 CODE >63:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5C7 text28 CODE >68:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5CA text28 CODE >69:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5CC text28 CODE >74:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5CD text28 CODE >75:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5CE text28 CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5CF text28 CODE >81:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5D0 text28 CODE >88:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5D5 text28 CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5D6 text28 CODE >90:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5D9 text28 CODE >91:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5DB text28 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5DC text28 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5E0 text28 CODE >95:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5E3 text28 CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5E6 text28 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5E8 text28 CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5E9 text28 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+5EF text28 CODE >102:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/pin_manager.c
+78A text27 CODE >86:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+78A text27 CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+78B text27 CODE >90:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+78C text27 CODE >91:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+78D text27 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/mcc.c
+614 text26 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+614 text26 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+619 text26 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+620 text26 CODE >33:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+62C text26 CODE >31:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+631 text26 CODE >29:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+678 text25 CODE >38:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+678 text25 CODE >42:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+67E text25 CODE >44:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+683 text25 CODE >46:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+68F text25 CODE >44:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+694 text25 CODE >42:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+657 text24 CODE >22:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+657 text24 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+65D text24 CODE >28:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+662 text24 CODE >30:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+66E text24 CODE >28:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+673 text24 CODE >26:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5F0 text23 CODE >142:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5F0 text23 CODE >146:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5F2 text23 CODE >147:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5F7 text23 CODE >149:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5F8 text23 CODE >150:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5F9 text23 CODE >151:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5FE text23 CODE >152:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+5FF text23 CODE >153:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+602 text23 CODE >155:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+607 text23 CODE >157:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+608 text23 CODE >158:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+609 text23 CODE >147:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+612 text23 CODE >160:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+763 text22 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+763 text22 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+765 text22 CODE >104:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+766 text22 CODE >105:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+767 text22 CODE >106:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+769 text22 CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+76A text22 CODE >108:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+76C text22 CODE >109:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+76D text22 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+758 text21 CODE >43:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+758 text21 CODE >45:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+75A text21 CODE >46:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+75B text21 CODE >47:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+75C text21 CODE >48:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+75D text21 CODE >49:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+75F text21 CODE >50:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+760 text21 CODE >51:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+70C text20 CODE >67:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+70C text20 CODE >70:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+70E text20 CODE >71:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+70F text20 CODE >72:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+710 text20 CODE >73:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+719 text20 CODE >74:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+71A text20 CODE >75:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+71C text20 CODE >76:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+71D text20 CODE >77:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+740 text19 CODE >54:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+740 text19 CODE >56:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+742 text19 CODE >57:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+743 text19 CODE >58:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+744 text19 CODE >59:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+746 text19 CODE >60:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+747 text19 CODE >61:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+749 text19 CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+74A text19 CODE >64:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+74B text19 CODE >65:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+55E text18 CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+55E text18 CODE >84:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+563 text18 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+56C text18 CODE >87:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+572 text18 CODE >88:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+576 text18 CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+57B text18 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+57C text18 CODE >95:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+582 text18 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+58D text18 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6BA text17 CODE >126:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6BC text17 CODE >129:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
 6BD text17 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4DB text16 CODE >164:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4DD text16 CODE >166:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4DE text16 CODE >167:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4E0 text16 CODE >168:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4E6 text16 CODE >170:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4EB text16 CODE >172:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4ED text16 CODE >173:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4F3 text16 CODE >175:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4F8 text16 CODE >177:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4F9 text16 CODE >178:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-4FB text16 CODE >179:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-501 text16 CODE >181:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-506 text16 CODE >183:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-50E text16 CODE >184:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-50F text16 CODE >185:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-510 text16 CODE >186:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-514 text15 CODE >222:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-516 text15 CODE >224:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-517 text15 CODE >225:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-519 text15 CODE >226:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-51F text15 CODE >228:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-524 text15 CODE >230:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-526 text15 CODE >231:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-52C text15 CODE >233:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-531 text15 CODE >235:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-536 text15 CODE >236:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-53C text15 CODE >238:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-541 text15 CODE >240:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-542 text15 CODE >241:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-FB text14 CODE >53:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-FB text14 CODE >55:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-FE text14 CODE >73:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-109 text14 CODE >74:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-10D text14 CODE >76:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-10F text14 CODE >78:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-116 text14 CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-118 text14 CODE >83:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-11D text14 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-128 text14 CODE >86:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-134 text14 CODE >87:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-138 text14 CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-13A text14 CODE >83:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-142 text14 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-147 text14 CODE >96:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-153 text14 CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-157 text14 CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-159 text14 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-164 text14 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-166 text14 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-16E text14 CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-179 text14 CODE >108:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-17D text14 CODE >110:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-17F text14 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-17F text14 CODE >112:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-180 text14 CODE >113:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-184 text14 CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-18F text14 CODE >116:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-193 text14 CODE >118:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-195 text14 CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-196 text14 CODE >122:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-19A text14 CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1A5 text14 CODE >124:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1A9 text14 CODE >126:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1AB text14 CODE >128:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1AC text14 CODE >129:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1B8 text14 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1BC text14 CODE >132:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1BE text14 CODE >134:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6C2 text17 CODE >132:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6C9 text17 CODE >133:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6CA text17 CODE >134:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6CC text17 CODE >135:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6CD text17 CODE >136:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6CF text17 CODE >137:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6D0 text17 CODE >138:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+6D5 text17 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+4F3 text16 CODE >164:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+4F5 text16 CODE >166:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+4F6 text16 CODE >167:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+4F8 text16 CODE >168:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+4FE text16 CODE >170:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+503 text16 CODE >172:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+505 text16 CODE >173:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+50B text16 CODE >175:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+510 text16 CODE >177:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+511 text16 CODE >178:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+513 text16 CODE >179:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+519 text16 CODE >181:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+51E text16 CODE >183:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+526 text16 CODE >184:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+527 text16 CODE >185:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+528 text16 CODE >186:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+52C text15 CODE >222:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+52E text15 CODE >224:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+52F text15 CODE >225:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+531 text15 CODE >226:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+537 text15 CODE >228:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+53C text15 CODE >230:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+53E text15 CODE >231:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+544 text15 CODE >233:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+549 text15 CODE >235:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+54E text15 CODE >236:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+554 text15 CODE >238:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+559 text15 CODE >240:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+55A text15 CODE >241:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+1CC text14 CODE >53:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1CC text14 CODE >55:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1CF text14 CODE >73:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1DA text14 CODE >74:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1DE text14 CODE >76:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1E0 text14 CODE >78:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1E7 text14 CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1E9 text14 CODE >83:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1EE text14 CODE >85:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1F9 text14 CODE >86:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+205 text14 CODE >87:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+209 text14 CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+20B text14 CODE >83:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+213 text14 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+218 text14 CODE >96:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+224 text14 CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+228 text14 CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+22A text14 CODE >101:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+235 text14 CODE >103:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+237 text14 CODE >94:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+23F text14 CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+24A text14 CODE >108:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+24E text14 CODE >110:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+250 text14 CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+250 text14 CODE >112:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+251 text14 CODE >113:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+255 text14 CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+260 text14 CODE >116:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+264 text14 CODE >118:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+266 text14 CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+267 text14 CODE >122:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+26B text14 CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+276 text14 CODE >124:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+27A text14 CODE >126:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+27C text14 CODE >128:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+27D text14 CODE >129:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+289 text14 CODE >130:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+28D text14 CODE >132:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+28F text14 CODE >134:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 22 text13 CODE >139:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 22 text13 CODE >143:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 24 text13 CODE >158:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
@@ -466,192 +467,192 @@ E8 text13 CODE >232:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 EC text13 CODE >233:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 F7 text13 CODE >235:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
 F9 text13 CODE >237:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6C2 text12 CODE >577:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6C2 text12 CODE >580:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6C4 text12 CODE >586:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6C9 text12 CODE >584:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6D3 text12 CODE >589:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6D4 text12 CODE >590:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6D8 text12 CODE >591:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6DA text12 CODE >595:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6DB text12 CODE >597:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-389 text11 CODE >303:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-389 text11 CODE >305:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-38C text11 CODE >306:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-38D text11 CODE >307:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-391 text11 CODE >308:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-39C text11 CODE >309:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3A0 text11 CODE >310:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3A5 text11 CODE >311:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3A6 text11 CODE >313:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3A8 text11 CODE >314:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3B3 text11 CODE >315:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3B7 text11 CODE >316:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3BC text11 CODE >317:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3BD text11 CODE >319:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3C5 text11 CODE >320:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3C9 text11 CODE >321:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3CE text11 CODE >322:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-416 text10 CODE >325:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-416 text10 CODE >327:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-419 text10 CODE >334:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-424 text10 CODE >335:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-428 text10 CODE >337:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-42D text10 CODE >340:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-431 text10 CODE >342:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-435 text10 CODE >344:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-439 text10 CODE >345:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-43D text10 CODE >346:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-443 text10 CODE >347:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-447 text10 CODE >348:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-44C text10 CODE >349:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-44D text10 CODE >351:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-452 text10 CODE >353:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-453 text10 CODE >431:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-61E text9 CODE >497:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-61E text9 CODE >500:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-624 text9 CODE >501:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-63A text9 CODE >503:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-756 text8 CODE >544:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-756 text8 CODE >546:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-759 text8 CODE >548:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-75C text8 CODE >549:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-75D text8 CODE >550:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-336 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-336 text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-33F text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-345 text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-347 text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-349 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-350 text7 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-354 text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-355 text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-35C text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-36C text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-374 text7 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-375 text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-37C text7 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-380 text7 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
-578 text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-578 text6 CODE >119:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-581 text6 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-583 text6 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-58B text6 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-592 text6 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-599 text6 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-59F text6 CODE >128:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
-71C text5 CODE >113:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-71C text5 CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-71E text5 CODE >116:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-71F text5 CODE >117:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-720 text5 CODE >118:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-722 text5 CODE >119:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-723 text5 CODE >120:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-725 text5 CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-726 text5 CODE >122:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-727 text5 CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-281 text4 CODE >189:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-283 text4 CODE >193:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-284 text4 CODE >194:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-286 text4 CODE >195:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-28C text4 CODE >197:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-291 text4 CODE >199:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-293 text4 CODE >200:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-299 text4 CODE >202:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-29E text4 CODE >204:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-29F text4 CODE >205:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2A1 text4 CODE >206:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2A7 text4 CODE >208:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2AC text4 CODE >210:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2B8 text4 CODE >211:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2C0 text4 CODE >212:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2CF text4 CODE >213:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2D3 text4 CODE >214:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2D4 text4 CODE >210:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2DA text4 CODE >217:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2DB text4 CODE >218:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-2DC text4 CODE >219:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
-1C0 text3 CODE >434:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1C0 text3 CODE >436:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1C3 text3 CODE >437:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1C4 text3 CODE >438:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1C8 text3 CODE >439:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1D0 text3 CODE >440:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1D2 text3 CODE >441:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1D4 text3 CODE >442:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1D6 text3 CODE >444:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1DB text3 CODE >446:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1EA text3 CODE >447:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1EE text3 CODE >449:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-1F3 text3 CODE >451:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-202 text3 CODE >453:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-205 text3 CODE >455:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-209 text3 CODE >456:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-20D text3 CODE >457:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-20D text3 CODE >458:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-215 text3 CODE >460:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-219 text3 CODE >461:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-219 text3 CODE >462:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-221 text3 CODE >464:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-225 text3 CODE >465:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-225 text3 CODE >466:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-22C text3 CODE >444:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-234 text3 CODE >468:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-242 text3 CODE >469:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-250 text3 CODE >470:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-27C text3 CODE >471:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6DD text2 CODE >508:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6DD text2 CODE >511:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6E3 text2 CODE >512:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6E7 text2 CODE >515:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6EF text2 CODE >517:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-6F3 text2 CODE >518:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-76E text1 CODE >555:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-76E text1 CODE >557:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-76F text1 CODE >558:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-770 text1 CODE >559:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-771 text1 CODE >563:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
-3D1 maintext CODE >54:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D1 maintext CODE >57:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D3 maintext CODE >59:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D4 maintext CODE >60:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D6 maintext CODE >61:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D7 maintext CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D8 maintext CODE >63:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3D9 maintext CODE >64:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3DE maintext CODE >69:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3DF maintext CODE >72:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3E0 maintext CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3E1 maintext CODE >90:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3E9 maintext CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3EB maintext CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3F2 maintext CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3F3 maintext CODE >100:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3F5 maintext CODE >104:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3FC maintext CODE >106:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3FD maintext CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3FE maintext CODE >108:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-3FF maintext CODE >109:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-400 maintext CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-407 maintext CODE >113:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-408 maintext CODE >114:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-409 maintext CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-40A maintext CODE >116:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-40B maintext CODE >117:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-40C maintext CODE >120:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-40D maintext CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-40E maintext CODE >122:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-40F maintext CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-410 maintext CODE >125:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-415 maintext CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
-768 clrtext CODE >3834:C:\Users\zwq\AppData\Local\Temp\s5d4.
-768 clrtext CODE >3835:C:\Users\zwq\AppData\Local\Temp\s5d4.
-769 clrtext CODE >3836:C:\Users\zwq\AppData\Local\Temp\s5d4.
-769 clrtext CODE >3837:C:\Users\zwq\AppData\Local\Temp\s5d4.
-76A clrtext CODE >3838:C:\Users\zwq\AppData\Local\Temp\s5d4.
-76B clrtext CODE >3839:C:\Users\zwq\AppData\Local\Temp\s5d4.
-76C clrtext CODE >3840:C:\Users\zwq\AppData\Local\Temp\s5d4.
-76D clrtext CODE >3841:C:\Users\zwq\AppData\Local\Temp\s5d4.
+6DA text12 CODE >577:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6DA text12 CODE >580:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6DC text12 CODE >586:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6E1 text12 CODE >584:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6EB text12 CODE >589:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6EC text12 CODE >590:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6F0 text12 CODE >591:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6F2 text12 CODE >595:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6F3 text12 CODE >597:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3A1 text11 CODE >303:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3A1 text11 CODE >305:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3A4 text11 CODE >306:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3A5 text11 CODE >307:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3A9 text11 CODE >308:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3B4 text11 CODE >309:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3B8 text11 CODE >310:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3BD text11 CODE >311:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3BE text11 CODE >313:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3C0 text11 CODE >314:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3CB text11 CODE >315:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3CF text11 CODE >316:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3D4 text11 CODE >317:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3D5 text11 CODE >319:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3DD text11 CODE >320:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3E1 text11 CODE >321:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3E6 text11 CODE >322:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+42E text10 CODE >325:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+42E text10 CODE >327:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+431 text10 CODE >334:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+43C text10 CODE >335:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+440 text10 CODE >337:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+445 text10 CODE >340:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+449 text10 CODE >342:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+44D text10 CODE >344:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+451 text10 CODE >345:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+455 text10 CODE >346:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+45B text10 CODE >347:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+45F text10 CODE >348:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+464 text10 CODE >349:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+465 text10 CODE >351:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+46A text10 CODE >353:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+46B text10 CODE >431:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+636 text9 CODE >497:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+636 text9 CODE >500:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+63C text9 CODE >501:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+652 text9 CODE >503:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+76E text8 CODE >544:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+76E text8 CODE >546:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+771 text8 CODE >548:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+774 text8 CODE >549:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+775 text8 CODE >550:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+34E text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+34E text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+357 text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+35D text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+35F text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+361 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+368 text7 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+36C text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+36D text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+374 text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+384 text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+38C text7 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+38D text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+394 text7 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+398 text7 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lldiv.c
+590 text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+590 text6 CODE >119:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+599 text6 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+59B text6 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+5A3 text6 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+5AA text6 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+5B1 text6 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+5B7 text6 CODE >128:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul32.c
+734 text5 CODE >113:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+734 text5 CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+736 text5 CODE >116:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+737 text5 CODE >117:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+738 text5 CODE >118:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+73A text5 CODE >119:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+73B text5 CODE >120:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+73D text5 CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+73E text5 CODE >122:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+73F text5 CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+291 text4 CODE >189:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+293 text4 CODE >193:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+294 text4 CODE >194:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+296 text4 CODE >195:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+29C text4 CODE >197:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2A1 text4 CODE >199:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2A3 text4 CODE >200:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2A9 text4 CODE >202:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2AE text4 CODE >204:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2AF text4 CODE >205:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2B1 text4 CODE >206:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2B7 text4 CODE >208:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2BC text4 CODE >210:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2C8 text4 CODE >211:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2D0 text4 CODE >212:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2DF text4 CODE >213:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2E3 text4 CODE >214:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2E4 text4 CODE >210:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2EA text4 CODE >217:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2EB text4 CODE >218:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+2EC text4 CODE >219:C:\Users\zwq\Desktop\string-6-channel-battery\iic.c
+FB text3 CODE >434:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+FB text3 CODE >436:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+FE text3 CODE >437:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+FF text3 CODE >438:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+103 text3 CODE >439:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+10B text3 CODE >440:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+10D text3 CODE >441:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+10F text3 CODE >442:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+111 text3 CODE >444:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+116 text3 CODE >446:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+125 text3 CODE >447:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+129 text3 CODE >449:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+12E text3 CODE >451:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+13D text3 CODE >453:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+140 text3 CODE >455:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+144 text3 CODE >456:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+148 text3 CODE >457:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+148 text3 CODE >458:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+150 text3 CODE >460:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+154 text3 CODE >461:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+154 text3 CODE >462:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+15C text3 CODE >464:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+160 text3 CODE >465:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+160 text3 CODE >466:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+167 text3 CODE >444:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+16F text3 CODE >468:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+17D text3 CODE >469:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+18B text3 CODE >470:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+1C7 text3 CODE >471:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6F5 text2 CODE >508:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6F5 text2 CODE >511:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6FB text2 CODE >512:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+6FF text2 CODE >515:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+707 text2 CODE >517:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+70B text2 CODE >518:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+786 text1 CODE >555:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+786 text1 CODE >557:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+787 text1 CODE >558:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+788 text1 CODE >559:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+789 text1 CODE >563:C:\Users\zwq\Desktop\string-6-channel-battery\CW201x.c
+3E9 maintext CODE >54:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3E9 maintext CODE >57:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3EB maintext CODE >59:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3EC maintext CODE >60:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3EE maintext CODE >61:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3EF maintext CODE >62:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3F0 maintext CODE >63:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3F1 maintext CODE >64:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3F6 maintext CODE >69:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3F7 maintext CODE >72:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3F8 maintext CODE >89:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+3F9 maintext CODE >90:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+401 maintext CODE >92:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+403 maintext CODE >97:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+40A maintext CODE >99:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+40B maintext CODE >100:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+40D maintext CODE >104:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+414 maintext CODE >106:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+415 maintext CODE >107:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+416 maintext CODE >108:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+417 maintext CODE >109:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+418 maintext CODE >111:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+41F maintext CODE >113:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+420 maintext CODE >114:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+421 maintext CODE >115:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+422 maintext CODE >116:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+423 maintext CODE >117:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+424 maintext CODE >120:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+425 maintext CODE >121:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+426 maintext CODE >122:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+427 maintext CODE >123:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+428 maintext CODE >125:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+42D maintext CODE >80:C:\Users\zwq\Desktop\string-6-channel-battery\main.c
+780 clrtext CODE >3834:C:\Users\zwq\AppData\Local\Temp\s8q8.
+780 clrtext CODE >3835:C:\Users\zwq\AppData\Local\Temp\s8q8.
+781 clrtext CODE >3836:C:\Users\zwq\AppData\Local\Temp\s8q8.
+781 clrtext CODE >3837:C:\Users\zwq\AppData\Local\Temp\s8q8.
+782 clrtext CODE >3838:C:\Users\zwq\AppData\Local\Temp\s8q8.
+783 clrtext CODE >3839:C:\Users\zwq\AppData\Local\Temp\s8q8.
+784 clrtext CODE >3840:C:\Users\zwq\AppData\Local\Temp\s8q8.
+785 clrtext CODE >3841:C:\Users\zwq\AppData\Local\Temp\s8q8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -669,47 +670,47 @@ __Hspace_0 800C 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__end_of_write_byte D84 0 CODE 0 text17 dist/default/production\string-6-channel-battery.production.obj
-_EUSART1_Initialize E16 0 CODE 0 text30 dist/default/production\string-6-channel-battery.production.obj
+__end_of_write_byte DB4 0 CODE 0 text17 dist/default/production\string-6-channel-battery.production.obj
+_EUSART1_Initialize E46 0 CODE 0 text30 dist/default/production\string-6-channel-battery.production.obj
 cw_bat_init@ret 42 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _cw_init 44 0 CODE 0 text13 dist/default/production\string-6-channel-battery.production.obj
-_cw_read 9B6 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
+_cw_read 9E6 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _LATA 18 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _LATC 1A 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _PLLR 4480 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_CW_Delay10ms BF8 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
+_CW_Delay10ms C28 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
 _WPUA 1F39 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _WPUC 1F4F 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-___sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-_main 7A2 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
-_stop E50 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
+___sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+_main 7D2 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
+_stop E80 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-start 2A 0 CODE 0 init C:\Users\zwq\AppData\Local\Temp\s5d4.obj
+start 2A 0 CODE 0 init C:\Users\zwq\AppData\Local\Temp\s8q8.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_stop 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_EUSART1_Receive_ISR 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ?___lmul 20 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of_update_capacity C7E 0 CODE 0 text9 dist/default/production\string-6-channel-battery.production.obj
+__end_of_update_capacity CAE 0 CODE 0 text9 dist/default/production\string-6-channel-battery.production.obj
 __size_ofi1_CW_Delay10ms 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 cw_get_vol@reg_val 43 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 cw_get_vol@ad_value 49 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __size_of_cw_write 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_wait_r_ack A8C 0 CODE 0 text18 dist/default/production\string-6-channel-battery.production.obj
+_wait_r_ack ABC 0 CODE 0 text18 dist/default/production\string-6-channel-battery.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_CW_Delay100us 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ?_cw_por 40 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5d4.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8q8.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -724,55 +725,55 @@ i1CW_Delay10ms@a 73 0 COMMON 1 cstackCOMMON dist/default/production\string-6-cha
 i1CW_Delay10ms@b 74 0 COMMON 1 cstackCOMMON dist/default/production\string-6-channel-battery.production.obj
 i1CW_Delay10ms@c 70 0 COMMON 1 cstackCOMMON dist/default/production\string-6-channel-battery.production.obj
 cw_update_config_info@reg_val 39 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-_EUSART1_Receive_ISR 5C0 0 CODE 0 text32 dist/default/production\string-6-channel-battery.production.obj
+_EUSART1_Receive_ISR 5E0 0 CODE 0 text32 dist/default/production\string-6-channel-battery.production.obj
 ?_cw_get_vol 3A 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 _ANSELA 1F38 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _ANSELC 1F4E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__end_of_CW_Delay100us D02 0 CODE 0 text25 dist/default/production\string-6-channel-battery.production.obj
-__end_of_Delay10us CC0 0 CODE 0 text24 dist/default/production\string-6-channel-battery.production.obj
-_update_capacity C3C 0 CODE 0 text9 dist/default/production\string-6-channel-battery.production.obj
+__end_of_CW_Delay100us D32 0 CODE 0 text25 dist/default/production\string-6-channel-battery.production.obj
+__end_of_Delay10us CF0 0 CODE 0 text24 dist/default/production\string-6-channel-battery.production.obj
+_update_capacity C6C 0 CODE 0 text9 dist/default/production\string-6-channel-battery.production.obj
 __size_of_update_vol 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_Delay10us 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _CHARGE 78 0 COMMON 1 bssCOMMON dist/default/production\string-6-channel-battery.production.obj
 __end_of_INTERRUPT_InterruptManager 2A 0 CODE 0 intentry dist/default/production\string-6-channel-battery.production.obj
-__end_of_CW_Delay10ms C3C 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
-__end_of_update_usb_online EC0 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
+__end_of_CW_Delay10ms C6C 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
+__end_of_update_usb_online EF0 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
 CW_Delay10ms@a 23 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 CW_Delay10ms@b 24 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 CW_Delay10ms@c 20 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of___lmul B50 0 CODE 0 text6 dist/default/production\string-6-channel-battery.production.obj
-_cw_write A28 0 CODE 0 text15 dist/default/production\string-6-channel-battery.production.obj
+__end_of___lmul B80 0 CODE 0 text6 dist/default/production\string-6-channel-battery.production.obj
+_cw_write A58 0 CODE 0 text15 dist/default/production\string-6-channel-battery.production.obj
 __size_of_cw_update_config_info 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ?_cw_get_capacity 47 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 main@ret 53 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 CW_Delay100us@a 21 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 CW_Delay100us@b 22 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 CW_Delay100us@i 23 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of_wait_r_ack AF0 0 CODE 0 text18 dist/default/production\string-6-channel-battery.production.obj
+__end_of_wait_r_ack B20 0 CODE 0 text18 dist/default/production\string-6-channel-battery.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_cw_get_capacity 8B6 0 CODE 0 text10 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_get_capacity 8E6 0 CODE 0 text10 dist/default/production\string-6-channel-battery.production.obj
 cw_get_capacity@cw_capacity 4B 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_write A8C 0 CODE 0 text15 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_write ABC 0 CODE 0 text15 dist/default/production\string-6-channel-battery.production.obj
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 cw_get_vol@F80 69 0 BANK0 1 bssBANK0 dist/default/production\string-6-channel-battery.production.obj
 cw_get_vol@ret 41 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-_Delay10us C7E 0 CODE 0 text24 dist/default/production\string-6-channel-battery.production.obj
-__end_of___lldiv 712 0 CODE 0 text7 dist/default/production\string-6-channel-battery.production.obj
-__end_ofcw_update_config_info@cw_bat_config_info 9B6 0 STRCODE 0 stringtext2 dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_por 7A2 0 CODE 0 text11 dist/default/production\string-6-channel-battery.production.obj
+_Delay10us CAE 0 CODE 0 text24 dist/default/production\string-6-channel-battery.production.obj
+__end_of___lldiv 742 0 CODE 0 text7 dist/default/production\string-6-channel-battery.production.obj
+__end_ofcw_update_config_info@cw_bat_config_info 9E6 0 STRCODE 0 stringtext2 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_por 7D2 0 CODE 0 text11 dist/default/production\string-6-channel-battery.production.obj
 cw_write@w_pdata 30 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 PIN_MANAGER_Initialize@state 20 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 cw_read_word@count 36 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_bat_init DBA 0 CODE 0 text12 dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_bat_work EE4 0 CODE 0 text1 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_bat_init DEA 0 CODE 0 text12 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_bat_work F14 0 CODE 0 text1 dist/default/production\string-6-channel-battery.production.obj
 __size_of_r_ack 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_s_ack 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_start 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__end_ofcw_init@cw_bat_config_info 936 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
+__end_ofcw_init@cw_bat_config_info 966 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
 ___lldiv@counter 39 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_PIN_MANAGER_Initialize B50 0 CODE 0 text28 dist/default/production\string-6-channel-battery.production.obj
+_PIN_MANAGER_Initialize B80 0 CODE 0 text28 dist/default/production\string-6-channel-battery.production.obj
 cw_por@reset_val 44 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 cw_por@ret 45 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 start_initialization 2C 0 CODE 0 cinit dist/default/production\string-6-channel-battery.production.obj
@@ -787,23 +788,23 @@ __size_of_write_byte 0 0 ABS 0 - dist/default/production\string-6-channel-batter
 _RC1REG 119 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _RC1STA 11D 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _RC4PPS 1F24 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__end_of_SYSTEM_Initialize EEC 0 CODE 0 text27 dist/default/production\string-6-channel-battery.production.obj
-clear_ram0 ED0 0 CODE 0 clrtext dist/default/production\string-6-channel-battery.production.obj
+__end_of_SYSTEM_Initialize F1C 0 CODE 0 text27 dist/default/production\string-6-channel-battery.production.obj
+clear_ram0 F00 0 CODE 0 clrtext dist/default/production\string-6-channel-battery.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 EUSART1_Receive_ISR@dat 76 0 COMMON 1 cstackCOMMON dist/default/production\string-6-channel-battery.production.obj
-_cw_get_capacity 82C 0 CODE 0 text10 dist/default/production\string-6-channel-battery.production.obj
+_cw_get_capacity 85C 0 CODE 0 text10 dist/default/production\string-6-channel-battery.production.obj
 cw_init@i 3C 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 _TX1REG 11A 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _TX1STA 11E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __CFG_RSTOSC$HFINTPLL 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__end_of_EUSART1_Receive_ISR 66C 0 CODE 0 text32 dist/default/production\string-6-channel-battery.production.obj
+__end_of_EUSART1_Receive_ISR 69C 0 CODE 0 text32 dist/default/production\string-6-channel-battery.production.obj
 __size_of_update_capacity 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 cw_read_word@length 31 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-_update_usb_online EAC 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
-_EUSART1_Write EC0 0 CODE 0 text34 dist/default/production\string-6-channel-battery.production.obj
-__end_of_sn_ack E50 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+_update_usb_online EDC 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
+_EUSART1_Write EF0 0 CODE 0 text34 dist/default/production\string-6-channel-battery.production.obj
+__end_of_sn_ack E80 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1034,9 +1035,9 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 8B6 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
-__pstringtext2 936 0 STRCODE 0 stringtext2 dist/default/production\string-6-channel-battery.production.obj
-___lmul AF0 0 CODE 0 text6 dist/default/production\string-6-channel-battery.production.obj
+__pstringtext1 8E6 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
+__pstringtext2 966 0 STRCODE 0 stringtext2 dist/default/production\string-6-channel-battery.production.obj
+___lmul B20 0 CODE 0 text6 dist/default/production\string-6-channel-battery.production.obj
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
@@ -1053,12 +1054,12 @@ __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __size_of_cw_init 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_cw_read 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_cw_read_word 502 0 CODE 0 text4 dist/default/production\string-6-channel-battery.production.obj
+_cw_read_word 522 0 CODE 0 text4 dist/default/production\string-6-channel-battery.production.obj
 _cw_bat 63 0 BANK0 1 bssBANK0 dist/default/production\string-6-channel-battery.production.obj
-_cw_por 712 0 CODE 0 text11 dist/default/production\string-6-channel-battery.production.obj
+_cw_por 742 0 CODE 0 text11 dist/default/production\string-6-channel-battery.production.obj
 __CFG_BBEN$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_SYSTEM_Initialize EE4 0 CODE 0 text27 dist/default/production\string-6-channel-battery.production.obj
-i1_CW_Delay10ms D02 0 CODE 0 text33 dist/default/production\string-6-channel-battery.production.obj
+_SYSTEM_Initialize F14 0 CODE 0 text27 dist/default/production\string-6-channel-battery.production.obj
+i1_CW_Delay10ms D32 0 CODE 0 text33 dist/default/production\string-6-channel-battery.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_cw_get_capacity 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_wait_r_ack 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
@@ -1066,7 +1067,7 @@ __size_of_cw_bat_init 0 0 ABS 0 - dist/default/production\string-6-channel-batte
 __size_of_cw_bat_work 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 2C 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\zwq\AppData\Local\Temp\s5d4.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\zwq\AppData\Local\Temp\s8q8.obj
 cw_init@ret 3D 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __size_of___lmul 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ?_wait_r_ack 2A 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
@@ -1080,32 +1081,32 @@ r_ack@ack 28 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-batt
 _PIE3bits 719 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_EUSART1_Write 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 update_vol@cw_voltage 50 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__ptext10 82C 0 CODE 0 text10 dist/default/production\string-6-channel-battery.production.obj
-__ptext11 712 0 CODE 0 text11 dist/default/production\string-6-channel-battery.production.obj
-__ptext12 D84 0 CODE 0 text12 dist/default/production\string-6-channel-battery.production.obj
+__ptext10 85C 0 CODE 0 text10 dist/default/production\string-6-channel-battery.production.obj
+__ptext11 742 0 CODE 0 text11 dist/default/production\string-6-channel-battery.production.obj
+__ptext12 DB4 0 CODE 0 text12 dist/default/production\string-6-channel-battery.production.obj
 __ptext13 44 0 CODE 0 text13 dist/default/production\string-6-channel-battery.production.obj
-__ptext14 1F6 0 CODE 0 text14 dist/default/production\string-6-channel-battery.production.obj
-__ptext15 A28 0 CODE 0 text15 dist/default/production\string-6-channel-battery.production.obj
-__ptext16 9B6 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
-__ptext17 D44 0 CODE 0 text17 dist/default/production\string-6-channel-battery.production.obj
-__ptext18 A8C 0 CODE 0 text18 dist/default/production\string-6-channel-battery.production.obj
-__ptext19 E50 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
-__ptext20 DE8 0 CODE 0 text20 dist/default/production\string-6-channel-battery.production.obj
-__ptext21 E80 0 CODE 0 text21 dist/default/production\string-6-channel-battery.production.obj
-__ptext22 E96 0 CODE 0 text22 dist/default/production\string-6-channel-battery.production.obj
-__ptext23 BB0 0 CODE 0 text23 dist/default/production\string-6-channel-battery.production.obj
-__ptext24 C7E 0 CODE 0 text24 dist/default/production\string-6-channel-battery.production.obj
-__ptext25 CC0 0 CODE 0 text25 dist/default/production\string-6-channel-battery.production.obj
-__ptext26 BF8 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
-__ptext27 EE4 0 CODE 0 text27 dist/default/production\string-6-channel-battery.production.obj
-__ptext28 B50 0 CODE 0 text28 dist/default/production\string-6-channel-battery.production.obj
-__ptext29 E68 0 CODE 0 text29 dist/default/production\string-6-channel-battery.production.obj
-__ptext30 E16 0 CODE 0 text30 dist/default/production\string-6-channel-battery.production.obj
-__ptext32 5C0 0 CODE 0 text32 dist/default/production\string-6-channel-battery.production.obj
-__ptext33 D02 0 CODE 0 text33 dist/default/production\string-6-channel-battery.production.obj
-__ptext34 EC0 0 CODE 0 text34 dist/default/production\string-6-channel-battery.production.obj
-__end_of_PIN_MANAGER_Initialize BB0 0 CODE 0 text28 dist/default/production\string-6-channel-battery.production.obj
-___lldiv 66C 0 CODE 0 text7 dist/default/production\string-6-channel-battery.production.obj
+__ptext14 398 0 CODE 0 text14 dist/default/production\string-6-channel-battery.production.obj
+__ptext15 A58 0 CODE 0 text15 dist/default/production\string-6-channel-battery.production.obj
+__ptext16 9E6 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
+__ptext17 D74 0 CODE 0 text17 dist/default/production\string-6-channel-battery.production.obj
+__ptext18 ABC 0 CODE 0 text18 dist/default/production\string-6-channel-battery.production.obj
+__ptext19 E80 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
+__ptext20 E18 0 CODE 0 text20 dist/default/production\string-6-channel-battery.production.obj
+__ptext21 EB0 0 CODE 0 text21 dist/default/production\string-6-channel-battery.production.obj
+__ptext22 EC6 0 CODE 0 text22 dist/default/production\string-6-channel-battery.production.obj
+__ptext23 BE0 0 CODE 0 text23 dist/default/production\string-6-channel-battery.production.obj
+__ptext24 CAE 0 CODE 0 text24 dist/default/production\string-6-channel-battery.production.obj
+__ptext25 CF0 0 CODE 0 text25 dist/default/production\string-6-channel-battery.production.obj
+__ptext26 C28 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
+__ptext27 F14 0 CODE 0 text27 dist/default/production\string-6-channel-battery.production.obj
+__ptext28 B80 0 CODE 0 text28 dist/default/production\string-6-channel-battery.production.obj
+__ptext29 E98 0 CODE 0 text29 dist/default/production\string-6-channel-battery.production.obj
+__ptext30 E46 0 CODE 0 text30 dist/default/production\string-6-channel-battery.production.obj
+__ptext32 5E0 0 CODE 0 text32 dist/default/production\string-6-channel-battery.production.obj
+__ptext33 D32 0 CODE 0 text33 dist/default/production\string-6-channel-battery.production.obj
+__ptext34 EF0 0 CODE 0 text34 dist/default/production\string-6-channel-battery.production.obj
+__end_of_PIN_MANAGER_Initialize BE0 0 CODE 0 text28 dist/default/production\string-6-channel-battery.production.obj
+___lldiv 69C 0 CODE 0 text7 dist/default/production\string-6-channel-battery.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -1161,7 +1162,7 @@ __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
 __size_of_cw_por 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__pmaintext 7A2 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
+__pmaintext 7D2 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ___lmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
@@ -1174,16 +1175,16 @@ __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.prod
 _LATAbits 18 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _LATCbits 1A 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __CFG_WRTAPP$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_read_word 5C0 0 CODE 0 text4 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_read_word 5E0 0 CODE 0 text4 dist/default/production\string-6-channel-battery.production.obj
 cw_read_word@point_reg 35 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_ofi1_CW_Delay10ms D44 0 CODE 0 text33 dist/default/production\string-6-channel-battery.production.obj
-_sn_ack E38 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
+__end_ofi1_CW_Delay10ms D74 0 CODE 0 text33 dist/default/production\string-6-channel-battery.production.obj
+_sn_ack E68 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
 __end_of_cw_init 1F6 0 CODE 0 text13 dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_read A28 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
-stackhi 20EF 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-stacklo 204C 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s5d4.obj
-cw_init@cw_bat_config_info 8B6 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
-__end_of_EUSART1_Write ED0 0 CODE 0 text34 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_read A58 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
+stackhi 20EF 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+stacklo 204C 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s8q8.obj
+cw_init@cw_bat_config_info 8E6 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
+__end_of_EUSART1_Write F00 0 CODE 0 text34 dist/default/production\string-6-channel-battery.production.obj
 _OSCCON1 88D 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _OSCCON3 88F 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _OSCSTAT 890 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
@@ -1201,7 +1202,7 @@ __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR3bits 70F 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __Lend_init 2A 0 CODE 0 end_init -
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_cw_get_vol 380 0 CODE 0 text3 dist/default/production\string-6-channel-battery.production.obj
+_cw_get_vol 1F6 0 CODE 0 text3 dist/default/production\string-6-channel-battery.production.obj
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
@@ -1214,37 +1215,37 @@ cw_update_config_info@reset_val 35 0 BANK0 1 cstackBANK0 dist/default/production
 ?___lldiv 2C 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 _reset_loop 6B 0 BANK0 1 bssBANK0 dist/default/production\string-6-channel-battery.production.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
-__end_of_cw_update_config_info 380 0 CODE 0 text14 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_update_config_info 522 0 CODE 0 text14 dist/default/production\string-6-channel-battery.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-_update_vol DBA 0 CODE 0 text2 dist/default/production\string-6-channel-battery.production.obj
+_update_vol DEA 0 CODE 0 text2 dist/default/production\string-6-channel-battery.production.obj
 __size_of_sn_ack 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 write_byte@w_data 25 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__ptext1 EDC 0 CODE 0 text1 dist/default/production\string-6-channel-battery.production.obj
-__ptext2 DBA 0 CODE 0 text2 dist/default/production\string-6-channel-battery.production.obj
-__ptext3 380 0 CODE 0 text3 dist/default/production\string-6-channel-battery.production.obj
-__ptext4 502 0 CODE 0 text4 dist/default/production\string-6-channel-battery.production.obj
-__ptext5 E38 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
-__ptext6 AF0 0 CODE 0 text6 dist/default/production\string-6-channel-battery.production.obj
-__ptext7 66C 0 CODE 0 text7 dist/default/production\string-6-channel-battery.production.obj
-__ptext8 EAC 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
-__ptext9 C3C 0 CODE 0 text9 dist/default/production\string-6-channel-battery.production.obj
+__ptext1 F0C 0 CODE 0 text1 dist/default/production\string-6-channel-battery.production.obj
+__ptext2 DEA 0 CODE 0 text2 dist/default/production\string-6-channel-battery.production.obj
+__ptext3 1F6 0 CODE 0 text3 dist/default/production\string-6-channel-battery.production.obj
+__ptext4 522 0 CODE 0 text4 dist/default/production\string-6-channel-battery.production.obj
+__ptext5 E68 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
+__ptext6 B20 0 CODE 0 text6 dist/default/production\string-6-channel-battery.production.obj
+__ptext7 69C 0 CODE 0 text7 dist/default/production\string-6-channel-battery.production.obj
+__ptext8 EDC 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
+__ptext9 C6C 0 CODE 0 text9 dist/default/production\string-6-channel-battery.production.obj
 cw_get_capacity@ret 4C 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_cw_update_config_info 1F6 0 CODE 0 text14 dist/default/production\string-6-channel-battery.production.obj
+_cw_update_config_info 398 0 CODE 0 text14 dist/default/production\string-6-channel-battery.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
 read_byte@i 25 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __end_of__initialization 3E 0 CODE 0 cinit dist/default/production\string-6-channel-battery.production.obj
-__end_of_read_byte BF8 0 CODE 0 text23 dist/default/production\string-6-channel-battery.production.obj
+__end_of_read_byte C28 0 CODE 0 text23 dist/default/production\string-6-channel-battery.production.obj
 __Lfunctab 0 0 ENTRY 0 functab -
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_read_byte 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 update_capacity@cw_capacity 50 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of_cw_get_vol 502 0 CODE 0 text3 dist/default/production\string-6-channel-battery.production.obj
+__end_of_cw_get_vol 398 0 CODE 0 text3 dist/default/production\string-6-channel-battery.production.obj
 cw_init@reg_val 3F 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 ?_r_ack 24 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 _SP1BRGH 11C 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
@@ -1254,46 +1255,46 @@ ___lmul@product 28 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channe
 ___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 ___lldiv@quotient 35 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\string-6-channel-battery.production.obj
-_cw_bat_init D84 0 CODE 0 text12 dist/default/production\string-6-channel-battery.production.obj
-_cw_bat_work EDC 0 CODE 0 text1 dist/default/production\string-6-channel-battery.production.obj
+_cw_bat_init DB4 0 CODE 0 text12 dist/default/production\string-6-channel-battery.production.obj
+_cw_bat_work F0C 0 CODE 0 text1 dist/default/production\string-6-channel-battery.production.obj
 cw_read@point_reg 33 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-_write_byte D44 0 CODE 0 text17 dist/default/production\string-6-channel-battery.production.obj
+_write_byte D74 0 CODE 0 text17 dist/default/production\string-6-channel-battery.production.obj
 cw_write@point_reg 33 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-__end_of_update_vol DE8 0 CODE 0 text2 dist/default/production\string-6-channel-battery.production.obj
+__end_of_update_vol E18 0 CODE 0 text2 dist/default/production\string-6-channel-battery.production.obj
 __Hend_init 2C 0 CODE 0 end_init -
-_read_byte BB0 0 CODE 0 text23 dist/default/production\string-6-channel-battery.production.obj
-__end_of_main 82C 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
-__end_of_stop E68 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
+_read_byte BE0 0 CODE 0 text23 dist/default/production\string-6-channel-battery.production.obj
+__end_of_main 85C 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
+__end_of_stop E98 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
 __CFG_WRTSAF$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 wait_r_ack@i 2E 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 _OSCEN 891 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_CW_Delay100us CC0 0 CODE 0 text25 dist/default/production\string-6-channel-battery.production.obj
+_CW_Delay100us CF0 0 CODE 0 text25 dist/default/production\string-6-channel-battery.production.obj
 _TRISA 12 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _TRISC 14 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-__end_of_r_ack E16 0 CODE 0 text20 dist/default/production\string-6-channel-battery.production.obj
-__end_of_s_ack EAC 0 CODE 0 text22 dist/default/production\string-6-channel-battery.production.obj
-__end_of_start E96 0 CODE 0 text21 dist/default/production\string-6-channel-battery.production.obj
+__end_of_r_ack E46 0 CODE 0 text20 dist/default/production\string-6-channel-battery.production.obj
+__end_of_s_ack EDC 0 CODE 0 text22 dist/default/production\string-6-channel-battery.production.obj
+__end_of_start EC6 0 CODE 0 text21 dist/default/production\string-6-channel-battery.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _count 7A 0 COMMON 1 bssCOMMON dist/default/production\string-6-channel-battery.production.obj
-_r_ack DE8 0 CODE 0 text20 dist/default/production\string-6-channel-battery.production.obj
+_r_ack E18 0 CODE 0 text20 dist/default/production\string-6-channel-battery.production.obj
 _rxbuf 54 0 BANK0 1 bssBANK0 dist/default/production\string-6-channel-battery.production.obj
-_s_ack E96 0 CODE 0 text22 dist/default/production\string-6-channel-battery.production.obj
-_start E80 0 CODE 0 text21 dist/default/production\string-6-channel-battery.production.obj
+_s_ack EC6 0 CODE 0 text22 dist/default/production\string-6-channel-battery.production.obj
+_start EB0 0 CODE 0 text21 dist/default/production\string-6-channel-battery.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\string-6-channel-battery.production.obj
-__end_of_EUSART1_Initialize E38 0 CODE 0 text30 dist/default/production\string-6-channel-battery.production.obj
-__end_of_OSCILLATOR_Initialize E80 0 CODE 0 text29 dist/default/production\string-6-channel-battery.production.obj
+__end_of_EUSART1_Initialize E68 0 CODE 0 text30 dist/default/production\string-6-channel-battery.production.obj
+__end_of_OSCILLATOR_Initialize EB0 0 CODE 0 text29 dist/default/production\string-6-channel-battery.production.obj
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __initialization 2C 0 CODE 0 cinit dist/default/production\string-6-channel-battery.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-cw_update_config_info@cw_bat_config_info 936 0 STRCODE 0 stringtext2 dist/default/production\string-6-channel-battery.production.obj
+cw_update_config_info@cw_bat_config_info 966 0 STRCODE 0 stringtext2 dist/default/production\string-6-channel-battery.production.obj
 cw_read_word@r_pdata 30 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __pbssBANK0 54 0 BANK0 1 bssBANK0 dist/default/production\string-6-channel-battery.production.obj
 _PPSLOCK 1E8F 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 cw_get_vol@ad_buff 4E 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __size_of_update_usb_online 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-_OSCILLATOR_Initialize E68 0 CODE 0 text29 dist/default/production\string-6-channel-battery.production.obj
+_OSCILLATOR_Initialize E98 0 CODE 0 text29 dist/default/production\string-6-channel-battery.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1319,10 +1320,10 @@ _OSCILLATOR_Initialize E68 0 CODE 0 text29 dist/default/production\string-6-chan
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text16 0 4DB 9B6 29B 2
+text16 0 4F3 9E6 29B 2
 cstackCOMMON 1 70 70 B 1
 cstackBANK0 1 20 20 4C 1
-stringtext1 0 45B 8B6 80 2
-intentry 0 4 8 457 2
+stringtext1 0 473 8E6 80 2
+intentry 0 4 8 46F 2
 reset_vec 0 0 0 1 2
 config 0 8007 1000E 5 2

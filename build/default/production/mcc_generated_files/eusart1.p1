@@ -7199,17 +7199,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.c: 142: count ++;
 "142
 [e ++ _count -> -> 1 `i `uc ]
+[; ;eusart1.c: 143: if(count > 15) count = 15;
 "143
-}
-[; ;eusart1.c: 143: }
-[e $U 853  ]
-"144
-[e :U 852 ]
-[; ;eusart1.c: 144: else ;
+[e $ ! > -> _count `i -> 15 `i 853  ]
+[e = _count -> -> 15 `i `uc ]
 [e :U 853 ]
+"144
+}
+[; ;eusart1.c: 144: }
+[e $U 854  ]
+"145
+[e :U 852 ]
+[; ;eusart1.c: 145: else ;
+[e :U 854 ]
 [e :U 851 ]
 [e :U 842 ]
-[; ;eusart1.c: 145: }
-"145
+[; ;eusart1.c: 146: }
+"146
 [e :UE 839 ]
 }

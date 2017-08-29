@@ -1177,9 +1177,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CW201x.c: 469: ad_value -= ad_value_max;
 "469
 [e =- _ad_value -> _ad_value_max `ul ]
-[; ;CW201x.c: 470: ad_value = ad_value * 305 / 100000;
+[; ;CW201x.c: 470: ad_value = (ad_value * 305 + 50000) / 100000;
 "470
-[e = _ad_value / * _ad_value -> -> -> 305 `i `l `ul -> -> 100000 `l `ul ]
+[e = _ad_value / + * _ad_value -> -> -> 305 `i `l `ul -> -> 50000 `l `ul -> -> 100000 `l `ul ]
 [; ;CW201x.c: 471: return(ad_value);
 "471
 [e ) -> _ad_value `ui ]

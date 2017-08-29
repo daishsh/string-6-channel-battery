@@ -467,7 +467,7 @@ unsigned int cw_get_vol(void)
 	}
 	ad_value -= ad_value_min;
 	ad_value -= ad_value_max;
-	ad_value = ad_value  * 305 / 100000;
+	ad_value = (ad_value  * 305 + 50000) / 100000;
 	return(ad_value);       //14λADCת��ֵ
 }
 

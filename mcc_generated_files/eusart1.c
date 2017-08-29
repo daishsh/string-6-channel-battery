@@ -140,6 +140,7 @@ void EUSART1_Receive_ISR(void)
     {
         rxbuf[count - 1] = dat;
         count ++;
+        if(count > 15) count = 15;
     }
     else ;
 }
