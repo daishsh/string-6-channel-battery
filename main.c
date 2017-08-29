@@ -56,7 +56,10 @@ void main(void)
     unsigned char ret = 0;
     uint8_t send_char;
     SYSTEM_Initialize();
-    
+    IO_RC2_SetHigh();
+    IO_RA2_SetHigh();
+    IO_RA5_SetHigh();
+    IO_RA4_SetHigh();
     ret = cw_bat_init();
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -76,7 +79,6 @@ void main(void)
     while (1)
     {
         // Add your application code
-        CW_Delay10ms(100);
         IO_RC3_SetHigh();
         cw_bat_work();
         EUSART1_Write(cw_bat.voltage);
@@ -118,6 +120,7 @@ void main(void)
             IO_RA5_SetHigh();
             IO_RA4_SetHigh();
         }
+        CW_Delay10ms(100);
     }
 }
 /**
