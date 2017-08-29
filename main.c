@@ -46,6 +46,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "CW201x.h"
 extern STRUCT_CW_BATTERY   cw_bat;
+extern unsigned char count = 0;
 /*
                          Main application
  */
@@ -65,10 +66,10 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -79,12 +80,13 @@ void main(void)
     while (1)
     {
         // Add your application code
-        IO_RC3_SetHigh();
+        /*IO_RC3_SetHigh();
         cw_bat_work();
         EUSART1_Write(cw_bat.voltage);
         EUSART1_Write(cw_bat.capacity);
         CW_Delay10ms(1);
-        IO_RC3_SetLow();
+        IO_RC3_SetLow();*/
+        cw_bat_work();
         if(cw_bat.capacity >= 80)
         {
             IO_RC2_SetLow();

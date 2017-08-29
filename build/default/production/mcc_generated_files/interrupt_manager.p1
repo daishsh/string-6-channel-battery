@@ -1,25 +1,4 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"69 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"690 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
-"689
-[u S37 `S38 1 ]
-[n S37 . . ]
-"699
-[v _LATCbits `VS37 ~T0 @X0 0 e@26 ]
-"645
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"644
-[u S35 `S36 1 ]
-[n S35 . . ]
-"654
-[v _LATAbits `VS35 ~T0 @X0 0 e@24 ]
-"44 CW201x.h
-[v _cw_bat_init `(uc ~T0 @X0 0 ef ]
 "417 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
 [s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . INTEDG . PEIE GIE ]
@@ -28,15 +7,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S25 . . ]
 "424
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"45 CW201x.h
-[v _cw_bat_work `(v ~T0 @X0 0 ef ]
-"34
-[s S833 `uc 1 `ui 1 `ui 1 `uc 1 ]
-[n S833 tagSTRUCT_CW_BATTERY usb_online capacity voltage alt ]
-"48 main.c
-[v _cw_bat `S833 ~T0 @X0 0 e ]
-"46 CW201x.h
-[v _CW_Delay10ms `(v ~T0 @X0 0 ef1`ui ]
+"8144
+[s S396 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S396 . SSP1IE BCL1IE . TX1IE RC1IE ]
+"8143
+[u S395 `S396 1 ]
+[n S395 . . ]
+"8152
+[v _PIE3bits `VS395 ~T0 @X0 0 e@1817 ]
+"7867
+[s S379 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S379 . SSP1IF BCL1IF . TX1IF RC1IF ]
+"7866
+[u S378 `S379 1 ]
+[n S378 . . ]
+"7875
+[v _PIR3bits `VS378 ~T0 @X0 0 e@1807 ]
+"221 mcc_generated_files/eusart1.h
+[v _EUSART1_Receive_ISR `(v ~T0 @X0 0 ef ]
+[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6963,7 +6952,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;eusart1.h: 76: extern volatile uint8_t eusart1TxBufferRemaining;
 [; ;eusart1.h: 77: extern volatile uint8_t eusart1RxCount;
 [; ;eusart1.h: 105: void EUSART1_Initialize(void);
@@ -6973,294 +6961,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 221: void EUSART1_Receive_ISR(void);
 [; ;mcc.h: 69: void SYSTEM_Initialize(void);
 [; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
-[; ;CW201x.h: 34: typedef struct tagSTRUCT_CW_BATTERY {
-[; ;CW201x.h: 35: unsigned char usb_online;
-[; ;CW201x.h: 36: unsigned int capacity;
-[; ;CW201x.h: 37: unsigned int voltage;
-[; ;CW201x.h: 41: unsigned char alt;
-[; ;CW201x.h: 42: }STRUCT_CW_BATTERY;
-[; ;CW201x.h: 44: unsigned char cw_bat_init(void);
-[; ;CW201x.h: 45: void cw_bat_work(void);
-[; ;CW201x.h: 46: void CW_Delay10ms(unsigned int c);
-[; ;main.c: 48: extern STRUCT_CW_BATTERY cw_bat;
-"49 main.c
-[v _count `uc ~T0 @X0 1 e ]
-[i _count
--> -> 0 `i `uc
-]
-[; ;main.c: 49: extern unsigned char count = 0;
-[v $root$_main `(v ~T0 @X0 0 e ]
+[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
+[v F3 `(v ~T0 @X0 1 tf ]
+"51 mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager `IF3 ~T0 @X0 1 e ]
+"52
+{
+[; ;interrupt_manager.c: 51: void interrupt INTERRUPT_InterruptManager (void)
+[; ;interrupt_manager.c: 52: {
+[e :U _INTERRUPT_InterruptManager ]
+[f ]
+[; ;interrupt_manager.c: 54: if(INTCONbits.PEIE == 1 && PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
 "54
-[v _main `(v ~T0 @X0 1 ef ]
+[e $ ! && && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _PIE3bits 0 4 `i -> 1 `i == -> . . _PIR3bits 0 4 `i -> 1 `i 834  ]
+[; ;interrupt_manager.c: 55: {
 "55
 {
-[; ;main.c: 54: void main(void)
-[; ;main.c: 55: {
-[e :U _main ]
-[f ]
+[; ;interrupt_manager.c: 56: EUSART1_Receive_ISR();
+"56
+[e ( _EUSART1_Receive_ISR ..  ]
 "57
-[v _ret `uc ~T0 @X0 1 a ]
-[; ;main.c: 57: unsigned char ret = 0;
-[e = _ret -> -> 0 `i `uc ]
+}
+[; ;interrupt_manager.c: 57: }
+[e $U 835  ]
 "58
-[v _send_char `uc ~T0 @X0 1 a ]
-[; ;main.c: 58: uint8_t send_char;
-[; ;main.c: 59: SYSTEM_Initialize();
+[e :U 834 ]
+[; ;interrupt_manager.c: 58: else
+[; ;interrupt_manager.c: 59: {
 "59
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 60: do { LATCbits.LATC2 = 1; } while(0);
-"60
-[e :U 837 ]
 {
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 836 ]
-[; ;main.c: 61: do { LATAbits.LATA2 = 1; } while(0);
 "61
-[e :U 840 ]
-{
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 839 ]
-[; ;main.c: 62: do { LATAbits.LATA5 = 1; } while(0);
+[e :U 835 ]
+[; ;interrupt_manager.c: 61: }
+[; ;interrupt_manager.c: 62: }
 "62
-[e :U 843 ]
-{
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 842 ]
-[; ;main.c: 63: do { LATAbits.LATA4 = 1; } while(0);
-"63
-[e :U 846 ]
-{
-[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 845 ]
-[; ;main.c: 64: ret = cw_bat_init();
-"64
-[e = _ret ( _cw_bat_init ..  ]
-[; ;main.c: 69: (INTCONbits.GIE = 1);
-"69
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 72: (INTCONbits.PEIE = 1);
-"72
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 80: while (1)
-"80
-[e :U 848 ]
-[; ;main.c: 81: {
-"81
-{
-[; ;main.c: 89: cw_bat_work();
-"89
-[e ( _cw_bat_work ..  ]
-[; ;main.c: 90: if(cw_bat.capacity >= 80)
-"90
-[e $ ! >= . _cw_bat 1 -> -> 80 `i `ui 850  ]
-[; ;main.c: 91: {
-"91
-{
-[; ;main.c: 92: do { LATCbits.LATC2 = 0; } while(0);
-"92
-[e :U 853 ]
-{
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 852 ]
-[; ;main.c: 93: do { LATAbits.LATA2 = 0; } while(0);
-"93
-[e :U 856 ]
-{
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 855 ]
-[; ;main.c: 94: do { LATAbits.LATA5 = 0; } while(0);
-"94
-[e :U 859 ]
-{
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 858 ]
-[; ;main.c: 95: do { LATAbits.LATA4 = 0; } while(0);
-"95
-[e :U 862 ]
-{
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 861 ]
-"96
-}
-[; ;main.c: 96: }
-[e $U 863  ]
-"97
-[e :U 850 ]
-[; ;main.c: 97: else if(cw_bat.capacity >= 60)
-[e $ ! >= . _cw_bat 1 -> -> 60 `i `ui 864  ]
-[; ;main.c: 98: {
-"98
-{
-[; ;main.c: 99: do { LATCbits.LATC2 = 1; } while(0);
-"99
-[e :U 867 ]
-{
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 866 ]
-[; ;main.c: 100: do { LATAbits.LATA2 = 0; } while(0);
-"100
-[e :U 870 ]
-{
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 869 ]
-[; ;main.c: 101: do { LATAbits.LATA5 = 0; } while(0);
-"101
-[e :U 873 ]
-{
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 872 ]
-[; ;main.c: 102: do { LATAbits.LATA4 = 0; } while(0);
-"102
-[e :U 876 ]
-{
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 875 ]
-"103
-}
-[; ;main.c: 103: }
-[e $U 877  ]
-"104
-[e :U 864 ]
-[; ;main.c: 104: else if(cw_bat.capacity >= 40)
-[e $ ! >= . _cw_bat 1 -> -> 40 `i `ui 878  ]
-[; ;main.c: 105: {
-"105
-{
-[; ;main.c: 106: do { LATCbits.LATC2 = 1; } while(0);
-"106
-[e :U 881 ]
-{
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 880 ]
-[; ;main.c: 107: do { LATAbits.LATA2 = 1; } while(0);
-"107
-[e :U 884 ]
-{
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 883 ]
-[; ;main.c: 108: do { LATAbits.LATA5 = 0; } while(0);
-"108
-[e :U 887 ]
-{
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 886 ]
-[; ;main.c: 109: do { LATAbits.LATA4 = 0; } while(0);
-"109
-[e :U 890 ]
-{
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 889 ]
-"110
-}
-[; ;main.c: 110: }
-[e $U 891  ]
-"111
-[e :U 878 ]
-[; ;main.c: 111: else if(cw_bat.capacity >= 20)
-[e $ ! >= . _cw_bat 1 -> -> 20 `i `ui 892  ]
-[; ;main.c: 112: {
-"112
-{
-[; ;main.c: 113: do { LATCbits.LATC2 = 1; } while(0);
-"113
-[e :U 895 ]
-{
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 894 ]
-[; ;main.c: 114: do { LATAbits.LATA2 = 1; } while(0);
-"114
-[e :U 898 ]
-{
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 897 ]
-[; ;main.c: 115: do { LATAbits.LATA5 = 1; } while(0);
-"115
-[e :U 901 ]
-{
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 900 ]
-[; ;main.c: 116: do { LATAbits.LATA4 = 0; } while(0);
-"116
-[e :U 904 ]
-{
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 903 ]
-"117
-}
-[; ;main.c: 117: }
-[e $U 905  ]
-"118
-[e :U 892 ]
-[; ;main.c: 118: else
-[; ;main.c: 119: {
-"119
-{
-[; ;main.c: 120: do { LATCbits.LATC2 = 1; } while(0);
-"120
-[e :U 908 ]
-{
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 907 ]
-[; ;main.c: 121: do { LATAbits.LATA2 = 1; } while(0);
-"121
-[e :U 911 ]
-{
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 910 ]
-[; ;main.c: 122: do { LATAbits.LATA5 = 1; } while(0);
-"122
-[e :U 914 ]
-{
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 913 ]
-[; ;main.c: 123: do { LATAbits.LATA4 = 1; } while(0);
-"123
-[e :U 917 ]
-{
-[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 916 ]
-"124
-}
-[e :U 905 ]
-[e :U 891 ]
-[e :U 877 ]
-[e :U 863 ]
-[; ;main.c: 124: }
-[; ;main.c: 125: CW_Delay10ms(100);
-"125
-[e ( _CW_Delay10ms (1 -> -> 100 `i `ui ]
-"126
-}
-[e :U 847 ]
-"80
-[e $U 848  ]
-[e :U 849 ]
-[; ;main.c: 126: }
-[; ;main.c: 127: }
-"127
-[e :UE 834 ]
+[e :UE 833 ]
 }

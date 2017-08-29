@@ -1,5 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1669 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
+"8144 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f15323.h
+[s S396 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S396 . SSP1IE BCL1IE . TX1IE RC1IE ]
+"8143
+[u S395 `S396 1 ]
+[n S395 . . ]
+"8152
+[v _PIE3bits `VS395 ~T0 @X0 0 e@1817 ]
+"1669
 [v _BAUD1CON `Vuc ~T0 @X0 0 e@287 ]
 "1309
 [v _RC1STA `Vuc ~T0 @X0 0 e@285 ]
@@ -17,6 +25,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S378 . . ]
 "7875
 [v _PIR3bits `VS378 ~T0 @X0 0 e@1807 ]
+"1124
+[v _TX1REG `Vuc ~T0 @X0 0 e@282 ]
 "1324
 [s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S81 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -27,8 +37,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RC1STAbits `VS80 ~T0 @X0 0 e@285 ]
 "1070
 [v _RC1REG `Vuc ~T0 @X0 0 e@281 ]
-"1124
-[v _TX1REG `Vuc ~T0 @X0 0 e@282 ]
+"690
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
+"689
+[u S37 `S38 1 ]
+[n S37 . . ]
+"699
+[v _LATCbits `VS37 ~T0 @X0 0 e@26 ]
+"46 mcc_generated_files/../CW201x.h
+[v _CW_Delay10ms `(v ~T0 @X0 0 ef1`ui ]
+"34
+[s S833 `uc 1 `ui 1 `ui 1 `uc 1 ]
+[n S833 tagSTRUCT_CW_BATTERY usb_online capacity voltage alt ]
+"62 mcc_generated_files/eusart1.c
+[v _cw_bat `S833 ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6953,111 +6976,240 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;eusart1.h: 94: void EUSART1_Initialize(void);
-[; ;eusart1.h: 114: uint8_t EUSART1_Read(void);
-[; ;eusart1.h: 134: void EUSART1_Write(uint8_t txData);
-"55 mcc_generated_files/eusart1.c
+[; ;eusart1.h: 76: extern volatile uint8_t eusart1TxBufferRemaining;
+[; ;eusart1.h: 77: extern volatile uint8_t eusart1RxCount;
+[; ;eusart1.h: 105: void EUSART1_Initialize(void);
+[; ;eusart1.h: 154: uint8_t EUSART1_Read(void);
+[; ;eusart1.h: 179: void EUSART1_Write(uint8_t txData);
+[; ;eusart1.h: 200: void EUSART1_Transmit_ISR(void);
+[; ;eusart1.h: 221: void EUSART1_Receive_ISR(void);
+[; ;pin_manager.h: 236: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 248: void PIN_MANAGER_IOC(void);
+[; ;CW201x.h: 34: typedef struct tagSTRUCT_CW_BATTERY {
+[; ;CW201x.h: 35: unsigned char usb_online;
+[; ;CW201x.h: 36: unsigned int capacity;
+[; ;CW201x.h: 37: unsigned int voltage;
+[; ;CW201x.h: 41: unsigned char alt;
+[; ;CW201x.h: 42: }STRUCT_CW_BATTERY;
+[; ;CW201x.h: 44: unsigned char cw_bat_init(void);
+[; ;CW201x.h: 45: void cw_bat_work(void);
+[; ;CW201x.h: 46: void CW_Delay10ms(unsigned int c);
+"59 mcc_generated_files/eusart1.c
+[v _rxbuf `uc ~T0 @X0 -> 15 `i e ]
+[; ;eusart1.c: 59: unsigned char rxbuf[15];
+"60
+[v _count `uc ~T0 @X0 1 e ]
+[i _count
+-> -> 0 `i `uc
+]
+[; ;eusart1.c: 60: unsigned char count = 0;
+"61
+[v _state `uc ~T0 @X0 1 e ]
+[i _state
+-> -> 0 `i `uc
+]
+[; ;eusart1.c: 61: unsigned char state = 0;
+[; ;eusart1.c: 62: extern STRUCT_CW_BATTERY cw_bat;
+"64
 [v _EUSART1_Initialize `(v ~T0 @X0 1 ef ]
-"56
+"65
 {
-[; ;eusart1.c: 55: void EUSART1_Initialize(void)
-[; ;eusart1.c: 56: {
+[; ;eusart1.c: 64: void EUSART1_Initialize(void)
+[; ;eusart1.c: 65: {
 [e :U _EUSART1_Initialize ]
 [f ]
-[; ;eusart1.c: 60: BAUD1CON = 0x08;
-"60
+[; ;eusart1.c: 67: PIE3bits.RC1IE = 0;
+"67
+[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
+[; ;eusart1.c: 68: PIE3bits.TX1IE = 0;
+"68
+[e = . . _PIE3bits 0 3 -> -> 0 `i `uc ]
+[; ;eusart1.c: 73: BAUD1CON = 0x08;
+"73
 [e = _BAUD1CON -> -> 8 `i `uc ]
-[; ;eusart1.c: 63: RC1STA = 0x90;
-"63
+[; ;eusart1.c: 76: RC1STA = 0x90;
+"76
 [e = _RC1STA -> -> 144 `i `uc ]
-[; ;eusart1.c: 66: TX1STA = 0x24;
-"66
+[; ;eusart1.c: 79: TX1STA = 0x24;
+"79
 [e = _TX1STA -> -> 36 `i `uc ]
-[; ;eusart1.c: 69: SP1BRGL = 0x40;
-"69
-[e = _SP1BRGL -> -> 64 `i `uc ]
-[; ;eusart1.c: 72: SP1BRGH = 0x03;
-"72
-[e = _SP1BRGH -> -> 3 `i `uc ]
-[; ;eusart1.c: 74: }
-"74
-[e :UE 833 ]
-}
-"77
-[v _EUSART1_Read `(uc ~T0 @X0 1 ef ]
-"78
-{
-[; ;eusart1.c: 77: uint8_t EUSART1_Read(void)
-[; ;eusart1.c: 78: {
-[e :U _EUSART1_Read ]
-[f ]
-[; ;eusart1.c: 80: while(!PIR3bits.RC1IF)
-"80
-[e $U 835  ]
-[e :U 836 ]
-[; ;eusart1.c: 81: {
-"81
-{
+[; ;eusart1.c: 82: SP1BRGL = 0x40;
 "82
-}
-[e :U 835 ]
-"80
-[e $ ! != -> . . _PIR3bits 0 4 `i -> -> -> 0 `i `Vuc `i 836  ]
-[e :U 837 ]
-[; ;eusart1.c: 82: }
-[; ;eusart1.c: 85: if(1 == RC1STAbits.OERR)
+[e = _SP1BRGL -> -> 64 `i `uc ]
+[; ;eusart1.c: 85: SP1BRGH = 0x03;
 "85
-[e $ ! == -> 1 `i -> . . _RC1STAbits 0 1 `i 838  ]
-[; ;eusart1.c: 86: {
-"86
-{
-[; ;eusart1.c: 89: RC1STAbits.SPEN = 0;
-"89
-[e = . . _RC1STAbits 0 7 -> -> 0 `i `uc ]
-[; ;eusart1.c: 90: RC1STAbits.SPEN = 1;
-"90
-[e = . . _RC1STAbits 0 7 -> -> 1 `i `uc ]
+[e = _SP1BRGH -> -> 3 `i `uc ]
+[; ;eusart1.c: 91: PIE3bits.RC1IE = 1;
 "91
-}
-[e :U 838 ]
-[; ;eusart1.c: 91: }
-[; ;eusart1.c: 93: return RC1REG;
-"93
-[e ) _RC1REG ]
-[e $UE 834  ]
-[; ;eusart1.c: 94: }
-"94
+[e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
+[; ;eusart1.c: 92: }
+"92
 [e :UE 834 ]
 }
-"96
+"94
 [v _EUSART1_Write `(v ~T0 @X0 1 ef1`uc ]
-"97
+"95
 {
-[; ;eusart1.c: 96: void EUSART1_Write(uint8_t txData)
-[; ;eusart1.c: 97: {
+[; ;eusart1.c: 94: void EUSART1_Write(uint8_t txData)
+[; ;eusart1.c: 95: {
 [e :U _EUSART1_Write ]
-"96
+"94
 [v _txData `uc ~T0 @X0 1 r1 ]
-"97
+"95
 [f ]
-[; ;eusart1.c: 98: while(0 == PIR3bits.TX1IF)
-"98
-[e $U 840  ]
-[e :U 841 ]
-[; ;eusart1.c: 99: {
-"99
+[; ;eusart1.c: 96: while(0 == PIR3bits.TX1IF)
+"96
+[e $U 836  ]
+[e :U 837 ]
+[; ;eusart1.c: 97: {
+"97
 {
+"98
+}
+[e :U 836 ]
+"96
+[e $ == -> 0 `i -> . . _PIR3bits 0 3 `i 837  ]
+[e :U 838 ]
+[; ;eusart1.c: 98: }
+[; ;eusart1.c: 100: TX1REG = txData;
 "100
+[e = _TX1REG _txData ]
+[; ;eusart1.c: 101: }
+"101
+[e :UE 835 ]
+}
+"103
+[v _EUSART1_Receive_ISR `(v ~T0 @X0 1 ef ]
+"104
+{
+[; ;eusart1.c: 103: void EUSART1_Receive_ISR(void)
+[; ;eusart1.c: 104: {
+[e :U _EUSART1_Receive_ISR ]
+[f ]
+"105
+[v _dat `uc ~T0 @X0 1 a ]
+[; ;eusart1.c: 105: unsigned char dat;
+[; ;eusart1.c: 106: if(1 == RC1STAbits.OERR)
+"106
+[e $ ! == -> 1 `i -> . . _RC1STAbits 0 1 `i 840  ]
+[; ;eusart1.c: 107: {
+"107
+{
+[; ;eusart1.c: 110: RC1STAbits.CREN = 0;
+"110
+[e = . . _RC1STAbits 0 4 -> -> 0 `i `uc ]
+[; ;eusart1.c: 111: RC1STAbits.CREN = 1;
+"111
+[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+"112
 }
 [e :U 840 ]
-"98
-[e $ == -> 0 `i -> . . _PIR3bits 0 3 `i 841  ]
+[; ;eusart1.c: 112: }
+[; ;eusart1.c: 115: dat = RC1REG;
+"115
+[e = _dat _RC1REG ]
+[; ;eusart1.c: 117: if((dat == 'S') && (count == 0))
+"117
+[e $ ! && == -> _dat `ui -> 83 `ui == -> _count `i -> 0 `i 841  ]
+[; ;eusart1.c: 118: {
+"118
+{
+[; ;eusart1.c: 119: count = 1;
+"119
+[e = _count -> -> 1 `i `uc ]
+"120
+}
+[; ;eusart1.c: 120: }
+[e $U 842  ]
+"121
+[e :U 841 ]
+[; ;eusart1.c: 121: else if(dat == 'E')
+[e $ ! == -> _dat `ui -> 69 `ui 843  ]
+[; ;eusart1.c: 122: {
+"122
+{
+[; ;eusart1.c: 123: count ++;
+"123
+[e ++ _count -> -> 1 `i `uc ]
+[; ;eusart1.c: 124: if((count == 4) && (rxbuf[0] == 0xAA) && (rxbuf[1] == 0xAA))
+"124
+[e $ ! && && == -> _count `i -> 4 `i == -> *U + &U _rxbuf * -> -> -> 0 `i `ui `ux -> -> # *U &U _rxbuf `ui `ux `i -> 170 `i == -> *U + &U _rxbuf * -> -> -> 1 `i `ui `ux -> -> # *U &U _rxbuf `ui `ux `i -> 170 `i 844  ]
+[; ;eusart1.c: 125: {
+"125
+{
+[; ;eusart1.c: 126: do { LATCbits.LATC3 = 1; } while(0);
+"126
+[e :U 847 ]
+{
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 846 ]
+[; ;eusart1.c: 127: CW_Delay10ms(1);
+"127
+[e ( _CW_Delay10ms (1 -> -> 1 `i `ui ]
+[; ;eusart1.c: 128: EUSART1_Write('S');
+"128
+[e ( _EUSART1_Write (1 -> -> 83 `ui `uc ]
+[; ;eusart1.c: 129: EUSART1_Write(0xAA);
+"129
+[e ( _EUSART1_Write (1 -> -> 170 `i `uc ]
+[; ;eusart1.c: 130: EUSART1_Write(0xAA);
+"130
+[e ( _EUSART1_Write (1 -> -> 170 `i `uc ]
+[; ;eusart1.c: 131: EUSART1_Write(cw_bat.voltage);
+"131
+[e ( _EUSART1_Write (1 -> . _cw_bat 2 `uc ]
+[; ;eusart1.c: 132: EUSART1_Write(cw_bat.capacity);
+"132
+[e ( _EUSART1_Write (1 -> . _cw_bat 1 `uc ]
+[; ;eusart1.c: 133: EUSART1_Write('E');
+"133
+[e ( _EUSART1_Write (1 -> -> 69 `ui `uc ]
+[; ;eusart1.c: 134: CW_Delay10ms(1);
+"134
+[e ( _CW_Delay10ms (1 -> -> 1 `i `ui ]
+[; ;eusart1.c: 135: do { LATCbits.LATC3 = 0; } while(0);
+"135
+[e :U 850 ]
+{
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 849 ]
+"136
+}
+[e :U 844 ]
+[; ;eusart1.c: 136: }
+[; ;eusart1.c: 137: count = 0;
+"137
+[e = _count -> -> 0 `i `uc ]
+"138
+}
+[; ;eusart1.c: 138: }
+[e $U 851  ]
+"139
+[e :U 843 ]
+[; ;eusart1.c: 139: else if(count > 0)
+[e $ ! > -> _count `i -> 0 `i 852  ]
+[; ;eusart1.c: 140: {
+"140
+{
+[; ;eusart1.c: 141: rxbuf[count - 1] = dat;
+"141
+[e = *U + &U _rxbuf * -> -> - -> _count `i -> 1 `i `ui `ux -> -> # *U &U _rxbuf `ui `ux _dat ]
+[; ;eusart1.c: 142: count ++;
+"142
+[e ++ _count -> -> 1 `i `uc ]
+"143
+}
+[; ;eusart1.c: 143: }
+[e $U 853  ]
+"144
+[e :U 852 ]
+[; ;eusart1.c: 144: else ;
+[e :U 853 ]
+[e :U 851 ]
 [e :U 842 ]
-[; ;eusart1.c: 100: }
-[; ;eusart1.c: 102: TX1REG = txData;
-"102
-[e = _TX1REG _txData ]
-[; ;eusart1.c: 103: }
-"103
+[; ;eusart1.c: 145: }
+"145
 [e :UE 839 ]
 }
