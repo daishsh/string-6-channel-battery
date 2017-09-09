@@ -47,26 +47,13 @@
   Section: Included Files
 */
 #include "eusart1.h"
-#include "pin_manager.h"
-#include "../CW201x.h"
 
 /**
   Section: EUSART1 APIs
 */
-#define ID_HIGH 0xAA
-#define ID_LOW 0xAA
-
-unsigned char rxbuf[15];
-unsigned char count = 0;
-unsigned char state = 0;
-extern STRUCT_CW_BATTERY   cw_bat;
 
 void EUSART1_Initialize(void)
 {
-    // disable interrupts before changing states
-    PIE3bits.RC1IE = 0;
-    PIE3bits.TX1IE = 0;
-
     // Set the EUSART1 module to the options selected in the user interface.
 
     // ABDOVF no_overflow; SCKP Non-Inverted; BRG16 16bit_generator; WUE disabled; ABDEN disabled; 
@@ -84,11 +71,26 @@ void EUSART1_Initialize(void)
     // Baud Rate = 9600; SP1BRGH 3; 
     SP1BRGH = 0x03;
 
+}
 
-    // initializing the driver state
 
-    // enable receive interrupt
-    PIE3bits.RC1IE = 1;
+uint8_t EUSART1_Read(void)
+{
+
+    while(!PIR3bits.RC1IF)
+    {
+    }
+
+    
+    if(1 == RC1STAbits.OERR)
+    {
+        // EUSART1 error - restart
+
+        RC1STAbits.SPEN = 0; 
+        RC1STAbits.SPEN = 1; 
+    }
+
+    return RC1REG;
 }
 
 void EUSART1_Write(uint8_t txData)
@@ -98,51 +100,6 @@ void EUSART1_Write(uint8_t txData)
     }
 
     TX1REG = txData;    // Write the data byte to the USART.
-}
-
-void EUSART1_Receive_ISR(void)
-{
-    unsigned char dat;
-    if(1 == RC1STAbits.OERR)
-    {
-        // EUSART1 error - restart
-
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
-    }
-
-    // buffer overruns are ignored
-    dat = RC1REG;
-    
-    if((dat == 'S') && (count == 0))
-    {
-        count = 1;
-    }
-    else if(dat == 'E')
-    {
-        count ++;
-        if((count == 4)  && (rxbuf[0] == ID_HIGH) && (rxbuf[1] == ID_LOW))
-        {
-            IO_RC3_SetHigh();
-            CW_Delay10ms(1);
-            EUSART1_Write('S');
-            EUSART1_Write(ID_HIGH);
-            EUSART1_Write(ID_LOW);
-            EUSART1_Write(cw_bat.voltage);
-            EUSART1_Write(cw_bat.capacity);
-            EUSART1_Write('E');
-            CW_Delay10ms(1);
-            IO_RC3_SetLow();
-        }
-        count = 0;
-    }
-    else if(count > 0)
-    {
-        rxbuf[count - 1] = dat;
-        count ++;
-        if(count > 15) count = 15;
-    }
-    else ;
 }
 /**
   End of File

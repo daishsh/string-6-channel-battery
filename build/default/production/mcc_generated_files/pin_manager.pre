@@ -9194,10 +9194,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 236 "mcc_generated_files/pin_manager.h"
+# 216 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 248
+# 228
 void PIN_MANAGER_IOC(void);
 
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdbool.h"
@@ -9213,7 +9213,7 @@ LATC = 0x00;
 
 # 62
 TRISA = 0x03;
-TRISC = 0x22;
+TRISC = 0x2A;
 
 # 68
 ANSELC = 0x1D;

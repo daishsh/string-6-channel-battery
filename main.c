@@ -66,27 +66,22 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
+    //INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
+    //INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    
+    cw_bat_work();
 
     while (1)
     {
         // Add your application code
-        /*IO_RC3_SetHigh();
-        cw_bat_work();
-        EUSART1_Write(cw_bat.voltage);
-        EUSART1_Write(cw_bat.capacity);
-        CW_Delay10ms(1);
-        IO_RC3_SetLow();*/
-        cw_bat_work();
         if(cw_bat.capacity >= 80)
         {
             IO_RC2_SetLow();
@@ -122,9 +117,17 @@ void main(void)
             IO_RA5_SetHigh();
             IO_RA4_SetHigh();
         }
-        CW_Delay10ms(100);
+        
+        CW_Delay10ms(1000);
+        
+        cw_bat_work();
+        
+        EUSART1_Write('S');
+        EUSART1_Write(cw_bat.voltage);
+        EUSART1_Write(cw_bat.capacity);
+        EUSART1_Write('E');
     }
 }
 /**
  End of File
-*/
+*/ 
