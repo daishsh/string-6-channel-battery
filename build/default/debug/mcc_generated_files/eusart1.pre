@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/eusart1.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9194,11 +9194,8 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 216 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 228
-void PIN_MANAGER_IOC(void);
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdbool.h"
+typedef unsigned char bool;
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdint.h"
 typedef signed char int8_t;
@@ -9290,9 +9287,6 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdbool.h"
-typedef unsigned char bool;
-
 # 94 "mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
 
@@ -9302,104 +9296,54 @@ uint8_t EUSART1_Read(void);
 # 134
 void EUSART1_Write(uint8_t txData);
 
-# 68 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 81
-void OSCILLATOR_Initialize(void);
-
-# 34 "CW201x.h"
-typedef struct tagSTRUCT_CW_BATTERY {
-unsigned char usb_online;
-unsigned int capacity;
-unsigned int voltage;
-
-# 41
-unsigned char alt;
-}STRUCT_CW_BATTERY;
-
-unsigned char cw_bat_init(void);
-void cw_bat_work(void);
-void CW_Delay10ms(unsigned int c);
-
-# 48 "main.c"
-extern STRUCT_CW_BATTERY cw_bat;
-unsigned char count = 0;
-
-# 54
-void main(void)
+# 55 "mcc_generated_files/eusart1.c"
+void EUSART1_Initialize(void)
 {
 
-unsigned char ret = 0;
-uint8_t send_char;
-SYSTEM_Initialize();
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 1; } while(0);
-ret = cw_bat_init();
 
-# 80
-cw_bat_work();
 
-while (1)
-{
+BAUD1CON = 0x08;
 
-if(cw_bat.capacity >= 80)
-{
-do { LATCbits.LATC2 = 0; } while(0);
-do { LATAbits.LATA2 = 0; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 60)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 0; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 40)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 20)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 1; } while(0);
+
+RC1STA = 0x90;
+
+
+TX1STA = 0x24;
+
+
+SP1BRGL = 0x40;
+
+
+SP1BRGH = 0x03;
+
 }
 
-if(count < 5)
+
+uint8_t EUSART1_Read(void)
 {
-CW_Delay10ms(1000);
-count ++;
-}
-else
+
+while(!PIR3bits.RC1IF)
 {
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
 }
 
-cw_bat_work();
 
-EUSART1_Write('S');
-EUSART1_Write(cw_bat.voltage);
-EUSART1_Write(cw_bat.capacity);
-EUSART1_Write('E');
+if(1 == RC1STAbits.OERR)
+{
+
+
+RC1STAbits.SPEN = 0;
+RC1STAbits.SPEN = 1;
 }
+
+return RC1REG;
+}
+
+void EUSART1_Write(uint8_t txData)
+{
+while(0 == PIR3bits.TX1IF)
+{
+}
+
+TX1REG = txData;
 }
 

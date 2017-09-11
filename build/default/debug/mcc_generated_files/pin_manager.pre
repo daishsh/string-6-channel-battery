@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/pin_manager.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9200,206 +9200,52 @@ void PIN_MANAGER_Initialize (void);
 # 228
 void PIN_MANAGER_IOC(void);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdbool.h"
 typedef unsigned char bool;
 
-# 94 "mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-
-# 114
-uint8_t EUSART1_Read(void);
-
-# 134
-void EUSART1_Write(uint8_t txData);
-
-# 68 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 81
-void OSCILLATOR_Initialize(void);
-
-# 34 "CW201x.h"
-typedef struct tagSTRUCT_CW_BATTERY {
-unsigned char usb_online;
-unsigned int capacity;
-unsigned int voltage;
-
-# 41
-unsigned char alt;
-}STRUCT_CW_BATTERY;
-
-unsigned char cw_bat_init(void);
-void cw_bat_work(void);
-void CW_Delay10ms(unsigned int c);
-
-# 48 "main.c"
-extern STRUCT_CW_BATTERY cw_bat;
-unsigned char count = 0;
-
-# 54
-void main(void)
+# 51 "mcc_generated_files/pin_manager.c"
+void PIN_MANAGER_Initialize(void)
 {
 
-unsigned char ret = 0;
-uint8_t send_char;
-SYSTEM_Initialize();
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 1; } while(0);
-ret = cw_bat_init();
+# 56
+LATA = 0x00;
+LATC = 0x00;
+
+# 62
+TRISA = 0x03;
+TRISC = 0x2A;
+
+# 68
+ANSELC = 0x1D;
+ANSELA = 0x37;
+
+# 74
+WPUA = 0x00;
+WPUC = 0x00;
 
 # 80
-cw_bat_work();
+ODCONA = 0x00;
+ODCONC = 0x00;
 
-while (1)
-{
+# 88
+bool state = GIE;
+GIE = 0;
+PPSLOCK = 0x55;
+PPSLOCK = 0xAA;
+PPSLOCKbits.PPSLOCKED = 0x00;
 
-if(cw_bat.capacity >= 80)
-{
-do { LATCbits.LATC2 = 0; } while(0);
-do { LATAbits.LATA2 = 0; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 60)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 0; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 40)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 20)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 1; } while(0);
+RX1DTPPSbits.RX1DTPPS = 0x15;
+RC4PPS = 0x0F;
+
+PPSLOCK = 0x55;
+PPSLOCK = 0xAA;
+PPSLOCKbits.PPSLOCKED = 0x01;
+
+GIE = state;
 }
 
-if(count < 5)
+void PIN_MANAGER_IOC(void)
 {
-CW_Delay10ms(1000);
-count ++;
-}
-else
-{
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-}
 
-cw_bat_work();
-
-EUSART1_Write('S');
-EUSART1_Write(cw_bat.voltage);
-EUSART1_Write(cw_bat.capacity);
-EUSART1_Write('E');
-}
 }
 

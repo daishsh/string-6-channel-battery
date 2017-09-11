@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\string-6-channel-battery.production.hex">
+  <executable name="dist/default/debug\string-6-channel-battery.debug.hex">
     <memory name="program">
       <units>words</units>
       <length>2048</length>

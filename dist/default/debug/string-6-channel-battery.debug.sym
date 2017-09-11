@@ -5,8 +5,8 @@ __S0 800C 0 ABS 0
 __S1 7E 0 ABS 0
 __S2 0 0 ABS 0
 _GIE 5F 0 ABS 0
-__Hintentry 1 0 CODE 0
-__Lintentry 1 0 CODE 0
+__Hintentry 2 0 CODE 0
+__Lintentry 2 0 CODE 0
 __CFG_BOREN$ON 0 0 ABS 0
 cw_init@i 2F 0 BANK0 1
 CW_Delay100us@b 72 0 COMMON 1
@@ -26,7 +26,7 @@ _main 517 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 _stop 139 0 CODE 0
-start 1 0 CODE 0
+start 2 0 CODE 0
 ?_cw_read 24 0 BANK0 1
 r_ack@ack 78 0 COMMON 1
 read_byte@i 75 0 COMMON 1
@@ -141,8 +141,8 @@ __Hstringtext2 0 0 ABS 0
 read_byte@r_data 76 0 COMMON 1
 __Lstringtext2 0 0 ABS 0
 ___lmul 28B 0 CODE 0
-__Hinit 1 0 CODE 0
-__Linit 1 0 CODE 0
+__Hinit 2 0 CODE 0
+__Linit 2 0 CODE 0
 __pstringtext2 356 0 STRCODE 0
 _read_byte 23A 0 CODE 0
 __end_of_main 583 0 CODE 0
@@ -541,15 +541,15 @@ __ptext28 25D 0 CODE 0
 __ptext19 139 0 CODE 0
 __ptext29 12D 0 CODE 0
 __CFG_PPS1WAY$ON 0 0 ABS 0
-__Hend_init 2 0 CODE 0
-__Lend_init 1 0 CODE 0
+__Hend_init 3 0 CODE 0
+__Lend_init 2 0 CODE 0
 _reset_loop 4F 0 BANK0 1
 ___lldiv@divisor 20 0 BANK0 1
 __size_of___lldiv 0 0 ABS 0
 __end_of_write_byte 1B8 0 CODE 0
 __size_of_cw_read_word 0 0 ABS 0
 _OSCILLATOR_Initialize 12D 0 CODE 0
-__Hreset_vec 1 0 CODE 0
+__Hreset_vec 2 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0
 _BAUD1CON 11F 0 ABS 0
@@ -605,7 +605,7 @@ cw_read_word@r_pdata 24 0 BANK0 1
 __size_of_wait_r_ack 0 0 ABS 0
 ___lldiv@dividend 24 0 BANK0 1
 %segments
-reset_vec 0 3 CODE 0 0
+reset_vec 0 5 CODE 0 0
 cinit FE4 FFF CODE FE4 0
 config 1000E 10017 CONFIG 1000E 0
 cstackCOMMON 70 7D COMMON 70 1
@@ -645,8 +645,8 @@ text31 1F4 203 CODE 1F4 0
 text1 1EC 1F3 CODE 1EC 0
 text27 1E4 1EB CODE 1E4 0
 %locals
-dist/default/production\string-6-channel-battery.production.obj
-C:\Users\zwq\AppData\Local\Temp\s8lo.
+dist/default/debug\string-6-channel-battery.debug.obj
+C:\Users\zwq\AppData\Local\Temp\s9vk.
 3217 7F2 0 CODE 0
 3220 7F2 0 CODE 0
 3244 7F2 0 CODE 0

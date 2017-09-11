@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.43 build -156212558 
-                                                                                               Mon Sep 11 12:52:13 2017
+                                                                                               Mon Sep 11 12:21:18 2017
 
 Microchip Technology Omniscient Code Generator v1.43 (Free mode) build 201707250354
      1                           	processor	16F15323
@@ -6735,7 +6735,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.43 build -156212558 
-Symbol Table                                                                                   Mon Sep 11 12:52:13 2017
+Symbol Table                                                                                   Mon Sep 11 12:21:18 2017
 
                                     __CFG_CP$OFF 0000                                               l31 00FB  
                                              l60 0136                                  _update_capacity 0219  
@@ -6804,7 +6804,7 @@ Symbol Table                                                                    
                                            fsr0l 0004                                             indf1 0001  
                                            fsr1l 0006                                             btemp 007E  
                                            _stop 0139                                    __CFG_BOREN$ON 0000  
-                                           start 0001                                    __CFG_CSWEN$ON 0000  
+                                           start 0002                                    __CFG_CSWEN$ON 0000  
                                  CW_Delay100us@a 0071                                   CW_Delay100us@b 0072  
                                  CW_Delay100us@i 0073                                 ?_cw_get_capacity 003A  
                      update_capacity@cw_capacity 0043                   __size_of_OSCILLATOR_Initialize 000C  

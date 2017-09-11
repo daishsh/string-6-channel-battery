@@ -1,0 +1,422 @@
+
+# 1 "CW201x.c"
+
+# 34 "CW201x.h"
+typedef struct tagSTRUCT_CW_BATTERY {
+unsigned char usb_online;
+unsigned int capacity;
+unsigned int voltage;
+
+# 41
+unsigned char alt;
+}STRUCT_CW_BATTERY;
+
+unsigned char cw_bat_init(void);
+void cw_bat_work(void);
+void CW_Delay10ms(unsigned int c);
+
+# 11 "iic.h"
+void I2C_Delay10us(unsigned char us);
+void start(void);
+void stop(void);
+int r_ack(void);
+int wait_r_ack(void);
+void s_ack(void);
+void sn_ack(void);
+void write_byte(unsigned char w_data);
+unsigned char read_byte(void);
+int cw_read(unsigned char point_reg,unsigned char *r_pdata);
+int cw_read_word(unsigned char point_reg,unsigned char *r_pdata, unsigned int length);
+int cw_write(unsigned char point_reg,unsigned char *w_pdata);
+
+# 4 "CW201x.c"
+unsigned char CHARGE = 0;
+
+
+
+
+unsigned char reset_loop =0;
+
+
+STRUCT_CW_BATTERY cw_bat;
+
+# 26
+void CW_Delay10ms(unsigned int c)
+{
+unsigned char a, b, d;
+for (;c>0;c--)
+{
+for(b=95;b>0;b--)
+{
+for(a=209;a>0;a--) ;
+}
+}
+}
+
+void CW_Delay100us()
+{
+unsigned char a, b;
+unsigned char i;
+for(i = 0; i < 10; i++)
+{
+for(b = 1;b > 0;b --)
+{
+for(a = 7;a > 0;a --);
+}
+}
+}
+
+# 53
+unsigned char cw_update_config_info(void)
+{
+int ret = 0;
+unsigned char i;
+unsigned char reset_val;
+unsigned char reg_val;
+const unsigned char cw_bat_config_info[64] = {
+0x14,0xA6,0x70,0x6C,0x6C,0x67,0x64,
+0x62,0x60,0x5C,0x59,0x4E,0x50,0x42,
+0x2E,0x26,0x25,0x24,0x27,0x2E,0x41,
+0x5A,0x6D,0x4C,0x39,0xD7,0x06,0x66,
+0x00,0x01,0x05,0x34,0x61,0x76,0x79,
+0x7D,0x42,0x1E,0xA4,0x00,0x27,0x5A,
+0x52,0x87,0x8F,0x91,0x94,0x52,0x82,
+0x8C,0x92,0x96,0x2B,0x59,0x6E,0xCB,
+0x2F,0x7D,0x72,0xA5,0xB5,0xC1,0x94,
+0x99
+};
+
+
+ret = cw_read(0xA, &reg_val);
+if(ret)
+{
+return 1;
+}
+if((reg_val & (0x3<<6)) == (0x3<<6))
+{
+return 2;
+}
+
+for(i = 0; i < 64; i++)
+{
+reg_val = cw_bat_config_info[i];
+ret = cw_write(0x10+i, &reg_val);
+if(ret)
+{
+return 1;
+}
+}
+
+
+for(i = 0; i < 64; i++)
+{
+ret = cw_read(0x10+i, &reg_val);
+if(ret)
+{
+return 1;
+}
+if(reg_val != cw_bat_config_info[i])
+{
+return 3;
+}
+}
+
+ret = cw_read(0x8, &reg_val);
+if(ret)
+{
+return 1;
+}
+reg_val |= (0x1<<1);
+reg_val &= 0x07;
+reg_val |= (0x0<<3);
+ret = cw_write(0x8, &reg_val);
+if(ret)
+{
+return 1;
+}
+
+reset_val = (0x0<<6);
+reg_val = (0xf<<0);
+ret = cw_write(0xA, &reg_val);
+if(ret)
+{
+return 1;
+}
+CW_Delay100us();
+ret = cw_write(0xA, &reset_val);
+if(ret)
+{
+return 1;
+}
+return 0;
+}
+
+# 139
+unsigned char cw_init(void)
+{
+unsigned ret;
+unsigned char i;
+unsigned char reg_val = (0x0<<6);
+const unsigned char cw_bat_config_info[64] = {
+0x14,0xA6,0x70,0x6C,0x6C,0x67,0x64,
+0x62,0x60,0x5C,0x59,0x4E,0x50,0x42,
+0x2E,0x26,0x25,0x24,0x27,0x2E,0x41,
+0x5A,0x6D,0x4C,0x39,0xD7,0x06,0x66,
+0x00,0x01,0x05,0x34,0x61,0x76,0x79,
+0x7D,0x42,0x1E,0xA4,0x00,0x27,0x5A,
+0x52,0x87,0x8F,0x91,0x94,0x52,0x82,
+0x8C,0x92,0x96,0x2B,0x59,0x6E,0xCB,
+0x2F,0x7D,0x72,0xA5,0xB5,0xC1,0x94,
+0x99
+};
+
+
+ret = cw_write(0xA, &reg_val);
+if(ret)
+{
+return 1;
+}
+
+
+ret = cw_read(0x8, &reg_val);
+if(ret)
+{
+return 1;
+}
+if((reg_val & 0xf8) != (0x0<<3))
+{
+
+reg_val &= 0x07;
+reg_val |= (0x0<<3);
+ret = cw_write(0x8, &reg_val);
+if(ret)
+{
+return 1;
+}
+}
+
+
+ret = cw_read(0x8, &reg_val);
+if(ret)
+{
+return 1;
+}
+if(!(reg_val & (0x1<<1)))
+{
+
+ret = cw_update_config_info();
+if(ret)
+{
+return ret;
+}
+}
+else
+{
+for(i = 0; i < 64; i++)
+{
+ret = cw_read(0x10 +i, &reg_val);
+if(ret)
+{
+return 1;
+}
+if(cw_bat_config_info[i] != reg_val)
+{
+break;
+}
+}
+if(i != 64)
+{
+
+ret = cw_update_config_info();
+if(ret)
+{
+return ret;
+}
+}
+}
+
+for (i = 0; i < 30; i++) {
+CW_Delay10ms(10);
+ret = cw_read(0x4, &reg_val);
+if (ret)
+return 1;
+else if (reg_val <= 100)
+break;
+}
+
+if (i >=30){
+reg_val = (0x3<<6);
+ret = cw_write(0xA, &reg_val);
+
+return 4;
+}
+return 0;
+}
+
+# 303
+int cw_por(void)
+{
+int ret = 0;
+unsigned char reset_val = 0;
+reset_val = (0x3<<6);
+ret = cw_write(0xA, &reset_val);
+if (ret)
+return -1;
+CW_Delay100us();
+
+reset_val = (0x0<<6);
+ret = cw_write(0xA, &reset_val);
+if (ret)
+return -1;
+CW_Delay100us();
+
+ret = cw_init();
+if (ret)
+return ret;
+return 0;
+}
+
+int cw_get_capacity(void)
+{
+int ret = 0;
+unsigned char allow_capacity;
+unsigned char reg_val;
+
+unsigned char cw_capacity;
+
+
+ret = cw_read(0x4, &reg_val);
+if(ret)
+{
+return -1;
+}
+
+cw_capacity = reg_val;
+
+if ((cw_capacity < 0) || (cw_capacity > 100)) {
+
+reset_loop++;
+if (reset_loop >5) {
+ret = cw_por();
+if(ret)
+return -1;
+reset_loop =0;
+}
+return cw_bat.capacity;
+}else {
+reset_loop =0;
+}
+
+# 431
+return(cw_capacity);
+}
+
+unsigned int cw_get_vol(void)
+{
+int ret = 0;
+unsigned char get_ad_times = 0;
+unsigned char reg_val[2] = {0 , 0};
+unsigned long ad_value = 0;
+unsigned int ad_buff = 0;
+unsigned int ad_value_min = 0;
+unsigned int ad_value_max = 0;
+
+for(get_ad_times = 0; get_ad_times < 3; get_ad_times++)
+{
+ret = cw_read_word(0x2, &reg_val[0],2);
+if(ret)
+{
+return 1;
+}
+ad_buff = (reg_val[0] << 8) + reg_val[1];
+
+if(get_ad_times == 0)
+{
+ad_value_min = ad_buff;
+ad_value_max = ad_buff;
+}
+if(ad_buff < ad_value_min)
+{
+ad_value_min = ad_buff;
+}
+if(ad_buff > ad_value_max)
+{
+ad_value_max = ad_buff;
+}
+ad_value += ad_buff;
+}
+ad_value -= ad_value_min;
+ad_value -= ad_value_max;
+ad_value = (ad_value * 305 + 50000) / 100000;
+return(ad_value);
+}
+
+# 497
+void update_capacity(void)
+{
+int cw_capacity;
+cw_capacity = cw_get_capacity();
+if((cw_capacity >= 0) && (cw_capacity <= 100) && (cw_bat.capacity != cw_capacity))
+{
+cw_bat.capacity = cw_capacity;
+}
+}
+
+
+void update_vol(void)
+{
+unsigned int cw_voltage;
+cw_voltage = cw_get_vol();
+if(cw_voltage == 1){
+
+cw_bat.voltage = cw_bat.voltage;
+}else if(cw_bat.voltage != cw_voltage)
+{
+cw_bat.voltage = cw_voltage;
+}
+}
+
+# 544
+void update_usb_online(void)
+{
+if(CHARGE == 1)
+{
+cw_bat.usb_online = 1;
+}else{
+cw_bat.usb_online = 0;
+}
+}
+
+
+void cw_bat_work(void)
+{
+update_usb_online();
+update_capacity();
+update_vol();
+
+# 563
+}
+
+# 577
+unsigned char cw_bat_init(void)
+{
+unsigned char ret;
+unsigned char loop = 0;
+
+
+ret = cw_init();
+while((loop++ < 200) && (ret != 0))
+{
+ret = cw_init();
+}
+
+cw_bat.usb_online = 0;
+cw_bat.capacity = 2;
+cw_bat.voltage = 0;
+
+# 595
+cw_bat.alt = 0;
+
+return ret;
+}
+

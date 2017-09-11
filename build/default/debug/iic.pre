@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "iic.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9308,98 +9308,218 @@ void SYSTEM_Initialize(void);
 # 81
 void OSCILLATOR_Initialize(void);
 
-# 34 "CW201x.h"
-typedef struct tagSTRUCT_CW_BATTERY {
-unsigned char usb_online;
-unsigned int capacity;
-unsigned int voltage;
-
-# 41
-unsigned char alt;
-}STRUCT_CW_BATTERY;
-
-unsigned char cw_bat_init(void);
-void cw_bat_work(void);
-void CW_Delay10ms(unsigned int c);
-
-# 48 "main.c"
-extern STRUCT_CW_BATTERY cw_bat;
-unsigned char count = 0;
-
-# 54
-void main(void)
+# 22 "iic.c"
+void Delay10us()
 {
-
-unsigned char ret = 0;
-uint8_t send_char;
-SYSTEM_Initialize();
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 1; } while(0);
-ret = cw_bat_init();
-
-# 80
-cw_bat_work();
-
-while (1)
+unsigned char a, b;
+unsigned char i;
+for(i = 0; i < 2; i++)
 {
-
-if(cw_bat.capacity >= 80)
+for(b = 1;b > 0;b --)
 {
-do { LATCbits.LATC2 = 0; } while(0);
-do { LATAbits.LATA2 = 0; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
+for(a = 7;a > 0;a --) ;
 }
-else if(cw_bat.capacity >= 60)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 0; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 40)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 0; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else if(cw_bat.capacity >= 20)
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 0; } while(0);
-}
-else
-{
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATAbits.LATA2 = 1; } while(0);
-do { LATAbits.LATA5 = 1; } while(0);
-do { LATAbits.LATA4 = 1; } while(0);
-}
-
-if(count < 5)
-{
-CW_Delay10ms(1000);
-count ++;
-}
-else
-{
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-CW_Delay10ms(1000);
-}
-
-cw_bat_work();
-
-EUSART1_Write('S');
-EUSART1_Write(cw_bat.voltage);
-EUSART1_Write(cw_bat.capacity);
-EUSART1_Write('E');
 }
 }
 
+# 43
+void start(void)
+{
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+do { LATCbits.LATC1 = 0; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 0; } while(0);
+}
+
+void stop(void)
+{
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 0; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+do { LATCbits.LATC1 = 1; } while(0);
+Delay10us();
+
+Delay10us();
+}
+
+int r_ack(void)
+{
+int ack;
+do { TRISCbits.TRISC1 = 1; } while(0);
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+ack = PORTCbits.RC1;
+Delay10us();
+do { LATCbits.LATC0 = 0; } while(0);
+Delay10us();
+return ack;
+}
+
+int wait_r_ack(void)
+{
+int ack;
+unsigned int i;
+ack = 1;
+for(i = 0; i < 100; i++)
+{
+ack = r_ack();
+if(!ack)
+{
+break;
+}
+if(i == 99)
+{
+stop();
+return 1;
+}
+}
+return 0;
+}
+
+void s_ack(void)
+{
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 0; } while(0);
+Delay10us();
+
+}
+
+void sn_ack(void)
+{
+do { TRISCbits.TRISC1 = 0; } while(0);
+do { LATCbits.LATC1 = 0; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 0; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
+Delay10us();
+}
+
+
+void write_byte(unsigned char w_data)
+{
+unsigned char i;
+do { TRISCbits.TRISC1 = 0; } while(0);
+for(i = 0; i < 8; i++)
+{
+LATCbits.LATC1 = (w_data & 0x80)?1:0;
+Delay10us();
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+do { LATCbits.LATC0 = 0; } while(0);
+Delay10us();
+w_data = w_data << 1;
+}
+}
+
+unsigned char read_byte(void)
+{
+unsigned char i;
+unsigned char r_data;
+do { TRISCbits.TRISC1 = 1; } while(0);
+for(i = 0; i < 8; i++)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+Delay10us();
+r_data = r_data << 1;
+Delay10us();
+if(PORTCbits.RC1)
+{
+r_data = r_data | 0x1;
+}
+do { LATCbits.LATC0 = 0; } while(0);
+Delay10us();
+}
+return r_data;
+}
+
+
+int cw_read(unsigned char point_reg,unsigned char *r_pdata)
+{
+start();
+write_byte(0xc4);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(point_reg);
+if(wait_r_ack())
+{
+return 1;
+}
+start();
+write_byte(0xc5);
+if(wait_r_ack())
+{
+return 1;
+}
+*r_pdata = read_byte();
+s_ack();
+stop();
+return 0;
+}
+
+int cw_read_word(unsigned char point_reg,unsigned char *r_pdata, unsigned int length)
+{
+unsigned char count;
+
+start();
+write_byte(0xc4);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(point_reg);
+if(wait_r_ack())
+{
+return 1;
+}
+start();
+write_byte(0xc5);
+if(wait_r_ack())
+{
+return 1;
+}
+for(count = 0; count < length; count++ ){
+*r_pdata = read_byte();
+if(count + 1 < length){
+r_pdata++;
+sn_ack();
+}
+}
+s_ack();
+stop();
+return 0;
+}
+
+int cw_write(unsigned char point_reg,unsigned char *w_pdata)
+{
+start();
+write_byte(0xc4);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(point_reg);
+if(wait_r_ack())
+{
+return 1;
+}
+write_byte(*w_pdata);
+if(wait_r_ack())
+{
+return 1;
+}
+stop();
+return 0;
+}

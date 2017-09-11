@@ -1,0 +1,1373 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"34 CW201x.h
+[s S1 `uc 1 `ui 1 `ui 1 `uc 1 ]
+[n S1 tagSTRUCT_CW_BATTERY usb_online capacity voltage alt ]
+"20 iic.h
+[v _cw_read `(i ~T0 @X0 0 ef2`uc`*uc ]
+"22
+[v _cw_write `(i ~T0 @X0 0 ef2`uc`*uc ]
+"21
+[v _cw_read_word `(i ~T0 @X0 0 ef3`uc`*uc`ui ]
+[; ;CW201x.h: 34: typedef struct tagSTRUCT_CW_BATTERY {
+[; ;CW201x.h: 35: unsigned char usb_online;
+[; ;CW201x.h: 36: unsigned int capacity;
+[; ;CW201x.h: 37: unsigned int voltage;
+[; ;CW201x.h: 41: unsigned char alt;
+[; ;CW201x.h: 42: }STRUCT_CW_BATTERY;
+[; ;CW201x.h: 44: unsigned char cw_bat_init(void);
+[; ;CW201x.h: 45: void cw_bat_work(void);
+[; ;CW201x.h: 46: void CW_Delay10ms(unsigned int c);
+[; ;iic.h: 11: void I2C_Delay10us(unsigned char us);
+[; ;iic.h: 12: void start(void);
+[; ;iic.h: 13: void stop(void);
+[; ;iic.h: 14: int r_ack(void);
+[; ;iic.h: 15: int wait_r_ack(void);
+[; ;iic.h: 16: void s_ack(void);
+[; ;iic.h: 17: void sn_ack(void);
+[; ;iic.h: 18: void write_byte(unsigned char w_data);
+[; ;iic.h: 19: unsigned char read_byte(void);
+[; ;iic.h: 20: int cw_read(unsigned char point_reg,unsigned char *r_pdata);
+[; ;iic.h: 21: int cw_read_word(unsigned char point_reg,unsigned char *r_pdata, unsigned int length);
+[; ;iic.h: 22: int cw_write(unsigned char point_reg,unsigned char *w_pdata);
+"4 CW201x.c
+[v _CHARGE `uc ~T0 @X0 1 e ]
+[i _CHARGE
+-> -> 0 `i `uc
+]
+[; ;CW201x.c: 4: unsigned char CHARGE = 0;
+"9
+[v _reset_loop `uc ~T0 @X0 1 e ]
+[i _reset_loop
+-> -> 0 `i `uc
+]
+[; ;CW201x.c: 9: unsigned char reset_loop =0;
+"12
+[v _cw_bat `S1 ~T0 @X0 1 e ]
+[; ;CW201x.c: 12: STRUCT_CW_BATTERY cw_bat;
+"26
+[v _CW_Delay10ms `(v ~T0 @X0 1 ef1`ui ]
+"27
+{
+[; ;CW201x.c: 26: void CW_Delay10ms(unsigned int c)
+[; ;CW201x.c: 27: {
+[e :U _CW_Delay10ms ]
+"26
+[v _c `ui ~T0 @X0 1 r1 ]
+"27
+[f ]
+"28
+[v _a `uc ~T0 @X0 1 a ]
+[v _b `uc ~T0 @X0 1 a ]
+[v _d `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 28: unsigned char a, b, d;
+[; ;CW201x.c: 29: for (;c>0;c--)
+"29
+{
+[e $ > _c -> -> 0 `i `ui 3  ]
+[e $U 4  ]
+"30
+[e :U 3 ]
+[; ;CW201x.c: 30: {
+{
+[; ;CW201x.c: 31: for(b=95;b>0;b--)
+"31
+{
+[e = _b -> -> 95 `i `uc ]
+[e $ > -> _b `i -> 0 `i 6  ]
+[e $U 7  ]
+"32
+[e :U 6 ]
+[; ;CW201x.c: 32: {
+{
+[; ;CW201x.c: 33: for(a=209;a>0;a--) ;
+"33
+{
+[e = _a -> -> 209 `i `uc ]
+[e $ > -> _a `i -> 0 `i 9  ]
+[e $U 10  ]
+[e :U 9 ]
+[e -- _a -> -> 1 `i `uc ]
+[e $ > -> _a `i -> 0 `i 9  ]
+[e :U 10 ]
+}
+"34
+}
+"31
+[e -- _b -> -> 1 `i `uc ]
+[e $ > -> _b `i -> 0 `i 6  ]
+[e :U 7 ]
+"34
+}
+"35
+}
+"29
+[e -- _c -> -> 1 `i `ui ]
+[e $ > _c -> -> 0 `i `ui 3  ]
+[e :U 4 ]
+"35
+}
+[; ;CW201x.c: 34: }
+[; ;CW201x.c: 35: }
+[; ;CW201x.c: 36: }
+"36
+[e :UE 2 ]
+}
+"38
+[v _CW_Delay100us `(v ~T0 @X0 1 ef ]
+"39
+{
+[; ;CW201x.c: 38: void CW_Delay100us()
+[; ;CW201x.c: 39: {
+[e :U _CW_Delay100us ]
+[f ]
+"40
+[v _a `uc ~T0 @X0 1 a ]
+[v _b `uc ~T0 @X0 1 a ]
+"41
+[v _i `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 40: unsigned char a, b;
+[; ;CW201x.c: 41: unsigned char i;
+[; ;CW201x.c: 42: for(i = 0; i < 10; i++)
+"42
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 10 `i 13  ]
+[e $U 14  ]
+"43
+[e :U 13 ]
+[; ;CW201x.c: 43: {
+{
+[; ;CW201x.c: 44: for(b = 1;b > 0;b --)
+"44
+{
+[e = _b -> -> 1 `i `uc ]
+[e $ > -> _b `i -> 0 `i 16  ]
+[e $U 17  ]
+"45
+[e :U 16 ]
+[; ;CW201x.c: 45: {
+{
+[; ;CW201x.c: 46: for(a = 7;a > 0;a --);
+"46
+{
+[e = _a -> -> 7 `i `uc ]
+[e $ > -> _a `i -> 0 `i 19  ]
+[e $U 20  ]
+[e :U 19 ]
+[e -- _a -> -> 1 `i `uc ]
+[e $ > -> _a `i -> 0 `i 19  ]
+[e :U 20 ]
+}
+"47
+}
+"44
+[e -- _b -> -> 1 `i `uc ]
+[e $ > -> _b `i -> 0 `i 16  ]
+[e :U 17 ]
+"47
+}
+"48
+}
+"42
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 10 `i 13  ]
+[e :U 14 ]
+"48
+}
+[; ;CW201x.c: 47: }
+[; ;CW201x.c: 48: }
+[; ;CW201x.c: 49: }
+"49
+[e :UE 12 ]
+}
+"53
+[v _cw_update_config_info `(uc ~T0 @X0 1 ef ]
+"54
+{
+[; ;CW201x.c: 53: unsigned char cw_update_config_info(void)
+[; ;CW201x.c: 54: {
+[e :U _cw_update_config_info ]
+[f ]
+"55
+[v _ret `i ~T0 @X0 1 a ]
+[; ;CW201x.c: 55: int ret = 0;
+[e = _ret -> 0 `i ]
+"56
+[v _i `uc ~T0 @X0 1 a ]
+"57
+[v _reset_val `uc ~T0 @X0 1 a ]
+"58
+[v _reg_val `uc ~T0 @X0 1 a ]
+"59
+[v F58 `Cuc ~T0 @X0 -> 64 `i s cw_bat_config_info ]
+[i F58
+:U ..
+"60
+-> -> 20 `i `uc
+-> -> 166 `i `uc
+-> -> 112 `i `uc
+-> -> 108 `i `uc
+-> -> 108 `i `uc
+-> -> 103 `i `uc
+-> -> 100 `i `uc
+"61
+-> -> 98 `i `uc
+-> -> 96 `i `uc
+-> -> 92 `i `uc
+-> -> 89 `i `uc
+-> -> 78 `i `uc
+-> -> 80 `i `uc
+-> -> 66 `i `uc
+"62
+-> -> 46 `i `uc
+-> -> 38 `i `uc
+-> -> 37 `i `uc
+-> -> 36 `i `uc
+-> -> 39 `i `uc
+-> -> 46 `i `uc
+-> -> 65 `i `uc
+"63
+-> -> 90 `i `uc
+-> -> 109 `i `uc
+-> -> 76 `i `uc
+-> -> 57 `i `uc
+-> -> 215 `i `uc
+-> -> 6 `i `uc
+-> -> 102 `i `uc
+"64
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 5 `i `uc
+-> -> 52 `i `uc
+-> -> 97 `i `uc
+-> -> 118 `i `uc
+-> -> 121 `i `uc
+"65
+-> -> 125 `i `uc
+-> -> 66 `i `uc
+-> -> 30 `i `uc
+-> -> 164 `i `uc
+-> -> 0 `i `uc
+-> -> 39 `i `uc
+-> -> 90 `i `uc
+"66
+-> -> 82 `i `uc
+-> -> 135 `i `uc
+-> -> 143 `i `uc
+-> -> 145 `i `uc
+-> -> 148 `i `uc
+-> -> 82 `i `uc
+-> -> 130 `i `uc
+"67
+-> -> 140 `i `uc
+-> -> 146 `i `uc
+-> -> 150 `i `uc
+-> -> 43 `i `uc
+-> -> 89 `i `uc
+-> -> 110 `i `uc
+-> -> 203 `i `uc
+"68
+-> -> 47 `i `uc
+-> -> 125 `i `uc
+-> -> 114 `i `uc
+-> -> 165 `i `uc
+-> -> 181 `i `uc
+-> -> 193 `i `uc
+-> -> 148 `i `uc
+"70
+-> -> 153 `i `uc
+..
+]
+[; ;CW201x.c: 56: unsigned char i;
+[; ;CW201x.c: 57: unsigned char reset_val;
+[; ;CW201x.c: 58: unsigned char reg_val;
+[; ;CW201x.c: 59: const unsigned char cw_bat_config_info[64] = {
+[; ;CW201x.c: 60: 0x14,0xA6,0x70,0x6C,0x6C,0x67,0x64,
+[; ;CW201x.c: 61: 0x62,0x60,0x5C,0x59,0x4E,0x50,0x42,
+[; ;CW201x.c: 62: 0x2E,0x26,0x25,0x24,0x27,0x2E,0x41,
+[; ;CW201x.c: 63: 0x5A,0x6D,0x4C,0x39,0xD7,0x06,0x66,
+[; ;CW201x.c: 64: 0x00,0x01,0x05,0x34,0x61,0x76,0x79,
+[; ;CW201x.c: 65: 0x7D,0x42,0x1E,0xA4,0x00,0x27,0x5A,
+[; ;CW201x.c: 66: 0x52,0x87,0x8F,0x91,0x94,0x52,0x82,
+[; ;CW201x.c: 67: 0x8C,0x92,0x96,0x2B,0x59,0x6E,0xCB,
+[; ;CW201x.c: 68: 0x2F,0x7D,0x72,0xA5,0xB5,0xC1,0x94,
+[; ;CW201x.c: 69: 0x99
+[; ;CW201x.c: 70: };
+[; ;CW201x.c: 73: ret = cw_read(0xA, &reg_val);
+"73
+[e = _ret ( _cw_read (2 , -> -> 10 `i `uc &U _reg_val ]
+[; ;CW201x.c: 74: if(ret)
+"74
+[e $ ! != _ret -> 0 `i 23  ]
+[; ;CW201x.c: 75: {
+"75
+{
+[; ;CW201x.c: 76: return 1;
+"76
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"77
+}
+[e :U 23 ]
+[; ;CW201x.c: 77: }
+[; ;CW201x.c: 78: if((reg_val & (0x3<<6)) == (0x3<<6))
+"78
+[e $ ! == & -> _reg_val `i << -> 3 `i -> 6 `i << -> 3 `i -> 6 `i 24  ]
+[; ;CW201x.c: 79: {
+"79
+{
+[; ;CW201x.c: 80: return 2;
+"80
+[e ) -> -> 2 `i `uc ]
+[e $UE 22  ]
+"81
+}
+[e :U 24 ]
+[; ;CW201x.c: 81: }
+[; ;CW201x.c: 83: for(i = 0; i < 64; i++)
+"83
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 64 `i 25  ]
+[e $U 26  ]
+"84
+[e :U 25 ]
+[; ;CW201x.c: 84: {
+{
+[; ;CW201x.c: 85: reg_val = cw_bat_config_info[i];
+"85
+[e = _reg_val *U + &U F58 * -> _i `ux -> -> # *U &U F58 `ui `ux ]
+[; ;CW201x.c: 86: ret = cw_write(0x10+i, &reg_val);
+"86
+[e = _ret ( _cw_write (2 , -> + -> 16 `i -> _i `i `uc &U _reg_val ]
+[; ;CW201x.c: 87: if(ret)
+"87
+[e $ ! != _ret -> 0 `i 28  ]
+[; ;CW201x.c: 88: {
+"88
+{
+[; ;CW201x.c: 89: return 1;
+"89
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"90
+}
+[e :U 28 ]
+"91
+}
+"83
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 64 `i 25  ]
+[e :U 26 ]
+"91
+}
+[; ;CW201x.c: 90: }
+[; ;CW201x.c: 91: }
+[; ;CW201x.c: 94: for(i = 0; i < 64; i++)
+"94
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 64 `i 29  ]
+[e $U 30  ]
+"95
+[e :U 29 ]
+[; ;CW201x.c: 95: {
+{
+[; ;CW201x.c: 96: ret = cw_read(0x10+i, &reg_val);
+"96
+[e = _ret ( _cw_read (2 , -> + -> 16 `i -> _i `i `uc &U _reg_val ]
+[; ;CW201x.c: 97: if(ret)
+"97
+[e $ ! != _ret -> 0 `i 32  ]
+[; ;CW201x.c: 98: {
+"98
+{
+[; ;CW201x.c: 99: return 1;
+"99
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"100
+}
+[e :U 32 ]
+[; ;CW201x.c: 100: }
+[; ;CW201x.c: 101: if(reg_val != cw_bat_config_info[i])
+"101
+[e $ ! != -> _reg_val `i -> *U + &U F58 * -> _i `ux -> -> # *U &U F58 `ui `ux `i 33  ]
+[; ;CW201x.c: 102: {
+"102
+{
+[; ;CW201x.c: 103: return 3;
+"103
+[e ) -> -> 3 `i `uc ]
+[e $UE 22  ]
+"104
+}
+[e :U 33 ]
+"105
+}
+"94
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 64 `i 29  ]
+[e :U 30 ]
+"105
+}
+[; ;CW201x.c: 104: }
+[; ;CW201x.c: 105: }
+[; ;CW201x.c: 107: ret = cw_read(0x8, &reg_val);
+"107
+[e = _ret ( _cw_read (2 , -> -> 8 `i `uc &U _reg_val ]
+[; ;CW201x.c: 108: if(ret)
+"108
+[e $ ! != _ret -> 0 `i 34  ]
+[; ;CW201x.c: 109: {
+"109
+{
+[; ;CW201x.c: 110: return 1;
+"110
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"111
+}
+[e :U 34 ]
+[; ;CW201x.c: 111: }
+[; ;CW201x.c: 112: reg_val |= (0x1<<1);
+"112
+[e =| _reg_val -> << -> 1 `i -> 1 `i `uc ]
+[; ;CW201x.c: 113: reg_val &= 0x07;
+"113
+[e =& _reg_val -> -> 7 `i `uc ]
+[; ;CW201x.c: 114: reg_val |= (0x0<<3);
+"114
+[e =| _reg_val -> << -> 0 `i -> 3 `i `uc ]
+[; ;CW201x.c: 115: ret = cw_write(0x8, &reg_val);
+"115
+[e = _ret ( _cw_write (2 , -> -> 8 `i `uc &U _reg_val ]
+[; ;CW201x.c: 116: if(ret)
+"116
+[e $ ! != _ret -> 0 `i 35  ]
+[; ;CW201x.c: 117: {
+"117
+{
+[; ;CW201x.c: 118: return 1;
+"118
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"119
+}
+[e :U 35 ]
+[; ;CW201x.c: 119: }
+[; ;CW201x.c: 121: reset_val = (0x0<<6);
+"121
+[e = _reset_val -> << -> 0 `i -> 6 `i `uc ]
+[; ;CW201x.c: 122: reg_val = (0xf<<0);
+"122
+[e = _reg_val -> << -> 15 `i -> 0 `i `uc ]
+[; ;CW201x.c: 123: ret = cw_write(0xA, &reg_val);
+"123
+[e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reg_val ]
+[; ;CW201x.c: 124: if(ret)
+"124
+[e $ ! != _ret -> 0 `i 36  ]
+[; ;CW201x.c: 125: {
+"125
+{
+[; ;CW201x.c: 126: return 1;
+"126
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"127
+}
+[e :U 36 ]
+[; ;CW201x.c: 127: }
+[; ;CW201x.c: 128: CW_Delay100us();
+"128
+[e ( _CW_Delay100us ..  ]
+[; ;CW201x.c: 129: ret = cw_write(0xA, &reset_val);
+"129
+[e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reset_val ]
+[; ;CW201x.c: 130: if(ret)
+"130
+[e $ ! != _ret -> 0 `i 37  ]
+[; ;CW201x.c: 131: {
+"131
+{
+[; ;CW201x.c: 132: return 1;
+"132
+[e ) -> -> 1 `i `uc ]
+[e $UE 22  ]
+"133
+}
+[e :U 37 ]
+[; ;CW201x.c: 133: }
+[; ;CW201x.c: 134: return 0;
+"134
+[e ) -> -> 0 `i `uc ]
+[e $UE 22  ]
+[; ;CW201x.c: 135: }
+"135
+[e :UE 22 ]
+}
+"139
+[v _cw_init `(uc ~T0 @X0 1 ef ]
+"140
+{
+[; ;CW201x.c: 139: unsigned char cw_init(void)
+[; ;CW201x.c: 140: {
+[e :U _cw_init ]
+[f ]
+"141
+[v _ret `ui ~T0 @X0 1 a ]
+"142
+[v _i `uc ~T0 @X0 1 a ]
+"143
+[v _reg_val `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 141: unsigned ret;
+[; ;CW201x.c: 142: unsigned char i;
+[; ;CW201x.c: 143: unsigned char reg_val = (0x0<<6);
+[e = _reg_val -> << -> 0 `i -> 6 `i `uc ]
+"144
+[v F64 `Cuc ~T0 @X0 -> 64 `i s cw_bat_config_info ]
+[i F64
+:U ..
+"145
+-> -> 20 `i `uc
+-> -> 166 `i `uc
+-> -> 112 `i `uc
+-> -> 108 `i `uc
+-> -> 108 `i `uc
+-> -> 103 `i `uc
+-> -> 100 `i `uc
+"146
+-> -> 98 `i `uc
+-> -> 96 `i `uc
+-> -> 92 `i `uc
+-> -> 89 `i `uc
+-> -> 78 `i `uc
+-> -> 80 `i `uc
+-> -> 66 `i `uc
+"147
+-> -> 46 `i `uc
+-> -> 38 `i `uc
+-> -> 37 `i `uc
+-> -> 36 `i `uc
+-> -> 39 `i `uc
+-> -> 46 `i `uc
+-> -> 65 `i `uc
+"148
+-> -> 90 `i `uc
+-> -> 109 `i `uc
+-> -> 76 `i `uc
+-> -> 57 `i `uc
+-> -> 215 `i `uc
+-> -> 6 `i `uc
+-> -> 102 `i `uc
+"149
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 5 `i `uc
+-> -> 52 `i `uc
+-> -> 97 `i `uc
+-> -> 118 `i `uc
+-> -> 121 `i `uc
+"150
+-> -> 125 `i `uc
+-> -> 66 `i `uc
+-> -> 30 `i `uc
+-> -> 164 `i `uc
+-> -> 0 `i `uc
+-> -> 39 `i `uc
+-> -> 90 `i `uc
+"151
+-> -> 82 `i `uc
+-> -> 135 `i `uc
+-> -> 143 `i `uc
+-> -> 145 `i `uc
+-> -> 148 `i `uc
+-> -> 82 `i `uc
+-> -> 130 `i `uc
+"152
+-> -> 140 `i `uc
+-> -> 146 `i `uc
+-> -> 150 `i `uc
+-> -> 43 `i `uc
+-> -> 89 `i `uc
+-> -> 110 `i `uc
+-> -> 203 `i `uc
+"153
+-> -> 47 `i `uc
+-> -> 125 `i `uc
+-> -> 114 `i `uc
+-> -> 165 `i `uc
+-> -> 181 `i `uc
+-> -> 193 `i `uc
+-> -> 148 `i `uc
+"155
+-> -> 153 `i `uc
+..
+]
+[; ;CW201x.c: 144: const unsigned char cw_bat_config_info[64] = {
+[; ;CW201x.c: 145: 0x14,0xA6,0x70,0x6C,0x6C,0x67,0x64,
+[; ;CW201x.c: 146: 0x62,0x60,0x5C,0x59,0x4E,0x50,0x42,
+[; ;CW201x.c: 147: 0x2E,0x26,0x25,0x24,0x27,0x2E,0x41,
+[; ;CW201x.c: 148: 0x5A,0x6D,0x4C,0x39,0xD7,0x06,0x66,
+[; ;CW201x.c: 149: 0x00,0x01,0x05,0x34,0x61,0x76,0x79,
+[; ;CW201x.c: 150: 0x7D,0x42,0x1E,0xA4,0x00,0x27,0x5A,
+[; ;CW201x.c: 151: 0x52,0x87,0x8F,0x91,0x94,0x52,0x82,
+[; ;CW201x.c: 152: 0x8C,0x92,0x96,0x2B,0x59,0x6E,0xCB,
+[; ;CW201x.c: 153: 0x2F,0x7D,0x72,0xA5,0xB5,0xC1,0x94,
+[; ;CW201x.c: 154: 0x99
+[; ;CW201x.c: 155: };
+[; ;CW201x.c: 158: ret = cw_write(0xA, &reg_val);
+"158
+[e = _ret -> ( _cw_write (2 , -> -> 10 `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 159: if(ret)
+"159
+[e $ ! != _ret -> -> 0 `i `ui 39  ]
+[; ;CW201x.c: 160: {
+"160
+{
+[; ;CW201x.c: 161: return 1;
+"161
+[e ) -> -> 1 `i `uc ]
+[e $UE 38  ]
+"162
+}
+[e :U 39 ]
+[; ;CW201x.c: 162: }
+[; ;CW201x.c: 165: ret = cw_read(0x8, &reg_val);
+"165
+[e = _ret -> ( _cw_read (2 , -> -> 8 `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 166: if(ret)
+"166
+[e $ ! != _ret -> -> 0 `i `ui 40  ]
+[; ;CW201x.c: 167: {
+"167
+{
+[; ;CW201x.c: 168: return 1;
+"168
+[e ) -> -> 1 `i `uc ]
+[e $UE 38  ]
+"169
+}
+[e :U 40 ]
+[; ;CW201x.c: 169: }
+[; ;CW201x.c: 170: if((reg_val & 0xf8) != (0x0<<3))
+"170
+[e $ ! != & -> _reg_val `i -> 248 `i << -> 0 `i -> 3 `i 41  ]
+[; ;CW201x.c: 171: {
+"171
+{
+[; ;CW201x.c: 173: reg_val &= 0x07;
+"173
+[e =& _reg_val -> -> 7 `i `uc ]
+[; ;CW201x.c: 174: reg_val |= (0x0<<3);
+"174
+[e =| _reg_val -> << -> 0 `i -> 3 `i `uc ]
+[; ;CW201x.c: 175: ret = cw_write(0x8, &reg_val);
+"175
+[e = _ret -> ( _cw_write (2 , -> -> 8 `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 176: if(ret)
+"176
+[e $ ! != _ret -> -> 0 `i `ui 42  ]
+[; ;CW201x.c: 177: {
+"177
+{
+[; ;CW201x.c: 178: return 1;
+"178
+[e ) -> -> 1 `i `uc ]
+[e $UE 38  ]
+"179
+}
+[e :U 42 ]
+"180
+}
+[e :U 41 ]
+[; ;CW201x.c: 179: }
+[; ;CW201x.c: 180: }
+[; ;CW201x.c: 183: ret = cw_read(0x8, &reg_val);
+"183
+[e = _ret -> ( _cw_read (2 , -> -> 8 `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 184: if(ret)
+"184
+[e $ ! != _ret -> -> 0 `i `ui 43  ]
+[; ;CW201x.c: 185: {
+"185
+{
+[; ;CW201x.c: 186: return 1;
+"186
+[e ) -> -> 1 `i `uc ]
+[e $UE 38  ]
+"187
+}
+[e :U 43 ]
+[; ;CW201x.c: 187: }
+[; ;CW201x.c: 188: if(!(reg_val & (0x1<<1)))
+"188
+[e $ ! ! != & -> _reg_val `i << -> 1 `i -> 1 `i -> 0 `i 44  ]
+[; ;CW201x.c: 189: {
+"189
+{
+[; ;CW201x.c: 191: ret = cw_update_config_info();
+"191
+[e = _ret -> ( _cw_update_config_info ..  `ui ]
+[; ;CW201x.c: 192: if(ret)
+"192
+[e $ ! != _ret -> -> 0 `i `ui 45  ]
+[; ;CW201x.c: 193: {
+"193
+{
+[; ;CW201x.c: 194: return ret;
+"194
+[e ) -> _ret `uc ]
+[e $UE 38  ]
+"195
+}
+[e :U 45 ]
+"196
+}
+[; ;CW201x.c: 195: }
+[; ;CW201x.c: 196: }
+[e $U 46  ]
+"197
+[e :U 44 ]
+[; ;CW201x.c: 197: else
+[; ;CW201x.c: 198: {
+"198
+{
+[; ;CW201x.c: 199: for(i = 0; i < 64; i++)
+"199
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 64 `i 47  ]
+[e $U 48  ]
+"200
+[e :U 47 ]
+[; ;CW201x.c: 200: {
+{
+[; ;CW201x.c: 201: ret = cw_read(0x10 +i, &reg_val);
+"201
+[e = _ret -> ( _cw_read (2 , -> + -> 16 `i -> _i `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 202: if(ret)
+"202
+[e $ ! != _ret -> -> 0 `i `ui 50  ]
+[; ;CW201x.c: 203: {
+"203
+{
+[; ;CW201x.c: 204: return 1;
+"204
+[e ) -> -> 1 `i `uc ]
+[e $UE 38  ]
+"205
+}
+[e :U 50 ]
+[; ;CW201x.c: 205: }
+[; ;CW201x.c: 206: if(cw_bat_config_info[i] != reg_val)
+"206
+[e $ ! != -> *U + &U F64 * -> _i `ux -> -> # *U &U F64 `ui `ux `i -> _reg_val `i 51  ]
+[; ;CW201x.c: 207: {
+"207
+{
+[; ;CW201x.c: 208: break;
+"208
+[e $U 48  ]
+"209
+}
+[e :U 51 ]
+"210
+}
+"199
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 64 `i 47  ]
+[e :U 48 ]
+"210
+}
+[; ;CW201x.c: 209: }
+[; ;CW201x.c: 210: }
+[; ;CW201x.c: 211: if(i != 64)
+"211
+[e $ ! != -> _i `i -> 64 `i 52  ]
+[; ;CW201x.c: 212: {
+"212
+{
+[; ;CW201x.c: 214: ret = cw_update_config_info();
+"214
+[e = _ret -> ( _cw_update_config_info ..  `ui ]
+[; ;CW201x.c: 215: if(ret)
+"215
+[e $ ! != _ret -> -> 0 `i `ui 53  ]
+[; ;CW201x.c: 216: {
+"216
+{
+[; ;CW201x.c: 217: return ret;
+"217
+[e ) -> _ret `uc ]
+[e $UE 38  ]
+"218
+}
+[e :U 53 ]
+"219
+}
+[e :U 52 ]
+"220
+}
+[e :U 46 ]
+[; ;CW201x.c: 218: }
+[; ;CW201x.c: 219: }
+[; ;CW201x.c: 220: }
+[; ;CW201x.c: 222: for (i = 0; i < 30; i++) {
+"222
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 30 `i 54  ]
+[e $U 55  ]
+[e :U 54 ]
+{
+[; ;CW201x.c: 223: CW_Delay10ms(10);
+"223
+[e ( _CW_Delay10ms (1 -> -> 10 `i `ui ]
+[; ;CW201x.c: 224: ret = cw_read(0x4, &reg_val);
+"224
+[e = _ret -> ( _cw_read (2 , -> -> 4 `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 225: if (ret)
+"225
+[e $ ! != _ret -> -> 0 `i `ui 57  ]
+[; ;CW201x.c: 226: return 1;
+"226
+[e ) -> -> 1 `i `uc ]
+[e $UE 38  ]
+[e $U 58  ]
+"227
+[e :U 57 ]
+[; ;CW201x.c: 227: else if (reg_val <= 100)
+[e $ ! <= -> _reg_val `i -> 100 `i 59  ]
+[; ;CW201x.c: 228: break;
+"228
+[e $U 55  ]
+[e :U 59 ]
+"229
+[e :U 58 ]
+}
+"222
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 30 `i 54  ]
+[e :U 55 ]
+"229
+}
+[; ;CW201x.c: 229: }
+[; ;CW201x.c: 231: if (i >=30){
+"231
+[e $ ! >= -> _i `i -> 30 `i 60  ]
+{
+[; ;CW201x.c: 232: reg_val = (0x3<<6);
+"232
+[e = _reg_val -> << -> 3 `i -> 6 `i `uc ]
+[; ;CW201x.c: 233: ret = cw_write(0xA, &reg_val);
+"233
+[e = _ret -> ( _cw_write (2 , -> -> 10 `i `uc &U _reg_val `ui ]
+[; ;CW201x.c: 235: return 4;
+"235
+[e ) -> -> 4 `i `uc ]
+[e $UE 38  ]
+"236
+}
+[e :U 60 ]
+[; ;CW201x.c: 236: }
+[; ;CW201x.c: 237: return 0;
+"237
+[e ) -> -> 0 `i `uc ]
+[e $UE 38  ]
+[; ;CW201x.c: 238: }
+"238
+[e :UE 38 ]
+}
+"303
+[v _cw_por `(i ~T0 @X0 1 ef ]
+"304
+{
+[; ;CW201x.c: 303: int cw_por(void)
+[; ;CW201x.c: 304: {
+[e :U _cw_por ]
+[f ]
+"305
+[v _ret `i ~T0 @X0 1 a ]
+[; ;CW201x.c: 305: int ret = 0;
+[e = _ret -> 0 `i ]
+"306
+[v _reset_val `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 306: unsigned char reset_val = 0;
+[e = _reset_val -> -> 0 `i `uc ]
+[; ;CW201x.c: 307: reset_val = (0x3<<6);
+"307
+[e = _reset_val -> << -> 3 `i -> 6 `i `uc ]
+[; ;CW201x.c: 308: ret = cw_write(0xA, &reset_val);
+"308
+[e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reset_val ]
+[; ;CW201x.c: 309: if (ret)
+"309
+[e $ ! != _ret -> 0 `i 62  ]
+[; ;CW201x.c: 310: return -1;
+"310
+[e ) -U -> 1 `i ]
+[e $UE 61  ]
+[e :U 62 ]
+[; ;CW201x.c: 311: CW_Delay100us();
+"311
+[e ( _CW_Delay100us ..  ]
+[; ;CW201x.c: 313: reset_val = (0x0<<6);
+"313
+[e = _reset_val -> << -> 0 `i -> 6 `i `uc ]
+[; ;CW201x.c: 314: ret = cw_write(0xA, &reset_val);
+"314
+[e = _ret ( _cw_write (2 , -> -> 10 `i `uc &U _reset_val ]
+[; ;CW201x.c: 315: if (ret)
+"315
+[e $ ! != _ret -> 0 `i 63  ]
+[; ;CW201x.c: 316: return -1;
+"316
+[e ) -U -> 1 `i ]
+[e $UE 61  ]
+[e :U 63 ]
+[; ;CW201x.c: 317: CW_Delay100us();
+"317
+[e ( _CW_Delay100us ..  ]
+[; ;CW201x.c: 319: ret = cw_init();
+"319
+[e = _ret -> ( _cw_init ..  `i ]
+[; ;CW201x.c: 320: if (ret)
+"320
+[e $ ! != _ret -> 0 `i 64  ]
+[; ;CW201x.c: 321: return ret;
+"321
+[e ) _ret ]
+[e $UE 61  ]
+[e :U 64 ]
+[; ;CW201x.c: 322: return 0;
+"322
+[e ) -> 0 `i ]
+[e $UE 61  ]
+[; ;CW201x.c: 323: }
+"323
+[e :UE 61 ]
+}
+"325
+[v _cw_get_capacity `(i ~T0 @X0 1 ef ]
+"326
+{
+[; ;CW201x.c: 325: int cw_get_capacity(void)
+[; ;CW201x.c: 326: {
+[e :U _cw_get_capacity ]
+[f ]
+"327
+[v _ret `i ~T0 @X0 1 a ]
+[; ;CW201x.c: 327: int ret = 0;
+[e = _ret -> 0 `i ]
+"328
+[v _allow_capacity `uc ~T0 @X0 1 a ]
+"329
+[v _reg_val `uc ~T0 @X0 1 a ]
+"331
+[v _cw_capacity `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 328: unsigned char allow_capacity;
+[; ;CW201x.c: 329: unsigned char reg_val;
+[; ;CW201x.c: 331: unsigned char cw_capacity;
+[; ;CW201x.c: 334: ret = cw_read(0x4, &reg_val);
+"334
+[e = _ret ( _cw_read (2 , -> -> 4 `i `uc &U _reg_val ]
+[; ;CW201x.c: 335: if(ret)
+"335
+[e $ ! != _ret -> 0 `i 66  ]
+[; ;CW201x.c: 336: {
+"336
+{
+[; ;CW201x.c: 337: return -1;
+"337
+[e ) -U -> 1 `i ]
+[e $UE 65  ]
+"338
+}
+[e :U 66 ]
+[; ;CW201x.c: 338: }
+[; ;CW201x.c: 340: cw_capacity = reg_val;
+"340
+[e = _cw_capacity _reg_val ]
+[; ;CW201x.c: 342: if ((cw_capacity < 0) || (cw_capacity > 100)) {
+"342
+[e $ ! || < -> _cw_capacity `i -> 0 `i > -> _cw_capacity `i -> 100 `i 67  ]
+{
+[; ;CW201x.c: 344: reset_loop++;
+"344
+[e ++ _reset_loop -> -> 1 `i `uc ]
+[; ;CW201x.c: 345: if (reset_loop >5) {
+"345
+[e $ ! > -> _reset_loop `i -> 5 `i 68  ]
+{
+[; ;CW201x.c: 346: ret = cw_por();
+"346
+[e = _ret ( _cw_por ..  ]
+[; ;CW201x.c: 347: if(ret)
+"347
+[e $ ! != _ret -> 0 `i 69  ]
+[; ;CW201x.c: 348: return -1;
+"348
+[e ) -U -> 1 `i ]
+[e $UE 65  ]
+[e :U 69 ]
+[; ;CW201x.c: 349: reset_loop =0;
+"349
+[e = _reset_loop -> -> 0 `i `uc ]
+"350
+}
+[e :U 68 ]
+[; ;CW201x.c: 350: }
+[; ;CW201x.c: 351: return cw_bat.capacity;
+"351
+[e ) -> . _cw_bat 1 `i ]
+[e $UE 65  ]
+"352
+}
+[; ;CW201x.c: 352: }else {
+[e $U 70  ]
+[e :U 67 ]
+{
+[; ;CW201x.c: 353: reset_loop =0;
+"353
+[e = _reset_loop -> -> 0 `i `uc ]
+"354
+}
+[e :U 70 ]
+[; ;CW201x.c: 354: }
+[; ;CW201x.c: 431: return(cw_capacity);
+"431
+[e ) -> _cw_capacity `i ]
+[e $UE 65  ]
+[; ;CW201x.c: 432: }
+"432
+[e :UE 65 ]
+}
+"434
+[v _cw_get_vol `(ui ~T0 @X0 1 ef ]
+"435
+{
+[; ;CW201x.c: 434: unsigned int cw_get_vol(void)
+[; ;CW201x.c: 435: {
+[e :U _cw_get_vol ]
+[f ]
+"436
+[v _ret `i ~T0 @X0 1 a ]
+[; ;CW201x.c: 436: int ret = 0;
+[e = _ret -> 0 `i ]
+"437
+[v _get_ad_times `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 437: unsigned char get_ad_times = 0;
+[e = _get_ad_times -> -> 0 `i `uc ]
+[v F80 `uc ~T0 @X0 -> 2 `i s ]
+[i F80
+:U ..
+"438
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _reg_val `uc ~T0 @X0 -> 2 `i a ]
+[; ;CW201x.c: 438: unsigned char reg_val[2] = {0 , 0};
+[e = _reg_val F80 ]
+"439
+[v _ad_value `ul ~T0 @X0 1 a ]
+[; ;CW201x.c: 439: unsigned long ad_value = 0;
+[e = _ad_value -> -> -> 0 `i `l `ul ]
+"440
+[v _ad_buff `ui ~T0 @X0 1 a ]
+[; ;CW201x.c: 440: unsigned int ad_buff = 0;
+[e = _ad_buff -> -> 0 `i `ui ]
+"441
+[v _ad_value_min `ui ~T0 @X0 1 a ]
+[; ;CW201x.c: 441: unsigned int ad_value_min = 0;
+[e = _ad_value_min -> -> 0 `i `ui ]
+"442
+[v _ad_value_max `ui ~T0 @X0 1 a ]
+[; ;CW201x.c: 442: unsigned int ad_value_max = 0;
+[e = _ad_value_max -> -> 0 `i `ui ]
+[; ;CW201x.c: 444: for(get_ad_times = 0; get_ad_times < 3; get_ad_times++)
+"444
+{
+[e = _get_ad_times -> -> 0 `i `uc ]
+[e $ < -> _get_ad_times `i -> 3 `i 72  ]
+[e $U 73  ]
+"445
+[e :U 72 ]
+[; ;CW201x.c: 445: {
+{
+[; ;CW201x.c: 446: ret = cw_read_word(0x2, &reg_val[0],2);
+"446
+[e = _ret ( _cw_read_word (3 , , -> -> 2 `i `uc &U *U + &U _reg_val * -> -> -> 0 `i `ui `ux -> -> # *U &U _reg_val `ui `ux -> -> 2 `i `ui ]
+[; ;CW201x.c: 447: if(ret)
+"447
+[e $ ! != _ret -> 0 `i 75  ]
+[; ;CW201x.c: 448: {
+"448
+{
+[; ;CW201x.c: 449: return 1;
+"449
+[e ) -> -> 1 `i `ui ]
+[e $UE 71  ]
+"450
+}
+[e :U 75 ]
+[; ;CW201x.c: 450: }
+[; ;CW201x.c: 451: ad_buff = (reg_val[0] << 8) + reg_val[1];
+"451
+[e = _ad_buff -> + << -> *U + &U _reg_val * -> -> -> 0 `i `ui `ux -> -> # *U &U _reg_val `ui `ux `i -> 8 `i -> *U + &U _reg_val * -> -> -> 1 `i `ui `ux -> -> # *U &U _reg_val `ui `ux `i `ui ]
+[; ;CW201x.c: 453: if(get_ad_times == 0)
+"453
+[e $ ! == -> _get_ad_times `i -> 0 `i 76  ]
+[; ;CW201x.c: 454: {
+"454
+{
+[; ;CW201x.c: 455: ad_value_min = ad_buff;
+"455
+[e = _ad_value_min _ad_buff ]
+[; ;CW201x.c: 456: ad_value_max = ad_buff;
+"456
+[e = _ad_value_max _ad_buff ]
+"457
+}
+[e :U 76 ]
+[; ;CW201x.c: 457: }
+[; ;CW201x.c: 458: if(ad_buff < ad_value_min)
+"458
+[e $ ! < _ad_buff _ad_value_min 77  ]
+[; ;CW201x.c: 459: {
+"459
+{
+[; ;CW201x.c: 460: ad_value_min = ad_buff;
+"460
+[e = _ad_value_min _ad_buff ]
+"461
+}
+[e :U 77 ]
+[; ;CW201x.c: 461: }
+[; ;CW201x.c: 462: if(ad_buff > ad_value_max)
+"462
+[e $ ! > _ad_buff _ad_value_max 78  ]
+[; ;CW201x.c: 463: {
+"463
+{
+[; ;CW201x.c: 464: ad_value_max = ad_buff;
+"464
+[e = _ad_value_max _ad_buff ]
+"465
+}
+[e :U 78 ]
+[; ;CW201x.c: 465: }
+[; ;CW201x.c: 466: ad_value += ad_buff;
+"466
+[e =+ _ad_value -> _ad_buff `ul ]
+"467
+}
+"444
+[e ++ _get_ad_times -> -> 1 `i `uc ]
+[e $ < -> _get_ad_times `i -> 3 `i 72  ]
+[e :U 73 ]
+"467
+}
+[; ;CW201x.c: 467: }
+[; ;CW201x.c: 468: ad_value -= ad_value_min;
+"468
+[e =- _ad_value -> _ad_value_min `ul ]
+[; ;CW201x.c: 469: ad_value -= ad_value_max;
+"469
+[e =- _ad_value -> _ad_value_max `ul ]
+[; ;CW201x.c: 470: ad_value = (ad_value * 305 + 50000) / 100000;
+"470
+[e = _ad_value / + * _ad_value -> -> -> 305 `i `l `ul -> -> 50000 `l `ul -> -> 100000 `l `ul ]
+[; ;CW201x.c: 471: return(ad_value);
+"471
+[e ) -> _ad_value `ui ]
+[e $UE 71  ]
+[; ;CW201x.c: 472: }
+"472
+[e :UE 71 ]
+}
+"497
+[v _update_capacity `(v ~T0 @X0 1 ef ]
+"498
+{
+[; ;CW201x.c: 497: void update_capacity(void)
+[; ;CW201x.c: 498: {
+[e :U _update_capacity ]
+[f ]
+"499
+[v _cw_capacity `i ~T0 @X0 1 a ]
+[; ;CW201x.c: 499: int cw_capacity;
+[; ;CW201x.c: 500: cw_capacity = cw_get_capacity();
+"500
+[e = _cw_capacity ( _cw_get_capacity ..  ]
+[; ;CW201x.c: 501: if((cw_capacity >= 0) && (cw_capacity <= 100) && (cw_bat.capacity != cw_capacity))
+"501
+[e $ ! && && >= _cw_capacity -> 0 `i <= _cw_capacity -> 100 `i != . _cw_bat 1 -> _cw_capacity `ui 80  ]
+[; ;CW201x.c: 502: {
+"502
+{
+[; ;CW201x.c: 503: cw_bat.capacity = cw_capacity;
+"503
+[e = . _cw_bat 1 -> _cw_capacity `ui ]
+"504
+}
+[e :U 80 ]
+[; ;CW201x.c: 504: }
+[; ;CW201x.c: 505: }
+"505
+[e :UE 79 ]
+}
+"508
+[v _update_vol `(v ~T0 @X0 1 ef ]
+"509
+{
+[; ;CW201x.c: 508: void update_vol(void)
+[; ;CW201x.c: 509: {
+[e :U _update_vol ]
+[f ]
+"510
+[v _cw_voltage `ui ~T0 @X0 1 a ]
+[; ;CW201x.c: 510: unsigned int cw_voltage;
+[; ;CW201x.c: 511: cw_voltage = cw_get_vol();
+"511
+[e = _cw_voltage ( _cw_get_vol ..  ]
+[; ;CW201x.c: 512: if(cw_voltage == 1){
+"512
+[e $ ! == _cw_voltage -> -> 1 `i `ui 82  ]
+{
+[; ;CW201x.c: 514: cw_bat.voltage = cw_bat.voltage;
+"514
+[e = . _cw_bat 2 . _cw_bat 2 ]
+"515
+}
+[; ;CW201x.c: 515: }else if(cw_bat.voltage != cw_voltage)
+[e $U 83  ]
+[e :U 82 ]
+[e $ ! != . _cw_bat 2 _cw_voltage 84  ]
+[; ;CW201x.c: 516: {
+"516
+{
+[; ;CW201x.c: 517: cw_bat.voltage = cw_voltage;
+"517
+[e = . _cw_bat 2 _cw_voltage ]
+"518
+}
+[e :U 84 ]
+"519
+[e :U 83 ]
+[; ;CW201x.c: 518: }
+[; ;CW201x.c: 519: }
+[e :UE 81 ]
+}
+"544
+[v _update_usb_online `(v ~T0 @X0 1 ef ]
+"545
+{
+[; ;CW201x.c: 544: void update_usb_online(void)
+[; ;CW201x.c: 545: {
+[e :U _update_usb_online ]
+[f ]
+[; ;CW201x.c: 546: if(CHARGE == 1)
+"546
+[e $ ! == -> _CHARGE `i -> 1 `i 86  ]
+[; ;CW201x.c: 547: {
+"547
+{
+[; ;CW201x.c: 548: cw_bat.usb_online = 1;
+"548
+[e = . _cw_bat 0 -> -> 1 `i `uc ]
+"549
+}
+[; ;CW201x.c: 549: }else{
+[e $U 87  ]
+[e :U 86 ]
+{
+[; ;CW201x.c: 550: cw_bat.usb_online = 0;
+"550
+[e = . _cw_bat 0 -> -> 0 `i `uc ]
+"551
+}
+[e :U 87 ]
+[; ;CW201x.c: 551: }
+[; ;CW201x.c: 552: }
+"552
+[e :UE 85 ]
+}
+"555
+[v _cw_bat_work `(v ~T0 @X0 1 ef ]
+"556
+{
+[; ;CW201x.c: 555: void cw_bat_work(void)
+[; ;CW201x.c: 556: {
+[e :U _cw_bat_work ]
+[f ]
+[; ;CW201x.c: 557: update_usb_online();
+"557
+[e ( _update_usb_online ..  ]
+[; ;CW201x.c: 558: update_capacity();
+"558
+[e ( _update_capacity ..  ]
+[; ;CW201x.c: 559: update_vol();
+"559
+[e ( _update_vol ..  ]
+[; ;CW201x.c: 563: }
+"563
+[e :UE 88 ]
+}
+"577
+[v _cw_bat_init `(uc ~T0 @X0 1 ef ]
+"578
+{
+[; ;CW201x.c: 577: unsigned char cw_bat_init(void)
+[; ;CW201x.c: 578: {
+[e :U _cw_bat_init ]
+[f ]
+"579
+[v _ret `uc ~T0 @X0 1 a ]
+"580
+[v _loop `uc ~T0 @X0 1 a ]
+[; ;CW201x.c: 579: unsigned char ret;
+[; ;CW201x.c: 580: unsigned char loop = 0;
+[e = _loop -> -> 0 `i `uc ]
+[; ;CW201x.c: 583: ret = cw_init();
+"583
+[e = _ret ( _cw_init ..  ]
+[; ;CW201x.c: 584: while((loop++ < 200) && (ret != 0))
+"584
+[e $U 90  ]
+[e :U 91 ]
+[; ;CW201x.c: 585: {
+"585
+{
+[; ;CW201x.c: 586: ret = cw_init();
+"586
+[e = _ret ( _cw_init ..  ]
+"587
+}
+[e :U 90 ]
+"584
+[e $ && < -> ++ _loop -> -> 1 `i `uc `i -> 200 `i != -> _ret `i -> 0 `i 91  ]
+[e :U 92 ]
+[; ;CW201x.c: 587: }
+[; ;CW201x.c: 589: cw_bat.usb_online = 0;
+"589
+[e = . _cw_bat 0 -> -> 0 `i `uc ]
+[; ;CW201x.c: 590: cw_bat.capacity = 2;
+"590
+[e = . _cw_bat 1 -> -> 2 `i `ui ]
+[; ;CW201x.c: 591: cw_bat.voltage = 0;
+"591
+[e = . _cw_bat 2 -> -> 0 `i `ui ]
+[; ;CW201x.c: 595: cw_bat.alt = 0;
+"595
+[e = . _cw_bat 3 -> -> 0 `i `uc ]
+[; ;CW201x.c: 597: return ret;
+"597
+[e ) _ret ]
+[e $UE 89  ]
+[; ;CW201x.c: 598: }
+"598
+[e :UE 89 ]
+}

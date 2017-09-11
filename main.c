@@ -46,7 +46,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "CW201x.h"
 extern STRUCT_CW_BATTERY   cw_bat;
-extern unsigned char count = 0;
+unsigned char count = 0;
 /*
                          Main application
  */
@@ -118,7 +118,18 @@ void main(void)
             IO_RA4_SetHigh();
         }
         
-        CW_Delay10ms(1000);
+        if(count < 5)
+        {
+            CW_Delay10ms(1000);
+            count ++;
+        }
+        else
+        {
+            CW_Delay10ms(1000);
+            CW_Delay10ms(1000);
+            CW_Delay10ms(1000);
+            CW_Delay10ms(1000);
+        }
         
         cw_bat_work();
         
