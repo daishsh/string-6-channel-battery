@@ -7233,15 +7233,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 877 ]
 [e :U 863 ]
 [; ;main.c: 119: }
-[; ;main.c: 121: if(count < 5)
+[; ;main.c: 121: if(count < 10)
 "121
-[e $ ! < -> _count `i -> 5 `i 918  ]
+[e $ ! < -> _count `i -> 10 `i 918  ]
 [; ;main.c: 122: {
 "122
 {
-[; ;main.c: 123: CW_Delay10ms(1000);
+[; ;main.c: 123: CW_Delay10ms(333);
 "123
-[e ( _CW_Delay10ms (1 -> -> 1000 `i `ui ]
+[e ( _CW_Delay10ms (1 -> -> 333 `i `ui ]
 [; ;main.c: 124: count ++;
 "124
 [e ++ _count -> -> 1 `i `uc ]

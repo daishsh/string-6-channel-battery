@@ -118,9 +118,9 @@ void main(void)
             IO_RA4_SetHigh();
         }
         
-        if(count < 5)
+        if(count < 10)
         {
-            CW_Delay10ms(1000);
+            CW_Delay10ms(333);
             count ++;
         }
         else

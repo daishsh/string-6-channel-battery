@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.43 build -156212558 
-                                                                                               Mon Sep 11 12:52:13 2017
+                                                                                               Wed Sep 13 01:46:01 2017
 
 Microchip Technology Omniscient Code Generator v1.43 (Free mode) build 201707250354
      1                           	processor	16F15323
@@ -2335,17 +2335,17 @@ Microchip Technology Omniscient Code Generator v1.43 (Free mode) build 201707250
   2321  0554                     l2447:	
   2322                           
   2323                           ;main.c: 119: }
-  2324                           ;main.c: 121: if(count < 5)
-  2325  0554  3005               	movlw	5
+  2324                           ;main.c: 121: if(count < 10)
+  2325  0554  300A               	movlw	10
   2326  0555  0251               	subwf	_count,w
   2327  0556  1803               	skipnc
   2328  0557  2D63               	goto	l2453
   2329                           
   2330                           ;main.c: 122: {
-  2331                           ;main.c: 123: CW_Delay10ms(1000);
-  2332  0558  30E8               	movlw	232
+  2331                           ;main.c: 123: CW_Delay10ms(333);
+  2332  0558  304D               	movlw	77
   2333  0559  00F0               	movwf	CW_Delay10ms@c
-  2334  055A  3003               	movlw	3
+  2334  055A  3001               	movlw	1
   2335  055B  00F1               	movwf	CW_Delay10ms@c+1
   2336  055C  21F8               	fcall	_CW_Delay10ms
   2337                           
@@ -6735,7 +6735,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.43 build -156212558 
-Symbol Table                                                                                   Mon Sep 11 12:52:13 2017
+Symbol Table                                                                                   Wed Sep 13 01:46:01 2017
 
                                     __CFG_CP$OFF 0000                                               l31 00FB  
                                              l60 0136                                  _update_capacity 0219  

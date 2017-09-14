@@ -50,7 +50,7 @@ cstackBANK0 BANK0 1 20 20 27 1
 stringtext1 STRCODE 0 396 396 40 2
 stringtext2 STRCODE 0 356 356 40 2
 bssBANK0 BANK0 1 47 47 B 1
-$C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+$C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 1 1 1 2
 config CONFIG 0 8007 8007 5 2
@@ -152,23 +152,23 @@ STRING 2-F1 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\string-6-channel-battery.production.obj
-7F2 cinit CODE >3217:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F2 cinit CODE >3220:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F2 cinit CODE >3244:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F3 cinit CODE >3245:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F4 cinit CODE >3246:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F5 cinit CODE >3247:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F6 cinit CODE >3248:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F7 cinit CODE >3249:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F8 cinit CODE >3250:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7F9 cinit CODE >3251:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FA cinit CODE >3252:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FB cinit CODE >3253:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FC cinit CODE >3254:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FD cinit CODE >3255:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FE cinit CODE >3261:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FE cinit CODE >3263:C:\Users\zwq\AppData\Local\Temp\s8lo.
-7FF cinit CODE >3264:C:\Users\zwq\AppData\Local\Temp\s8lo.
+7F2 cinit CODE >3217:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F2 cinit CODE >3220:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F2 cinit CODE >3244:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F3 cinit CODE >3245:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F4 cinit CODE >3246:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F5 cinit CODE >3247:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F6 cinit CODE >3248:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F7 cinit CODE >3249:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F8 cinit CODE >3250:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7F9 cinit CODE >3251:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FA cinit CODE >3252:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FB cinit CODE >3253:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FC cinit CODE >3254:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FD cinit CODE >3255:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FE cinit CODE >3261:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FE cinit CODE >3263:C:\Users\zwq\AppData\Local\Temp\s5hk.
+7FF cinit CODE >3264:C:\Users\zwq\AppData\Local\Temp\s5hk.
 FA text31 CODE >96:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
 FB text31 CODE >98:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
 FB text31 CODE >100:C:\Users\zwq\Desktop\string-6-channel-battery\mcc_generated_files/eusart1.c
@@ -636,11 +636,11 @@ _PLLR 4480 0 ABS 0 - dist/default/production\string-6-channel-battery.production
 _CW_Delay10ms 3F0 0 CODE 0 text26 dist/default/production\string-6-channel-battery.production.obj
 _WPUA 1F39 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 _WPUC 1F4F 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-___sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+___sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 _main A2E 0 CODE 0 maintext dist/default/production\string-6-channel-battery.production.obj
 _stop 272 0 CODE 0 text19 dist/default/production\string-6-channel-battery.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
-start 2 0 CODE 0 init C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+start 2 0 CODE 0 init C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_stop 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
@@ -654,12 +654,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 __size_of_CW_Delay100us 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ?_cw_por 33 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8lo.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8lo.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8lo.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8lo.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8lo.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5hk.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5hk.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5hk.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5hk.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5hk.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 cw_bat_init@loop 34 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
@@ -741,7 +741,7 @@ __CFG_RSTOSC$HFINTPLL 0 0 ABS 0 - dist/default/production\string-6-channel-batte
 __size_of_update_capacity 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 cw_read_word@length 25 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+___int_sp 0 0 STACK 2 stack C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 _update_usb_online 204 0 CODE 0 text8 dist/default/production\string-6-channel-battery.production.obj
 _EUSART1_Write 1F4 0 CODE 0 text31 dist/default/production\string-6-channel-battery.production.obj
 __end_of_sn_ack 2A2 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
@@ -1003,7 +1003,7 @@ __size_of_cw_bat_init 0 0 ABS 0 - dist/default/production\string-6-channel-batte
 __size_of_cw_bat_work 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 __Lintentry 2 0 CODE 0 intentry -
 ___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 cw_init@ret 30 0 BANK0 1 cstackBANK0 dist/default/production\string-6-channel-battery.production.obj
 __size_of___lmul 0 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
 ?_wait_r_ack 7A 0 COMMON 1 cstackCOMMON dist/default/production\string-6-channel-battery.production.obj
@@ -1112,8 +1112,8 @@ cw_read_word@point_reg 27 0 BANK0 1 cstackBANK0 dist/default/production\string-6
 _sn_ack 28A 0 CODE 0 text5 dist/default/production\string-6-channel-battery.production.obj
 __end_of_cw_init FE4 0 CODE 0 text13 dist/default/production\string-6-channel-battery.production.obj
 __end_of_cw_read 6AC 0 CODE 0 text16 dist/default/production\string-6-channel-battery.production.obj
-stackhi 20EF 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s8lo.obj
-stacklo 2032 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s8lo.obj
+stackhi 20EF 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s5hk.obj
+stacklo 2032 0 ABS 0 - C:\Users\zwq\AppData\Local\Temp\s5hk.obj
 cw_init@cw_bat_config_info 72C 0 STRCODE 0 stringtext1 dist/default/production\string-6-channel-battery.production.obj
 __end_of_EUSART1_Write 204 0 CODE 0 text31 dist/default/production\string-6-channel-battery.production.obj
 _OSCCON1 88D 0 ABS 0 - dist/default/production\string-6-channel-battery.production.obj
